@@ -20,7 +20,7 @@
 				</v8:item>
 			</Synonym>
 			<Comment>&lt;ИГС&gt; Гаврилова А.Н. 07.07.2025 #0116</Comment>
-			<DefaultForm>ExternalReport.СА_СравнитьСОстаткамиERP.Form.ФормаОтчета</DefaultForm>
+			<DefaultForm/>
 			<AuxiliaryForm/>
 			<MainDataCompositionSchema>ExternalReport.СА_СравнитьСОстаткамиERP.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
@@ -135,7 +135,6 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Form>ФормаОтчета</Form>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
 			<Template>ВременнаяСхемаКомпановки</Template>
 		</ChildObjects>

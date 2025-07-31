@@ -119,7 +119,8 @@
 		ПО ПоступлениеТоваровУслугУслуги.Ссылка = ПоступлениеТоваровУслуг.Ссылка
 ГДЕ
 	ПоступлениеТоваровУслуг.ВидОперации = &amp;ВидОперации
-	И ПоступлениеТоваровУслуг.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания</query>
+	И ПоступлениеТоваровУслуг.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ПоступлениеТоваровУслуг.Организация = &amp;Организация</query>
 	</dataSet>
 	<totalField>
 		<dataPath>СуммаБезНДС</dataPath>
@@ -193,6 +194,21 @@
 		<useRestriction>true</useRestriction>
 		<expression>&amp;ПериодДокумента.ДатаОкончания</expression>
 	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -261,6 +277,11 @@
 						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
 					</dcscor:value>
 					<dcsset:userSettingID>700ecc7d-0cab-451b-bee4-bdb7b82a0090</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>1ce9cdad-b5a5-4b9e-b324-006f7651d36f</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">

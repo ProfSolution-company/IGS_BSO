@@ -341,7 +341,6 @@
 				<c>
 					<f>31</f>
 					<parameter>Заказчик</parameter>
-					<detailParameter>Получатель</detailParameter>
 				</c>
 			</c>
 			<c>
@@ -460,7 +459,6 @@
 				<c>
 					<f>31</f>
 					<parameter>Подрядчик</parameter>
-					<detailParameter>ПоставщикУслуг</detailParameter>
 				</c>
 			</c>
 			<c>
@@ -743,7 +741,7 @@
 			<c>
 				<c>
 					<f>52</f>
-					<parameter>Договор</parameter>
+					<parameter>ДоговорНомер</parameter>
 				</c>
 			</c>
 		</row>
@@ -791,7 +789,7 @@
 			<c>
 				<c>
 					<f>54</f>
-					<parameter>ДатаДоговора</parameter>
+					<parameter>ДоговорДата</parameter>
 				</c>
 			</c>
 		</row>
@@ -1017,7 +1015,7 @@
 			<c>
 				<c>
 					<f>67</f>
-					<parameter>НомерДок</parameter>
+					<parameter>ДокументНомер</parameter>
 				</c>
 			</c>
 			<c>
@@ -1028,7 +1026,7 @@
 			<c>
 				<c>
 					<f>68</f>
-					<parameter>ДатаДок</parameter>
+					<parameter>ДокументДата</parameter>
 				</c>
 			</c>
 			<c>
@@ -1519,7 +1517,7 @@
 			<c>
 				<c>
 					<f>110</f>
-					<parameter>Цена</parameter>
+					<parameter>ЦенаБезНДС</parameter>
 				</c>
 			</c>
 			<c>
@@ -1581,7 +1579,7 @@
 			<c>
 				<c>
 					<f>118</f>
-					<parameter>Итого</parameter>
+					<parameter>ИтогоБезНДС</parameter>
 				</c>
 			</c>
 		</row>
@@ -1719,7 +1717,7 @@
 			<c>
 				<c>
 					<f>127</f>
-					<parameter>ДолжностьРуководителя</parameter>
+					<parameter>ДолжностьПредставителя</parameter>
 				</c>
 			</c>
 			<c>
@@ -1732,7 +1730,7 @@
 				<i>8</i>
 				<c>
 					<f>129</f>
-					<parameter>ФИОРуководителя</parameter>
+					<parameter>ПредставительПодрядчика</parameter>
 				</c>
 			</c>
 		</row>

@@ -1717,7 +1717,7 @@
 			<c>
 				<c>
 					<f>127</f>
-					<parameter>ДолжностьПредставителя</parameter>
+					<parameter>ДолжностьРуководителя</parameter>
 				</c>
 			</c>
 			<c>
@@ -1730,7 +1730,7 @@
 				<i>8</i>
 				<c>
 					<f>129</f>
-					<parameter>ПредставительПодрядчика</parameter>
+					<parameter>ФИОРуководителя</parameter>
 				</c>
 			</c>
 		</row>

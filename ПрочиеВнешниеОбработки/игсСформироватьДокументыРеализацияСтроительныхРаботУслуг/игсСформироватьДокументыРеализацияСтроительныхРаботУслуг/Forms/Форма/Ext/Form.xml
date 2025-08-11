@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="34">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="35"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаЛевая" id="36">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаЛеваяРасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<InputField name="Организация" id="1">
+							<DataPath>Объект.Организация</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+						</InputField>
+						<InputField name="Подразделение" id="7">
+							<DataPath>Объект.Подразделение</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПодразделениеКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="9"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаПравая" id="38">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаПраваяРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<InputField name="Дата" id="4">
+							<DataPath>Объект.Дата</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТаблицаПроектов" id="10">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТаблицаПроектов</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаПроектовКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ТаблицаПроектовКоманднаяПанель" id="12">
+				<ChildItems>
+					<Button name="СнятьФлажки" id="42">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СнятьФлажки</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="43"/>
+					</Button>
+					<Button name="УстановитьФлажки" id="44">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.УстановитьФлажки</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.CheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="УстановитьФлажкиРасширеннаяПодсказка" id="45"/>
+					</Button>
+					<Button name="Заполнить" id="32">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.Заполнить</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.QueryWizardCreateTempTableDescription</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ЗаполнитьРасширеннаяПодсказка" id="33"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаПроектовРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ТаблицаПроектовСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ТаблицаПроектов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ТаблицаПроектовСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаПроектовСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ТаблицаПроектов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ТаблицаПроектовСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаПроектовУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ТаблицаПроектов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТаблицаПроектовУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТаблицаПроектовНомерСтроки" id="23">
+					<DataPath>Объект.ТаблицаПроектов.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаПроектовНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТаблицаПроектовНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<CheckBoxField name="ТаблицаПроектовФлагАктивности" id="26">
+					<DataPath>Объект.ТаблицаПроектов.ФлагАктивности</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТаблицаПроектовФлагАктивностиКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТаблицаПроектовФлагАктивностиРасширеннаяПодсказка" id="28"/>
+				</CheckBoxField>
+				<InputField name="ТаблицаПроектовПроект" id="29">
+					<DataPath>Объект.ТаблицаПроектов.Проект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ContextMenu name="ТаблицаПроектовПроектКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТаблицаПроектовПроектРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="ChoiceProcessing">ТаблицаПроектовПроектОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаПроектовФактическаяВыручка" id="125">
+					<DataPath>Объект.ТаблицаПроектов.ФактическаяВыручка</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовФактическаяВыручкаКонтекстноеМеню" id="126"/>
+					<ExtendedTooltip name="ТаблицаПроектовФактическаяВыручкаРасширеннаяПодсказка" id="127"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовФактическиеЗатраты" id="110">
+					<DataPath>Объект.ТаблицаПроектов.ФактическиеЗатраты</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовФактическиеЗатратыКонтекстноеМеню" id="111"/>
+					<ExtendedTooltip name="ТаблицаПроектовФактическиеЗатратыРасширеннаяПодсказка" id="112"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовПлановаяВыручка" id="113">
+					<DataPath>Объект.ТаблицаПроектов.ПлановаяВыручка</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовПлановаяВыручкаКонтекстноеМеню" id="114"/>
+					<ExtendedTooltip name="ТаблицаПроектовПлановаяВыручкаРасширеннаяПодсказка" id="115"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовПлановыеЗатраты" id="116">
+					<DataPath>Объект.ТаблицаПроектов.ПлановыеЗатраты</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовПлановыеЗатратыКонтекстноеМеню" id="117"/>
+					<ExtendedTooltip name="ТаблицаПроектовПлановыеЗатратыРасширеннаяПодсказка" id="118"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовНачальныйОстатокВыручки" id="119">
+					<DataPath>Объект.ТаблицаПроектов.НачальныйОстатокВыручки</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовНачальныйОстатокВыручкиКонтекстноеМеню" id="120"/>
+					<ExtendedTooltip name="ТаблицаПроектовНачальныйОстатокВыручкиРасширеннаяПодсказка" id="121"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовНачальныйОстатокЗатрат" id="122">
+					<DataPath>Объект.ТаблицаПроектов.НачальныйОстатокЗатрат</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовНачальныйОстатокЗатратКонтекстноеМеню" id="123"/>
+					<ExtendedTooltip name="ТаблицаПроектовНачальныйОстатокЗатратРасширеннаяПодсказка" id="124"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовПерваяСтрока" id="104">
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовПерваяСтрокаКонтекстноеМеню" id="105"/>
+					<ExtendedTooltip name="ТаблицаПроектовПерваяСтрокаРасширеннаяПодсказка" id="106"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовПоследняяСтрока" id="107">
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовПоследняяСтрокаКонтекстноеМеню" id="108"/>
+					<ExtendedTooltip name="ТаблицаПроектовПоследняяСтрокаРасширеннаяПодсказка" id="109"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовДокументРеализации" id="128">
+					<DataPath>Объект.ТаблицаПроектов.ДокументРеализации</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовДокументРеализацииКонтекстноеМеню" id="129"/>
+					<ExtendedTooltip name="ТаблицаПроектовДокументРеализацииРасширеннаяПодсказка" id="130"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="ТаблицаПроектовСтрукт" id="64">
+			<Visible>false</Visible>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТаблицаПроектовДетальная</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаПроектовСтруктКонтекстноеМеню" id="65"/>
+			<AutoCommandBar name="ТаблицаПроектовСтруктКоманднаяПанель" id="66">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаПроектовСтруктРасширеннаяПодсказка" id="67"/>
+			<SearchStringAddition name="ТаблицаПроектовСтруктСтрокаПоиска" id="68">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>ТаблицаПроектовСтрукт</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовСтруктСтрокаПоискаКонтекстноеМеню" id="69"/>
+				<ExtendedTooltip name="ТаблицаПроектовСтруктСтрокаПоискаРасширеннаяПодсказка" id="70"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаПроектовСтруктСостояниеПросмотра" id="71">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>ТаблицаПроектовСтрукт</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовСтруктСостояниеПросмотраКонтекстноеМеню" id="72"/>
+				<ExtendedTooltip name="ТаблицаПроектовСтруктСостояниеПросмотраРасширеннаяПодсказка" id="73"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаПроектовСтруктУправлениеПоиском" id="74">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>ТаблицаПроектовСтрукт</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовСтруктУправлениеПоискомКонтекстноеМеню" id="75"/>
+				<ExtendedTooltip name="ТаблицаПроектовСтруктУправлениеПоискомРасширеннаяПодсказка" id="76"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТаблицаПроектовСтруктНомерСтроки" id="77">
+					<DataPath>Объект.ТаблицаПроектовДетальная.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаПроектовСтруктНомерСтрокиКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="ТаблицаПроектовСтруктНомерСтрокиРасширеннаяПодсказка" id="79"/>
+				</LabelField>
+				<InputField name="ТаблицаПроектовСтруктПроект" id="80">
+					<DataPath>Объект.ТаблицаПроектовДетальная.Проект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовСтруктПроектКонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="ТаблицаПроектовСтруктПроектРасширеннаяПодсказка" id="82"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовСтруктНоменклатурнаяГруппа" id="83">
+					<DataPath>Объект.ТаблицаПроектовДетальная.НоменклатурнаяГруппа</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовСтруктНоменклатурнаяГруппаКонтекстноеМеню" id="84"/>
+					<ExtendedTooltip name="ТаблицаПроектовСтруктНоменклатурнаяГруппаРасширеннаяПодсказка" id="85"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовСтруктФактическаяВыручка" id="86">
+					<DataPath>Объект.ТаблицаПроектовДетальная.ФактическаяВыручкаДетально</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовСтруктФактическаяВыручкаКонтекстноеМеню" id="87"/>
+					<ExtendedTooltip name="ТаблицаПроектовСтруктФактическаяВыручкаРасширеннаяПодсказка" id="88"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовСтруктФактическиеЗатраты" id="89">
+					<DataPath>Объект.ТаблицаПроектовДетальная.ФактическиеЗатратыДетально</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовСтруктФактическиеЗатратыКонтекстноеМеню" id="90"/>
+					<ExtendedTooltip name="ТаблицаПроектовСтруктФактическиеЗатратыРасширеннаяПодсказка" id="91"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="ДокументРасчета" id="159">
+			<DataPath>Объект.ДокументРасчета</DataPath>
+			<Visible>false</Visible>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДокументРасчетаКонтекстноеМеню" id="160"/>
+			<ExtendedTooltip name="ДокументРасчетаРасширеннаяПодсказка" id="161"/>
+		</InputField>
+		<Table name="ТаблицаПроектовДетальная" id="131">
+			<Visible>false</Visible>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТаблицаПроектовДетальная</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаПроектовДетальнаяКонтекстноеМеню" id="132"/>
+			<AutoCommandBar name="ТаблицаПроектовДетальнаяКоманднаяПанель" id="133"/>
+			<ExtendedTooltip name="ТаблицаПроектовДетальнаяРасширеннаяПодсказка" id="134"/>
+			<SearchStringAddition name="ТаблицаПроектовДетальнаяСтрокаПоиска" id="135">
+				<AdditionSource>
+					<Item>ТаблицаПроектовДетальная</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовДетальнаяСтрокаПоискаКонтекстноеМеню" id="136"/>
+				<ExtendedTooltip name="ТаблицаПроектовДетальнаяСтрокаПоискаРасширеннаяПодсказка" id="137"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаПроектовДетальнаяСостояниеПросмотра" id="138">
+				<AdditionSource>
+					<Item>ТаблицаПроектовДетальная</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовДетальнаяСостояниеПросмотраКонтекстноеМеню" id="139"/>
+				<ExtendedTooltip name="ТаблицаПроектовДетальнаяСостояниеПросмотраРасширеннаяПодсказка" id="140"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаПроектовДетальнаяУправлениеПоиском" id="141">
+				<AdditionSource>
+					<Item>ТаблицаПроектовДетальная</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаПроектовДетальнаяУправлениеПоискомКонтекстноеМеню" id="142"/>
+				<ExtendedTooltip name="ТаблицаПроектовДетальнаяУправлениеПоискомРасширеннаяПодсказка" id="143"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТаблицаПроектовДетальнаяНомерСтроки" id="144">
+					<DataPath>Объект.ТаблицаПроектовДетальная.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаПроектовДетальнаяНомерСтрокиКонтекстноеМеню" id="145"/>
+					<ExtendedTooltip name="ТаблицаПроектовДетальнаяНомерСтрокиРасширеннаяПодсказка" id="146"/>
+				</LabelField>
+				<InputField name="ТаблицаПроектовДетальнаяПроект" id="147">
+					<DataPath>Объект.ТаблицаПроектовДетальная.Проект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовДетальнаяПроектКонтекстноеМеню" id="148"/>
+					<ExtendedTooltip name="ТаблицаПроектовДетальнаяПроектРасширеннаяПодсказка" id="149"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовДетальнаяНоменклатурнаяГруппа" id="150">
+					<DataPath>Объект.ТаблицаПроектовДетальная.НоменклатурнаяГруппа</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовДетальнаяНоменклатурнаяГруппаКонтекстноеМеню" id="151"/>
+					<ExtendedTooltip name="ТаблицаПроектовДетальнаяНоменклатурнаяГруппаРасширеннаяПодсказка" id="152"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовДетальнаяФактическаяВыручкаДетально" id="153">
+					<DataPath>Объект.ТаблицаПроектовДетальная.ФактическаяВыручкаДетально</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовДетальнаяФактическаяВыручкаДетальноКонтекстноеМеню" id="154"/>
+					<ExtendedTooltip name="ТаблицаПроектовДетальнаяФактическаяВыручкаДетальноРасширеннаяПодсказка" id="155"/>
+				</InputField>
+				<InputField name="ТаблицаПроектовДетальнаяФактическиеЗатратыДетально" id="156">
+					<DataPath>Объект.ТаблицаПроектовДетальная.ФактическиеЗатратыДетально</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТаблицаПроектовДетальнаяФактическиеЗатратыДетальноКонтекстноеМеню" id="157"/>
+					<ExtendedTooltip name="ТаблицаПроектовДетальнаяФактическиеЗатратыДетальноРасширеннаяПодсказка" id="158"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Button name="СформироватьДокументы" id="40">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<DefaultButton>true</DefaultButton>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<CommandName>Form.Command.СформироватьДокументы</CommandName>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<ExtendedTooltip name="СформироватьДокументыРасширеннаяПодсказка" id="41"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.игсСформироватьДокументыРеализацияСтроительныхРаботУслуг</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+		<Command name="СформироватьДокументы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьДокументы</Action>
+		</Command>
+		<Command name="СнятьФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СнятьФлажки</Action>
+		</Command>
+		<Command name="УстановитьФлажки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьФлажки</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<ExternalReport uuid="462dc8a5-c44c-4903-a4de-480f537f5ae8">
+		<InternalInfo>
+			<xr:ContainedObject>
+				<xr:ClassId>e41aff26-25cf-4bb6-b6c1-3f478a75f374</xr:ClassId>
+				<xr:ObjectId>19d57ffb-58f5-4e0d-8887-edbc7d0fc74a</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:GeneratedType name="ExternalReportObject.ДетализацияРаспределенияПоСправкам" category="Object">
+				<xr:TypeId>9c5600ce-304d-4744-8efd-fec0c1f6a767</xr:TypeId>
+				<xr:ValueId>0be8b3f5-700a-4615-942c-ad7eaa238529</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ДетализацияРаспределенияПоСправкам</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детализация распределения по справкам</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>&lt;ИГС&gt; ПР Прудько А. 0336</Comment>
+			<DefaultForm/>
+			<AuxiliaryForm/>
+			<MainDataCompositionSchema>ExternalReport.ДетализацияРаспределенияПоСправкам.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<DefaultSettingsForm/>
+			<AuxiliarySettingsForm/>
+			<DefaultVariantForm/>
+			<VariantsStorage>SettingsStorage.ХранилищеВариантовОтчетов</VariantsStorage>
+			<SettingsStorage/>
+		</Properties>
+		<ChildObjects>
+			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
+		</ChildObjects>
+	</ExternalReport>
+</MetaDataObject>

@@ -25,6 +25,12 @@
 					<v8:content>Дата начала</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДатаОкончанияДляОС</dataPath>
@@ -35,6 +41,12 @@
 					<v8:content>Дата окончания</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ОбъектРаспределения</dataPath>

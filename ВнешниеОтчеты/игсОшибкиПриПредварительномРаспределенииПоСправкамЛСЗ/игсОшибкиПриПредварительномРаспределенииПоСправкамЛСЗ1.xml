@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
-	<ExternalReport uuid="5e93d88d-919d-4499-8d93-f6ff608f9599">
+	<ExternalReport uuid="65940771-833b-4387-8c04-3479976a5ce0">
 		<InternalInfo>
 			<xr:ContainedObject>
 				<xr:ClassId>e41aff26-25cf-4bb6-b6c1-3f478a75f374</xr:ClassId>
-				<xr:ObjectId>baf71e55-af9d-4181-8242-3085147018ea</xr:ObjectId>
+				<xr:ObjectId>3705423c-84c7-490a-b2fa-dcf81cc3062b</xr:ObjectId>
 			</xr:ContainedObject>
 			<xr:GeneratedType name="ExternalReportObject.игсОшибкиПриПредварительномРаспределенииПоСправкамЛСЗ" category="Object">
-				<xr:TypeId>70005aa5-2ea4-4297-bfeb-5776cb8de288</xr:TypeId>
-				<xr:ValueId>c774d156-5cf0-4be6-9ab8-0a305863f2e5</xr:ValueId>
+				<xr:TypeId>a0709360-e1fa-4f58-87d7-dca4d8676417</xr:TypeId>
+				<xr:ValueId>d59db947-7fe5-4757-801e-fd0a45c1c8d4</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>

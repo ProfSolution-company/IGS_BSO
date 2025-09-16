@@ -1,0 +1,2068 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://v8.1c.ru/8.2/data/spreadsheet" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<languageSettings>
+		<currentLanguage>ru</currentLanguage>
+		<defaultLanguage>ru</defaultLanguage>
+		<languageInfo>
+			<id>ru</id>
+			<code>Русский</code>
+			<description>Русский</description>
+		</languageInfo>
+	</languageSettings>
+	<columns>
+		<size>8</size>
+		<columnsItem>
+			<index>0</index>
+			<column>
+				<formatIndex>1</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>1</index>
+			<column>
+				<formatIndex>2</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>2</index>
+			<column>
+				<formatIndex>3</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>3</index>
+			<column>
+				<formatIndex>4</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>4</index>
+			<column>
+				<formatIndex>5</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>5</index>
+			<column>
+				<formatIndex>6</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>6</index>
+			<column>
+				<formatIndex>7</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>7</index>
+			<column>
+				<formatIndex>8</formatIndex>
+			</column>
+		</columnsItem>
+	</columns>
+	<rowsItem>
+		<index>0</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>10</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>[Организация]. Бюджет Строительного Контракта. Руб.</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">АО "Инвестгеосервис". Бюджет Строительного Контракта. Руб.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>1</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>12</f>
+					<parameter>Проект</parameter>
+					<detailParameter>Проект</detailParameter>
+					<d xsi:type="xs:string">скв. 140 Гыданского ЛУ</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>14</f>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>2</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>15</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сценарий факт: [СценарийФакт]</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">скв. 140 Гыданского ЛУ</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>14</f>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>3</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>15</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сценарий прогноз: [Сценарий]</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">скв. 140 Гыданского ЛУ</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>14</f>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>4</index>
+		<row>
+			<formatIndex>16</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>17</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>17</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>17</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>17</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>17</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>17</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>17</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>5</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>18</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>19</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показатели</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Показатели</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>20</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прогноз по проекту</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Прогноз по проекту</d>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>6</index>
+		<row>
+			<formatIndex>21</formatIndex>
+			<c>
+				<c>
+					<f>18</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<i>2</i>
+				<c>
+					<f>22</f>
+					<parameter>Период0</parameter>
+					<d xsi:type="xs:string">2020 до 01.01.2021 факт</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>22</f>
+					<parameter>Период1</parameter>
+					<d xsi:type="xs:string">9 мес 2021 г факт</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>22</f>
+					<parameter>Период2</parameter>
+					<d xsi:type="xs:string">октябрь 2021  (месяц закрытия)</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>22</f>
+					<parameter>Период3</parameter>
+					<d xsi:type="xs:string">ноябрь-декабрь 2021 прогноз</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>22</f>
+					<parameter>Период4</parameter>
+					<d xsi:type="xs:string">2022г и далее</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>23</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итого по скважине</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Итого по скважине</d>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>7</index>
+		<row>
+			<formatIndex>24</formatIndex>
+			<c>
+				<c>
+					<f>25</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>РСБУ (СК)</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">РСБУ (СК)</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>26</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выручка</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Выручка</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>27</f>
+					<parameter>Выручка0</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.12.2020 г.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>27</f>
+					<parameter>Выручка1</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 30.09.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>27</f>
+					<parameter>Выручка</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.10.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>27</f>
+					<parameter>Выручка2</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>27</f>
+					<parameter>Выручка3</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>27</f>
+					<parameter>ВыручкаИтого</parameter>
+					<d xsi:type="xs:string">Сумма</d>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>8</index>
+		<row>
+			<formatIndex>28</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>29</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расходы по строительному контракту (20+25+26 счета)</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Расходы по строительному контракту ( 20+25+26 счета)</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>30</f>
+					<parameter>Расходы0</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.12.2020 г.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>31</f>
+					<parameter>Расходы1</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 30.09.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>32</f>
+					<parameter>Расходы</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.10.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>33</f>
+					<parameter>Расходы2</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>34</f>
+					<parameter>Расходы3</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>35</f>
+					<parameter>РасходыИтого</parameter>
+					<d xsi:type="xs:string">Сумма</d>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>9</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>36</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ПНО по СК</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">ПНО по СК</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>Прибыль0</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>Прибыль1</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>Прибыль</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>Прибыль2</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>Прибыль3</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>ПрибыльИтого</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>10</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>38</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные по резерву под убыток</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Данные по резерву под убыток</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>39</f>
+					<parameter>Резерв0</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>39</f>
+					<parameter>Резерв1</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>39</f>
+					<parameter>Резерв</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>39</f>
+					<parameter>Резерв2</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>39</f>
+					<parameter>Резерв3</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>39</f>
+					<parameter>РезервИтого</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>11</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>40</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные по актированию выручки</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Данные по актированию выручки</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>41</f>
+					<parameter>АВыручка0</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>41</f>
+					<parameter>АВыручка1</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>41</f>
+					<parameter>АВыручка</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>41</f>
+					<parameter>АВыручка2</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>41</f>
+					<parameter>АВыручка3</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>41</f>
+					<parameter>АВыручкаИтого</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>12</index>
+		<row>
+			<formatIndex>42</formatIndex>
+			<c>
+				<c>
+					<f>43</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>44</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>44</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>44</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>44</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>44</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>44</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>44</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>13</index>
+		<row>
+			<formatIndex>24</formatIndex>
+			<c>
+				<c>
+					<f>25</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>УУ</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">УУ</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>26</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выручка</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Выручка</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>30</f>
+					<parameter>УпрВыручка0</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.12.2020 г.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>31</f>
+					<parameter>УпрВыручка1</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 30.09.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>32</f>
+					<parameter>УпрВыручка</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.10.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>33</f>
+					<parameter>УпрВыручка2</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>34</f>
+					<parameter>УпрВыручка3</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>35</f>
+					<parameter>УпрВыручкаИтого</parameter>
+					<d xsi:type="xs:string">Сумма</d>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>14</index>
+		<row>
+			<formatIndex>24</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>29</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расходы (20+25+26 счета)</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Расходы ( 20+25+26 счета)</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>30</f>
+					<parameter>УпрРасходы0</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.12.2020 г.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>31</f>
+					<parameter>УпрРасходы1</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 30.09.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>32</f>
+					<parameter>УпрРасходы</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.10.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>33</f>
+					<parameter>УпрРасходы2</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>34</f>
+					<parameter>УпрРасходы3</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>35</f>
+					<parameter>УпрРасходыИтого</parameter>
+					<d xsi:type="xs:string">Сумма</d>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>15</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>36</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчетная Прибыль</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Расчетная Прибыль</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыль0</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыль1</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыль</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыль2</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыль3</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыльИтого</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>16</index>
+		<row>
+			<formatIndex>24</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>29</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расходы/доходы 91 счет</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Расходы/доходы 91 счет</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>30</f>
+					<parameter>УпрРасходы91_0</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.12.2020 г.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>31</f>
+					<parameter>УпрРасходы91_1</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 30.09.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>32</f>
+					<parameter>УпрРасходы91_</parameter>
+					<d xsi:type="xs:string">Выручка по отчету на 31.10.2021 г. - Колонка слева</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>33</f>
+					<parameter>УпрРасходы91_2</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>34</f>
+					<parameter>УпрРасходы91_3</parameter>
+					<d xsi:type="xs:string">Пока не заполняем</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>35</f>
+					<parameter>УпрРасходы91_Итого</parameter>
+					<d xsi:type="xs:string">Сумма</d>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>17</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<i>1</i>
+				<c>
+					<f>36</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прибыль до налога</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Прибыль до налога</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыльДоНалога0</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыльДоНалога1</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыльДоНалога</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыльДоНалога2</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыльДоНалога3</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>37</f>
+					<parameter>УпрПрибыльДоНалогаИтого</parameter>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>18</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>45</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>19</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Экономист проекта</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Экономист проекта</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>46</f>
+					<parameter>ЭкономистПроекта</parameter>
+					<d xsi:type="xs:string">Скобин А.А.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>20</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>21</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>22</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Зам. Главного бухгалтера</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Зам. Главного бухгалтера</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Морозова Я.В.</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Морозова Я.В.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>23</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>24</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<rowsItem>
+		<index>25</index>
+		<row>
+			<formatIndex>9</formatIndex>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Директор департамента по финансовому контролю и отчетности</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Финансовый директор</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Айсан Т.Т.</v8:content>
+						</v8:item>
+					</tl>
+					<d xsi:type="xs:string">Кочухова С.В.</d>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>11</f>
+					<d xsi:type="xs:string"/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
+	<templateMode>true</templateMode>
+	<defaultFormatIndex>47</defaultFormatIndex>
+	<height>26</height>
+	<vgRows>26</vgRows>
+	<merge>
+		<r>5</r>
+		<c>1</c>
+		<h>1</h>
+	</merge>
+	<merge>
+		<r>5</r>
+		<c>2</c>
+		<w>5</w>
+	</merge>
+	<merge>
+		<r>7</r>
+		<c>0</c>
+		<h>4</h>
+	</merge>
+	<merge>
+		<r>13</r>
+		<c>0</c>
+		<h>4</h>
+	</merge>
+	<namedItem xsi:type="NamedItemCells">
+		<name>Проект</name>
+		<area>
+			<type>Rows</type>
+			<beginRow>0</beginRow>
+			<endRow>25</endRow>
+			<beginColumn>-1</beginColumn>
+			<endColumn>-1</endColumn>
+		</area>
+	</namedItem>
+	<line width="1" gap="false">
+		<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+	</line>
+	<line width="1" gap="false">
+		<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+	</line>
+	<font xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" ref="sys:DefaultGUIFont" faceName="Times New Roman" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont" scale="100"/>
+	<font xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" ref="sys:DefaultGUIFont" faceName="Times New Roman" height="11" bold="false" italic="false" underline="false" strikeout="false" kind="WindowsFont" scale="100"/>
+	<font xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" ref="sys:DefaultGUIFont" faceName="Times New Roman" height="11" bold="true" italic="true" underline="false" strikeout="false" kind="WindowsFont" scale="100"/>
+	<format>
+		<width>58</width>
+	</format>
+	<format>
+		<width>281</width>
+	</format>
+	<format>
+		<width>144</width>
+	</format>
+	<format>
+		<width>157</width>
+	</format>
+	<format>
+		<width>130</width>
+	</format>
+	<format>
+		<width>137</width>
+	</format>
+	<format>
+		<width>148</width>
+	</format>
+	<format>
+		<width>149</width>
+	</format>
+	<format>
+		<height>60</height>
+	</format>
+	<format>
+		<font>0</font>
+		<border>0</border>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+		<fillType>Template</fillType>
+	</format>
+	<format>
+		<font>1</font>
+		<border>0</border>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+	</format>
+	<format>
+		<font>0</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>0</topBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+		<fillType>Parameter</fillType>
+		<bySelectedColumns>true</bySelectedColumns>
+	</format>
+	<format>
+		<font>0</font>
+		<topBorder>0</topBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+		<bySelectedColumns>true</bySelectedColumns>
+	</format>
+	<format>
+		<font>0</font>
+		<topBorder>0</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+		<bySelectedColumns>true</bySelectedColumns>
+	</format>
+	<format>
+		<font>0</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>0</topBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+		<fillType>Template</fillType>
+		<bySelectedColumns>true</bySelectedColumns>
+	</format>
+	<format>
+		<height>24</height>
+	</format>
+	<format>
+		<font>1</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>0</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>1</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+	</format>
+	<format>
+		<font>1</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>0</topBorder>
+		<rightBorder>1</rightBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+	</format>
+	<format>
+		<font>0</font>
+		<leftBorder>1</leftBorder>
+		<topBorder>1</topBorder>
+		<horizontalAlignment>Center</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+	</format>
+	<format>
+		<font>0</font>
+		<leftBorder>1</leftBorder>
+		<topBorder>1</topBorder>
+		<rightBorder>1</rightBorder>
+		<horizontalAlignment>Center</horizontalAlignment>
+		<verticalAlignment>Center</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+	</format>
+	<format>
+		<height>171</height>
+	</format>
+	<format>
+		<font>0</font>
+		<border>1</border>
+		<horizontalAlignment>Center</horizontalAlignment>
+		<verticalAlignment>Center</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+	</format>
+	<format>
+		<font>0</font>
+		<border>1</border>
+		<horizontalAlignment>Center</horizontalAlignment>
+		<verticalAlignment>Center</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<height>240</height>
+	</format>
+	<format>
+		<font>1</font>
+		<leftBorder>1</leftBorder>
+		<topBorder>1</topBorder>
+		<horizontalAlignment>Center</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFC000</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<height>180</height>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<height>240</height>
+		<width>115</width>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<height>240</height>
+		<width>157</width>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<height>240</height>
+		<width>130</width>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<height>240</height>
+		<width>137</width>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<height>240</height>
+		<width>148</width>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>1</font>
+		<border>1</border>
+		<height>240</height>
+		<width>132</width>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>0</font>
+		<border>1</border>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#F2F2F2</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<font>0</font>
+		<border>1</border>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#F2F2F2</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>2</font>
+		<leftBorder>1</leftBorder>
+		<topBorder>1</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#F2F2F2</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<font>2</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>1</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#F2F2F2</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<font>2</font>
+		<leftBorder>1</leftBorder>
+		<topBorder>0</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#F2F2F2</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<font>2</font>
+		<border>0</border>
+		<horizontalAlignment>Right</horizontalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#F2F2F2</backColor>
+		<textPlacement>Wrap</textPlacement>
+		<fillType>Parameter</fillType>
+		<format>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+			</v8:item>
+		</format>
+	</format>
+	<format>
+		<height>33</height>
+	</format>
+	<format>
+		<font>1</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>1</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>1</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+	</format>
+	<format>
+		<font>1</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>0</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>1</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Wrap</textPlacement>
+	</format>
+	<format>
+		<font>1</font>
+		<leftBorder>0</leftBorder>
+		<topBorder>1</topBorder>
+		<rightBorder>0</rightBorder>
+		<bottomBorder>0</bottomBorder>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+	</format>
+	<format>
+		<font>1</font>
+		<border>0</border>
+		<horizontalAlignment>Left</horizontalAlignment>
+		<verticalAlignment>Bottom</verticalAlignment>
+		<textColor>#000000</textColor>
+		<backColor>#FFFFFF</backColor>
+		<textPlacement>Auto</textPlacement>
+		<fillType>Parameter</fillType>
+	</format>
+	<format>
+		<width>72</width>
+	</format>
+</document>

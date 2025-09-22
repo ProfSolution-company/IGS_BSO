@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
-	<ExternalDataProcessor uuid="b630c430-8585-4eb2-bbf0-d4883352e1d1">
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<ExternalDataProcessor uuid="2fcca5ff-17eb-445a-b8d1-29423e2f87d0">
 		<InternalInfo>
 			<xr:ContainedObject>
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
-				<xr:ObjectId>b620b0a5-6030-4216-9ae0-38fa1276be78</xr:ObjectId>
+				<xr:ObjectId>d3e58130-1eff-400f-83fb-5f75a5bffe95</xr:ObjectId>
 			</xr:ContainedObject>
 			<xr:GeneratedType name="ExternalDataProcessorObject.игсСформироватьДокументыРеализацияСтроительныхРаботУслуг" category="Object">
-				<xr:TypeId>606404d3-df6c-4831-901b-d0654dd0c8eb</xr:TypeId>
-				<xr:ValueId>da912fe2-972c-48d4-a8fa-1de08934860a</xr:ValueId>
+				<xr:TypeId>3235bc91-fd74-48f1-81aa-b0a35e2d5a14</xr:TypeId>
+				<xr:ValueId>aad602bd-f445-4a63-ad0c-4f1e70802138</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -198,6 +198,7 @@
 							<xr:MultiLine>false</xr:MultiLine>
 							<xr:FillFromFillingValue>false</xr:FillFromFillingValue>
 							<xr:CreateOnInput>Auto</xr:CreateOnInput>
+							<xr:TypeReductionMode>TransformValues</xr:TypeReductionMode>
 							<xr:MaxValue xsi:nil="true"/>
 							<xr:ToolTip/>
 							<xr:ExtendedEdit>false</xr:ExtendedEdit>
@@ -606,6 +607,7 @@
 							<xr:MultiLine>false</xr:MultiLine>
 							<xr:FillFromFillingValue>false</xr:FillFromFillingValue>
 							<xr:CreateOnInput>Auto</xr:CreateOnInput>
+							<xr:TypeReductionMode>TransformValues</xr:TypeReductionMode>
 							<xr:MaxValue xsi:nil="true"/>
 							<xr:ToolTip/>
 							<xr:ExtendedEdit>false</xr:ExtendedEdit>

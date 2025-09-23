@@ -23,6 +23,9 @@
 							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
 							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="3"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+							</Events>
 						</InputField>
 						<InputField name="Подразделение" id="7">
 							<DataPath>Объект.Подразделение</DataPath>
@@ -139,7 +142,6 @@
 				</InputField>
 				<InputField name="ТаблицаПроектовФактическаяВыручка" id="125">
 					<DataPath>Объект.ТаблицаПроектов.ФактическаяВыручка</DataPath>
-					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТаблицаПроектовФактическаяВыручкаКонтекстноеМеню" id="126"/>
@@ -147,7 +149,6 @@
 				</InputField>
 				<InputField name="ТаблицаПроектовФактическиеЗатраты" id="110">
 					<DataPath>Объект.ТаблицаПроектов.ФактическиеЗатраты</DataPath>
-					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТаблицаПроектовФактическиеЗатратыКонтекстноеМеню" id="111"/>
@@ -155,7 +156,6 @@
 				</InputField>
 				<InputField name="ТаблицаПроектовПлановаяВыручка" id="113">
 					<DataPath>Объект.ТаблицаПроектов.ПлановаяВыручка</DataPath>
-					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТаблицаПроектовПлановаяВыручкаКонтекстноеМеню" id="114"/>
@@ -163,7 +163,6 @@
 				</InputField>
 				<InputField name="ТаблицаПроектовПлановыеЗатраты" id="116">
 					<DataPath>Объект.ТаблицаПроектов.ПлановыеЗатраты</DataPath>
-					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТаблицаПроектовПлановыеЗатратыКонтекстноеМеню" id="117"/>
@@ -171,7 +170,6 @@
 				</InputField>
 				<InputField name="ТаблицаПроектовНачальныйОстатокВыручки" id="119">
 					<DataPath>Объект.ТаблицаПроектов.НачальныйОстатокВыручки</DataPath>
-					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТаблицаПроектовНачальныйОстатокВыручкиКонтекстноеМеню" id="120"/>
@@ -179,7 +177,6 @@
 				</InputField>
 				<InputField name="ТаблицаПроектовНачальныйОстатокЗатрат" id="122">
 					<DataPath>Объект.ТаблицаПроектов.НачальныйОстатокЗатрат</DataPath>
-					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТаблицаПроектовНачальныйОстатокЗатратКонтекстноеМеню" id="123"/>
@@ -201,7 +198,6 @@
 				</InputField>
 				<InputField name="ТаблицаПроектовДокументРеализации" id="128">
 					<DataPath>Объект.ТаблицаПроектов.ДокументРеализации</DataPath>
-					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТаблицаПроектовДокументРеализацииКонтекстноеМеню" id="129"/>
@@ -293,7 +289,6 @@
 			<ExtendedTooltip name="ДокументРасчетаРасширеннаяПодсказка" id="161"/>
 		</InputField>
 		<Table name="ТаблицаПроектовДетальная" id="131">
-			<Visible>false</Visible>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>

@@ -800,12 +800,7 @@
 			<c>
 				<c>
 					<f>80</f>
-					<tl>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>приказ, постановление, распоряжение</v8:content>
-						</v8:item>
-					</tl>
+					<parameter>ОснованиеИнвентаризации</parameter>
 				</c>
 			</c>
 			<c>
@@ -866,12 +861,6 @@
 			<c>
 				<c>
 					<f>86</f>
-					<tl>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>ненужное зачеркнуть</v8:content>
-						</v8:item>
-					</tl>
 				</c>
 			</c>
 			<c>
@@ -2259,16 +2248,6 @@
 			<c>
 				<c>
 					<f>149</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>150</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>151</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2279,7 +2258,7 @@
 			</c>
 			<c>
 				<c>
-					<f>152</f>
+					<f>150</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2290,7 +2269,7 @@
 			</c>
 			<c>
 				<c>
-					<f>146</f>
+					<f>151</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2301,7 +2280,7 @@
 			</c>
 			<c>
 				<c>
-					<f>146</f>
+					<f>152</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2312,7 +2291,7 @@
 			</c>
 			<c>
 				<c>
-					<f>145</f>
+					<f>146</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2323,7 +2302,7 @@
 			</c>
 			<c>
 				<c>
-					<f>145</f>
+					<f>146</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2377,9 +2356,8 @@
 				</c>
 			</c>
 			<c>
-				<i>21</i>
 				<c>
-					<f>153</f>
+					<f>145</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2390,7 +2368,7 @@
 			</c>
 			<c>
 				<c>
-					<f>153</f>
+					<f>145</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2400,6 +2378,7 @@
 				</c>
 			</c>
 			<c>
+				<i>21</i>
 				<c>
 					<f>153</f>
 					<tl>
@@ -2445,7 +2424,7 @@
 			</c>
 			<c>
 				<c>
-					<f>148</f>
+					<f>153</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2456,7 +2435,7 @@
 			</c>
 			<c>
 				<c>
-					<f>148</f>
+					<f>153</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2467,7 +2446,7 @@
 			</c>
 			<c>
 				<c>
-					<f>153</f>
+					<f>148</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -2478,11 +2457,33 @@
 			</c>
 			<c>
 				<c>
-					<f>153</f>
+					<f>148</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>27</v8:content>
+						</v8:item>
+					</tl>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>153</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>28</v8:content>
+						</v8:item>
+					</tl>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>153</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>29</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -4082,7 +4083,7 @@
 		<bottomBorder>0</bottomBorder>
 		<height>48</height>
 		<width>238</width>
-		<horizontalAlignment>Left</horizontalAlignment>
+		<horizontalAlignment>Center</horizontalAlignment>
 		<verticalAlignment>Bottom</verticalAlignment>
 		<fillType>Parameter</fillType>
 		<bySelectedColumns>true</bySelectedColumns>
@@ -4145,7 +4146,7 @@
 		<width>280</width>
 		<horizontalAlignment>Center</horizontalAlignment>
 		<verticalAlignment>Bottom</verticalAlignment>
-		<fillType>Text</fillType>
+		<fillType>Parameter</fillType>
 		<bySelectedColumns>true</bySelectedColumns>
 	</format>
 	<format>

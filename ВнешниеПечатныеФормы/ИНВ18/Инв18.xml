@@ -20,11 +20,10 @@
 				</v8:item>
 			</Synonym>
 			<Comment>&lt;ИГС&gt; Прудько А. 31.03.2025 Задача №0082</Comment>
-			<DefaultForm>ExternalDataProcessor.ПечатнаяФормаИНВ18.Form.Форма</DefaultForm>
+			<DefaultForm/>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
-			<Form>Форма</Form>
 			<Template>ИНВ18</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>

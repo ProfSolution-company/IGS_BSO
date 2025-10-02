@@ -170,7 +170,7 @@
 	ЗатратыПоСправкамРаспределения.СуммаРасход КАК Расход,
 	ЗатратыПоСправкамРаспределения.ОсновноеСредство КАК ОсновноеСредство
 ИЗ
-	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОстаткиИОбороты КАК ЗатратыПоСправкамРаспределения</query>
+	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОстаткиИОбороты(, , , , Организация = &amp;Организация) КАК ЗатратыПоСправкамРаспределения</query>
 	</dataSet>
 	<totalField>
 		<dataPath>НачальныйОстаток</dataPath>
@@ -245,6 +245,22 @@
 			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 		</value>
 		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
 	</parameter>
 	<nestedSchema>
 		<name>РезультатРаспределения</name>
@@ -331,7 +347,7 @@
 	РезультатРаспределенияПоСправкамОбороты.ВосстановительныеРаботы КАК ВосстановительныеРаботы,
 	РезультатРаспределенияПоСправкамОбороты.СуммаОборот КАК Сумма
 ИЗ
-	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты КАК РезультатРаспределенияПоСправкамОбороты</query>
+	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты(, , , Организация = &amp;Организация) КАК РезультатРаспределенияПоСправкамОбороты</query>
 			</dataSet>
 			<totalField>
 				<dataPath>Сумма</dataPath>
@@ -353,6 +369,7 @@
 				</valueType>
 				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 				<useRestriction>false</useRestriction>
+				<use>Always</use>
 			</parameter>
 			<parameter>
 				<name>КонецПериода</name>
@@ -370,6 +387,22 @@
 				</valueType>
 				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 				<useRestriction>false</useRestriction>
+				<use>Always</use>
+			</parameter>
+			<parameter>
+				<name>Организация</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Организация</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Организации</v8:Type>
+				</valueType>
+				<value xsi:nil="true"/>
+				<useRestriction>false</useRestriction>
+				<use>Always</use>
 			</parameter>
 			<settingsVariant>
 				<dcsset:name>Основной</dcsset:name>
@@ -480,6 +513,10 @@
 					<dcscor:parameter>КонецПериода</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:Field">ОбъектНастройкиВладелец.ПараметрыДанных.КонецПериода</dcscor:value>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:Field">ОбъектНастройкиВладелец.ПараметрыДанных.Организация</dcscor:value>
+				</dcscor:item>
 			</dcsset:dataParameters>
 		</settings>
 	</nestedSchema>
@@ -522,6 +559,12 @@
 						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
 					</dcscor:value>
 					<dcsset:userSettingID>ee6de6ee-942e-41b3-b9c0-421029087060</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>3af1cbf8-8318-4532-93dc-624599557a8e</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>

@@ -6,13 +6,13 @@
 				<xr:ClassId>e41aff26-25cf-4bb6-b6c1-3f478a75f374</xr:ClassId>
 				<xr:ObjectId>a23fcdc3-054b-4296-9520-96a7ef25cb8f</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalReportObject.СписаниеГСМ_1" category="Object">
+			<xr:GeneratedType name="ExternalReportObject.СписаниеГСМ" category="Object">
 				<xr:TypeId>9fd3e1ce-b0bc-4991-a271-047e01473c61</xr:TypeId>
 				<xr:ValueId>74ec69fd-8cf6-4b55-bcc6-190391f5c0ea</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>СписаниеГСМ_1</Name>
+			<Name>СписаниеГСМ</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -22,7 +22,7 @@
 			<Comment>&lt;ИГС&gt; Гаврилова А.Н. 03.10.2025  #0221</Comment>
 			<DefaultForm/>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>ExternalReport.СписаниеГСМ_1.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<MainDataCompositionSchema>ExternalReport.СписаниеГСМ.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>

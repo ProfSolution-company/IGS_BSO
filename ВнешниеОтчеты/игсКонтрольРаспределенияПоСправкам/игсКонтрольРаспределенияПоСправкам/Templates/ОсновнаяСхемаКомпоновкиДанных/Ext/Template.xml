@@ -170,7 +170,7 @@
 	ЗатратыПоСправкамРаспределения.СуммаРасход КАК Расход,
 	ЗатратыПоСправкамРаспределения.ОсновноеСредство КАК ОсновноеСредство
 ИЗ
-	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОстаткиИОбороты(, , , , Организация = &amp;Организация) КАК ЗатратыПоСправкамРаспределения</query>
+	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОстаткиИОбороты(, , , , ) КАК ЗатратыПоСправкамРаспределения</query>
 	</dataSet>
 	<totalField>
 		<dataPath>НачальныйОстаток</dataPath>
@@ -245,22 +245,6 @@
 			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 		</value>
 		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Организация</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Организация</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-		<denyIncompleteValues>true</denyIncompleteValues>
-		<use>Always</use>
 	</parameter>
 	<nestedSchema>
 		<name>РезультатРаспределения</name>
@@ -347,7 +331,7 @@
 	РезультатРаспределенияПоСправкамОбороты.ВосстановительныеРаботы КАК ВосстановительныеРаботы,
 	РезультатРаспределенияПоСправкамОбороты.СуммаОборот КАК Сумма
 ИЗ
-	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты(, , , Организация = &amp;Организация) КАК РезультатРаспределенияПоСправкамОбороты</query>
+	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты(, , , ) КАК РезультатРаспределенияПоСправкамОбороты</query>
 			</dataSet>
 			<totalField>
 				<dataPath>Сумма</dataPath>
@@ -389,21 +373,6 @@
 				<useRestriction>false</useRestriction>
 				<use>Always</use>
 			</parameter>
-			<parameter>
-				<name>Организация</name>
-				<title xsi:type="v8:LocalStringType">
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Организация</v8:content>
-					</v8:item>
-				</title>
-				<valueType>
-					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Организации</v8:Type>
-				</valueType>
-				<value xsi:nil="true"/>
-				<useRestriction>false</useRestriction>
-				<use>Always</use>
-			</parameter>
 			<settingsVariant>
 				<dcsset:name>Основной</dcsset:name>
 				<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
@@ -425,6 +394,13 @@
 							<dcsset:field>Сумма</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
 					<dcsset:outputParameters>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
@@ -552,6 +528,14 @@
 					<dcsset:field>КонечныйОстаток</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>b06038df-cd7b-4f6e-a57e-6963a421fe59</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
@@ -559,12 +543,6 @@
 						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
 					</dcscor:value>
 					<dcsset:userSettingID>ee6de6ee-942e-41b3-b9c0-421029087060</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Организация</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>3af1cbf8-8318-4532-93dc-624599557a8e</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>

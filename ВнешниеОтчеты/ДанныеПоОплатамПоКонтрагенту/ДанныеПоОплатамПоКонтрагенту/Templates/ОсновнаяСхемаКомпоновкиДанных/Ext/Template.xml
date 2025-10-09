@@ -84,7 +84,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма фактическая оплата</v8:content>
+					<v8:content>в т.ч. фактическая оплата</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -94,7 +94,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма заявки на оплату</v8:content>
+					<v8:content>в т.ч. не оплаченные заявки на оплату</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -387,10 +387,10 @@
 					<dcsset:field>СуммаКонтроль</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаЗаявкиНаОплату</dcsset:field>
+					<dcsset:field>СуммаНДСКонтроль</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаНДСКонтроль</dcsset:field>
+					<dcsset:field>СуммаЗаявкиНаОплату</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СуммаФактическаяОплата</dcsset:field>

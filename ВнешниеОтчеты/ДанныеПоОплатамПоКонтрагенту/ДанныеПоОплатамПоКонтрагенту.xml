@@ -12,11 +12,11 @@
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ДанныеПоОплатамПоКонтрагенту_10</Name>
+			<Name>ДанныеПоОплатамПоКонтрагенту</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Данные по оплатам по контрагенту 10</v8:content>
+					<v8:content>Данные по оплатам по контрагенту</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment>&lt;ИГС&gt; Гаврилова А,Н. 13.08.2025 #0334</Comment>

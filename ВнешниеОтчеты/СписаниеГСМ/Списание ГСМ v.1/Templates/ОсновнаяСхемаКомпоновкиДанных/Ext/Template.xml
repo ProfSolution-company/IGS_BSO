@@ -59,10 +59,6 @@
 					<v8:content>Куст, скважина</v8:content>
 				</v8:item>
 			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Номенклатура</dataPath>
@@ -78,6 +74,10 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Проект</dataPath>
 			<field>Проект</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Период</dataPath>
@@ -164,8 +164,8 @@
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	НАЧАЛОПЕРИОДА(ХозрасчетныйОборотыДтКт.Период, МЕСЯЦ) КАК Период,
-	НоменклатурныеГруппы.Родитель.Родитель.Родитель КАК Проект,
-	ЕСТЬNULL(НоменклатурныеГруппы.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1) КАК КустСкважина,
+	ЕСТЬNULL(НоменклатурныеГруппы.Родитель.Родитель.Родитель.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1.Родитель.Родитель.Родитель.Родитель) КАК Проект,
+	ЕСТЬNULL(НоменклатурныеГруппы.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1.Родитель) КАК КустСкважина,
 	ХозрасчетныйОборотыДтКт.Регистратор КАК Документ,
 	ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.Номенклатура) КАК Номенклатура,
 	ВЫБОР

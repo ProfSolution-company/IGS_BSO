@@ -6,7 +6,7 @@
 				<xr:ClassId>e41aff26-25cf-4bb6-b6c1-3f478a75f374</xr:ClassId>
 				<xr:ObjectId>36308bcf-102a-4be6-b645-b22970cb6471</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalReportObject.ДанныеПоОплатамПоКонтрагенту_10" category="Object">
+			<xr:GeneratedType name="ExternalReportObject.ДанныеПоОплатамПоКонтрагенту" category="Object">
 				<xr:TypeId>1307d2db-3154-470e-889e-6f9c68be698f</xr:TypeId>
 				<xr:ValueId>c36c22da-5249-4aca-9d6b-32f283dabc69</xr:ValueId>
 			</xr:GeneratedType>
@@ -22,7 +22,7 @@
 			<Comment>&lt;ИГС&gt; Гаврилова А,Н. 13.08.2025 #0334</Comment>
 			<DefaultForm/>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>ExternalReport.ДанныеПоОплатамПоКонтрагенту_10.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<MainDataCompositionSchema>ExternalReport.ДанныеПоОплатамПоКонтрагенту.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>

@@ -174,7 +174,7 @@
 	ХозрасчетныйОбороты.Период КАК ДатаСостояния
 ПОМЕСТИТЬ Состояние2
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Обороты({(&amp;ПустойПериод)}, &amp;КонецПериода, День, Счет.Код = "МЦ.08", &amp;СубконтоОс, , , ) КАК ХозрасчетныйОбороты
+	РегистрБухгалтерии.Хозрасчетный.Обороты({(&amp;ПустойПериод)}, &amp;КонецПериода, День, Счет.Код = "МЦ.08", &amp;СубконтоОс, {Организация = &amp;Организация}, , ) КАК ХозрасчетныйОбороты
 ГДЕ
 	ХозрасчетныйОбороты.КоличествоОборотДт &gt; 0
 
@@ -188,12 +188,25 @@
 	СостоянияОСОрганизацийСрезПоследних.ДатаСостояния КАК ДатаСостояния
 ПОМЕСТИТЬ Состояние1
 ИЗ
-	РегистрСведений.СостоянияОСОрганизаций.СрезПоследних(, ) КАК СостоянияОСОрганизацийСрезПоследних
+	РегистрСведений.СостоянияОСОрганизаций.СрезПоследних(, {Организация = &amp;Организация}) КАК СостоянияОСОрганизацийСрезПоследних
 ГДЕ
 	СостоянияОСОрганизацийСрезПоследних.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияОС.ПринятоКУчету)
 
 ИНДЕКСИРОВАТЬ ПО
 	ОсновноеСредство
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ХозрасчетныйОстаткиИОбороты.КоличествоНачальныйОстаток КАК КоличествоНачальныйОстаток,
+	ХозрасчетныйОстаткиИОбороты.СуммаНачальныйОстаток КАК СуммаНачальныйОстаток,
+	ХозрасчетныйОстаткиИОбороты.СуммаКонечныйОстаток КАК СуммаКонечныйОстаток,
+	ХозрасчетныйОстаткиИОбороты.КоличествоКонечныйОстаток КАК КоличествоКонечныйОстаток,
+	ХозрасчетныйОстаткиИОбороты.Субконто1 КАК Субконто1,
+	ХозрасчетныйОстаткиИОбороты.Субконто2 КАК Субконто2
+ПОМЕСТИТЬ ХозрасчетныйОстаткиИОбороты
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, Период, , Счет = &amp;СчетМЦ08, &amp;СубконтоОс, {Организация = &amp;Организация}) КАК ХозрасчетныйОстаткиИОбороты
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -213,13 +226,13 @@
 	ХозрасчетныйОстаткиИОбороты.СуммаКонечныйОстаток КАК СуммаКонечныйОстаток,
 	ЕСТЬNULL(Состояние1.ДатаСостояния, ЕСТЬNULL(Состояние2.ДатаСостояния, ДАТАВРЕМЯ(1, 1, 1))) КАК ДатаВводаВЭксплуатацию
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, Период, , Счет.Код = "МЦ.08", &amp;СубконтоОс, ) КАК ХозрасчетныйОстаткиИОбороты
-		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ОсновныеСредства КАК ОсновныеСредства
-			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Состояние1 КАК Состояние1
-			ПО ОсновныеСредства.Ссылка = Состояние1.ОсновноеСредство
-			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Состояние2 КАК Состояние2
-			ПО ОсновныеСредства.Ссылка = Состояние2.ОсновноеСредство
-		ПО ХозрасчетныйОстаткиИОбороты.Субконто1 = ОсновныеСредства.Ссылка
+	Справочник.ОсновныеСредства КАК ОсновныеСредства
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Состояние1 КАК Состояние1
+		ПО ОсновныеСредства.Ссылка = Состояние1.ОсновноеСредство
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Состояние2 КАК Состояние2
+		ПО ОсновныеСредства.Ссылка = Состояние2.ОсновноеСредство
+		ПРАВОЕ СОЕДИНЕНИЕ ХозрасчетныйОстаткиИОбороты КАК ХозрасчетныйОстаткиИОбороты
+		ПО (ХозрасчетныйОстаткиИОбороты.Субконто1 = ОсновныеСредства.Ссылка)
 
 ОБЪЕДИНИТЬ ВСЕ
 
@@ -338,7 +351,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<expression>НачалоПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -356,7 +369,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<expression>КонецПериода(&amp;ПериодОтчета.ДатаОкончания, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>ПустойПериод</name>
@@ -387,11 +400,46 @@
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
 		</valueType>
 		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.ОсновныеСредства</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Склады</value>
 		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СчетМЦ08</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет м ц08</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.игсБуровыеИКомплектующие</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Буровые и комплектующие</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
@@ -471,6 +519,17 @@
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:userSettingID>606738db-7232-4bce-b0b3-abab5f36a12a</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СубконтоОс</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.ОсновныеСредства</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>342e12a1-44e2-4d1d-abb2-fa00502e49ea</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
@@ -534,6 +593,11 @@
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
 					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">

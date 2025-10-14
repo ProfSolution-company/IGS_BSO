@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<ExternalDataProcessor uuid="8fc99391-fad8-4405-824e-d9342011f323">
+		<InternalInfo>
+			<xr:ContainedObject>
+				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
+				<xr:ObjectId>4a00ecc1-5615-433f-bc36-629677cda46f</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:GeneratedType name="ExternalDataProcessorObject.игсОбновитьСтатусыДокументовГазпромБанк" category="Object">
+				<xr:TypeId>64e1b144-aa21-4ddb-bcc7-8c8dbc506f41</xr:TypeId>
+				<xr:ValueId>3a16e63d-c440-4e8a-a01f-7e1434897dd7</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>игсОбновитьСтатусыДокументовГазпромБанк</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить статусы документов</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>&lt;ИГС&gt; ПР Потылицын Г.С. #0019</Comment>
+			<DefaultForm>ExternalDataProcessor.игсОбновитьСтатусыДокументовГазпромБанк.Form.Форма</DefaultForm>
+			<AuxiliaryForm/>
+		</Properties>
+		<ChildObjects>
+			<Form>Форма</Form>
+		</ChildObjects>
+	</ExternalDataProcessor>
+</MetaDataObject>

@@ -195,7 +195,7 @@
 	ХозрасчетныйОстаткиИОбороты.СуммаОборотКт КАК СуммаОборотКт,
 	ХозрасчетныйОстаткиИОбороты.СуммаКонечныйОстаток КАК СуммаКонечныйОстаток
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, , , Счет = &amp;Счет, , ) КАК ХозрасчетныйОстаткиИОбороты</query>
+	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, , , Счет = &amp;Счет, , {Организация = &amp;Организация}) КАК ХозрасчетныйОстаткиИОбороты</query>
 	</dataSet>
 	<totalField>
 		<dataPath>КоличествоКонечныйОстаток</dataPath>
@@ -267,8 +267,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
-		<denyIncompleteValues>true</denyIncompleteValues>
+		<expression>НачалоПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -287,8 +286,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
-		<denyIncompleteValues>true</denyIncompleteValues>
+		<expression>КонецПериода(&amp;ПериодОтчета.ДатаОкончания, "День")</expression>
 		<use>Always</use>
 	</parameter>
 	<parameter>
@@ -325,9 +323,28 @@
 		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по счету 003</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -406,6 +423,12 @@
 							<v8:content>По счету</v8:content>
 						</v8:item>
 					</dcsset:userSettingPresentation>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>9400d53b-ef7f-410d-8fad-109298ec1e82</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>

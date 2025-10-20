@@ -47,10 +47,6 @@
 			<field>ВалютаДт</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Документ</dataPath>
-			<field>Документ</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>КустСкважина</dataPath>
 			<field>КустСкважина</field>
 			<title xsi:type="v8:LocalStringType">
@@ -59,10 +55,6 @@
 					<v8:content>Куст, скважина</v8:content>
 				</v8:item>
 			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Номенклатура</dataPath>
@@ -78,6 +70,10 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Проект</dataPath>
 			<field>Проект</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Период</dataPath>
@@ -164,35 +160,41 @@
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	НАЧАЛОПЕРИОДА(ХозрасчетныйОборотыДтКт.Период, МЕСЯЦ) КАК Период,
-	НоменклатурныеГруппы.Родитель.Родитель.Родитель КАК Проект,
-	ЕСТЬNULL(НоменклатурныеГруппы.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1) КАК КустСкважина,
-	ХозрасчетныйОборотыДтКт.Регистратор КАК Документ,
+	ЕСТЬNULL(НоменклатурныеГруппы.Родитель.Родитель.Родитель.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1.Родитель.Родитель.Родитель.Родитель) КАК Проект,
+	ЕСТЬNULL(НоменклатурныеГруппы.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1.Родитель) КАК КустСкважина,
 	ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.Номенклатура) КАК Номенклатура,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.ТребованиеНакладная
-			ТОГДА ХозрасчетныйОборотыДтКт.КоличествоОборотКт
-		ИНАЧЕ 0
-	КОНЕЦ КАК КоличествоСписание,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.ТребованиеНакладная
-			ТОГДА ХозрасчетныйОборотыДтКт.СуммаОборот
-		ИНАЧЕ 0
-	КОНЕЦ КАК СуммаСписание,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
-			ТОГДА ХозрасчетныйОборотыДтКт.КоличествоОборотКт
-		ИНАЧЕ 0
-	КОНЕЦ КАК КоличествоРеализация,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
-			ТОГДА ХозрасчетныйОборотыДтКт.СуммаОборот
-		ИНАЧЕ 0
-	КОНЕЦ КАК СуммаРеализация,
+	СУММА(ВЫБОР
+			КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.ТребованиеНакладная
+				ТОГДА ХозрасчетныйОборотыДтКт.КоличествоОборотКт
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КоличествоСписание,
+	СУММА(ВЫБОР
+			КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.ТребованиеНакладная
+				ТОГДА ХозрасчетныйОборотыДтКт.СуммаОборот
+			ИНАЧЕ 0
+		КОНЕЦ) КАК СуммаСписание,
+	СУММА(ВЫБОР
+			КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+				ТОГДА ХозрасчетныйОборотыДтКт.КоличествоОборотКт
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КоличествоРеализация,
+	СУММА(ВЫБОР
+			КОГДА ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+				ТОГДА ХозрасчетныйОборотыДтКт.СуммаОборот
+			ИНАЧЕ 0
+		КОНЕЦ) КАК СуммаРеализация,
 	ХозрасчетныйОборотыДтКт.Организация КАК Организация
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт &lt;&gt; &amp;Счет1003, , СчетКт = &amp;Счет1003, &amp;СубконтоНоменклатура, ) КАК ХозрасчетныйОборотыДтКт
+	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт &lt;&gt; &amp;Счет1003, , СчетКт В ИЕРАРХИИ (&amp;Счет1003), &amp;СубконтоНоменклатура, ) КАК ХозрасчетныйОборотыДтКт
 		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.НоменклатурныеГруппы КАК НоменклатурныеГруппы
-		ПО ХозрасчетныйОборотыДтКт.СубконтоДт2 = НоменклатурныеГруппы.Ссылка</query>
+		ПО ХозрасчетныйОборотыДтКт.СубконтоДт2 = НоменклатурныеГруппы.Ссылка
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ХозрасчетныйОборотыДтКт.Период, МЕСЯЦ),
+	ЕСТЬNULL(НоменклатурныеГруппы.Родитель.Родитель.Родитель.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1.Родитель.Родитель.Родитель.Родитель),
+	ЕСТЬNULL(НоменклатурныеГруппы.Родитель, ХозрасчетныйОборотыДтКт.СубконтоДт1.Родитель),
+	ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.Номенклатура),
+	ХозрасчетныйОборотыДтКт.Организация</query>
 	</dataSet>
 	<totalField>
 		<dataPath>КоличествоРеализация</dataPath>
@@ -302,6 +304,18 @@
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Проект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КустСкважина</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
 					<dcsset:lwsTitle>
 						<v8:item>
@@ -350,36 +364,6 @@
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:groupItems>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Период</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Проект</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>КустСкважина</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Номенклатура</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>

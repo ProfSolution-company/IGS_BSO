@@ -111,91 +111,136 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СтоимостьВостановленноС94</dataPath>
-			<field>СтоимостьВостановленноС94</field>
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Стоимость востановленно с94</v8:content>
+					<v8:content>Комментарий</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоСписаноНа94</dataPath>
-			<field>КоличествоСписаноНа94</field>
+			<dataPath>СтоимостьСторно</dataPath>
+			<field>СтоимостьСторно</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество списано на94</v8:content>
+					<v8:content>Стоимость восстановлено с 94</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СтоимостьСписаноНа94</dataPath>
-			<field>СтоимостьСписаноНа94</field>
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Стоимость списано на94</v8:content>
+					<v8:content>Количество списано на 94</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоВостановленноС94</dataPath>
-			<field>КоличествоВостановленноС94</field>
+			<dataPath>Стоимость</dataPath>
+			<field>Стоимость</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество востановленно с94</v8:content>
+					<v8:content>Стоимость списано на 94</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоСторно</dataPath>
+			<field>КоличествоСторно</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество восстановлено с 94</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Номенклатура,
-	ХозрасчетныйОборотыДтКт.Регистратор КАК Документ,
-	ЕСТЬNULL(ХозрасчетныйОборотыДтКт.СубконтоКт2, ЗНАЧЕНИЕ(Справочник.Склады.ПустаяСсылка)) КАК Склад,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.СуммаОборот &gt; 0
-			ТОГДА ХозрасчетныйОборотыДтКт.КоличествоОборотКт
-		ИНАЧЕ 0
-	КОНЕЦ КАК КоличествоСписаноНа94,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.СуммаОборот &gt; 0
-			ТОГДА ХозрасчетныйОборотыДтКт.СуммаОборот
-		ИНАЧЕ 0
-	КОНЕЦ КАК СтоимостьСписаноНа94,
-	ХозрасчетныйОборотыДтКт.СубконтоКт1.Код КАК Код,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.СуммаОборот &lt; 0
-			ТОГДА ХозрасчетныйОборотыДтКт.СуммаОборот
-		ИНАЧЕ 0
-	КОНЕЦ КАК СтоимостьВостановленноС94,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.СуммаОборот &lt; 0
-			ТОГДА ХозрасчетныйОборотыДтКт.КоличествоОборотКт
-		ИНАЧЕ 0
-	КОНЕЦ КАК КоличествоВостановленноС94
+	ХозрасчетныйОборотыДтКт.Регистратор КАК Регистратор,
+	ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК СубконтоКт1,
+	ХозрасчетныйОборотыДтКт.СубконтоКт2 КАК СубконтоКт2,
+	ХозрасчетныйОборотыДтКт.КоличествоОборотКт КАК КоличествоОборотКт,
+	ХозрасчетныйОборотыДтКт.СуммаОборот КАК СуммаОборот
+ПОМЕСТИТЬ ХозрасчетныйОборотыДтКт
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт = &amp;Счет94, , СчетКт В ИЕРАРХИИ (&amp;Счет10, &amp;Счет07, &amp;Счет08, &amp;Счет01, &amp;Счет45), , ) КАК ХозрасчетныйОборотыДтКт
+	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДТ = &amp;Счет94, , СчетКт В ИЕРАРХИИ (&amp;Счет01, &amp;Счет07, &amp;Счет08, &amp;Счет10, &amp;Счет45), , Организация = &amp;Организация) КАК ХозрасчетныйОборотыДтКт
 ГДЕ
-	НЕ ХозрасчетныйОборотыДтКт.Регистратор.ПометкаУдаления</query>
+	НЕ ХозрасчетныйОборотыДтКт.Регистратор.ПометкаУдаления
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ХозрасчетныйОборотыДтКт.Регистратор КАК Документ,
+	ЕСТЬNULL(ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.Номенклатура), ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.ОсновныеСредства)) КАК Номенклатура,
+	ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт2 КАК Справочник.Склады) КАК Склад,
+	ХозрасчетныйОборотыДтКт.КоличествоОборотКт КАК Количество,
+	ХозрасчетныйОборотыДтКт.СуммаОборот КАК Стоимость,
+	ЕСТЬNULL(СписаниеТоваров.Комментарий, "") КАК Комментарий,
+	ХозрасчетныйОборотыДтКт.СубконтоКт1.Код КАК Код,
+	0 КАК КоличествоСторно,
+	0 КАК СтоимостьСторно
+ИЗ
+	ХозрасчетныйОборотыДтКт КАК ХозрасчетныйОборотыДтКт
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.СписаниеТоваров КАК СписаниеТоваров
+		ПО ХозрасчетныйОборотыДтКт.Регистратор = СписаниеТоваров.Ссылка
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОборотыДтКт.Регистратор,
+	ЕСТЬNULL(ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.Номенклатура), ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.ОсновныеСредства)),
+	СписаниеОС.игсСклад,
+	ЕСТЬNULL(ХозрасчетныйОборотыДтКт.КоличествоОборотКт, 0),
+	ХозрасчетныйОборотыДтКт.СуммаОборот,
+	ЕСТЬNULL(СписаниеОС.Комментарий, ""),
+	ХозрасчетныйОборотыДтКт.СубконтоКт1.Код,
+	0,
+	0
+ИЗ
+	ХозрасчетныйОборотыДтКт КАК ХозрасчетныйОборотыДтКт
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.СписаниеОС КАК СписаниеОС
+		ПО ХозрасчетныйОборотыДтКт.Регистратор = СписаниеОС.Ссылка
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОборотыДтКт.Регистратор,
+	ЕСТЬNULL(ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.ОсновныеСредства), ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК Справочник.Номенклатура)),
+	ЕСТЬNULL(ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт2 КАК Справочник.Склады), ЗНАЧЕНИЕ(Справочник.Склады.ПустаяСсылка)),
+	0,
+	0,
+	ЕСТЬNULL(ОперацияБух.Комментарий, ""),
+	ХозрасчетныйОборотыДтКт.СубконтоКт1.Код,
+	ЕСТЬNULL(ХозрасчетныйОборотыДтКт.КоличествоОборотКт, 0),
+	ХозрасчетныйОборотыДтКт.СуммаОборот
+ИЗ
+	ХозрасчетныйОборотыДтКт КАК ХозрасчетныйОборотыДтКт
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ОперацияБух КАК ОперацияБух
+		ПО ХозрасчетныйОборотыДтКт.Регистратор = ОперацияБух.Ссылка
+ГДЕ
+	ОперацияБух.СторнируемыйДокумент &lt;&gt; НЕОПРЕДЕЛЕНО</query>
 	</dataSet>
 	<totalField>
-		<dataPath>КоличествоВостановленноС94</dataPath>
-		<expression>Сумма(КоличествоВостановленноС94)</expression>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>КоличествоСписаноНа94</dataPath>
-		<expression>Сумма(КоличествоСписаноНа94)</expression>
+		<dataPath>КоличествоСторно</dataPath>
+		<expression>Сумма(КоличествоСторно)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>СтоимостьВостановленноС94</dataPath>
-		<expression>Сумма(СтоимостьВостановленноС94)</expression>
+		<dataPath>Стоимость</dataPath>
+		<expression>Сумма(Стоимость)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>СтоимостьСписаноНа94</dataPath>
-		<expression>Сумма(СтоимостьСписаноНа94)</expression>
+		<dataPath>СтоимостьСторно</dataPath>
+		<expression>Сумма(СтоимостьСторно)</expression>
 	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -212,8 +257,8 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
-		<expression>&amp;Период.ДатаНачала</expression>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(&amp;Период.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -230,8 +275,8 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
-		<expression>&amp;Период.ДатаОкончания</expression>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;Период.ДатаОкончания, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>Счет01</name>
@@ -353,6 +398,20 @@
 		</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -367,6 +426,9 @@
 					<dcsset:field>Документ</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Комментарий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Склад</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -376,33 +438,37 @@
 					<dcsset:field>Номенклатура</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоСписаноНа94</dcsset:field>
+					<dcsset:field>Количество</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоВостановленноС94</dcsset:field>
+					<dcsset:field>Стоимость</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СтоимостьСписаноНа94</dcsset:field>
+					<dcsset:field>КоличествоСторно</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СтоимостьВостановленноС94</dcsset:field>
+					<dcsset:field>СтоимостьСторно</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НачалоПериода</dcscor:parameter>
-					<dcscor:value xsi:type="v8:StandardBeginningDate">
-						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
-						<v8:date>0001-01-01T00:00:00</v8:date>
-					</dcscor:value>
-				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>cee346b7-9533-48bb-b034-417e988c7b47</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>d97a3b82-6b2d-4de6-9147-c2ade6311de0</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">

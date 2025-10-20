@@ -57,6 +57,16 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">70</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">70</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ОсновноеСредство</dataPath>
@@ -96,7 +106,7 @@
 			<field>СуммаРасход</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
 	игсУчетЗабалансовыхОСПриходОС.Ссылка КАК Ссылка,
 	игсУчетЗабалансовыхОСПриходОС.ОсновноеСредство КАК ОсновноеСредство
 ПОМЕСТИТЬ ВТПеремещения
@@ -106,6 +116,11 @@
 		ПО игсУчетЗабалансовыхОСПриходОС.Ссылка = игсУчетЗабалансовыхОСРасходОС.Ссылка
 			И игсУчетЗабалансовыхОСПриходОС.ОсновноеСредство = игсУчетЗабалансовыхОСРасходОС.ОсновноеСредство
 			И (игсУчетЗабалансовыхОСПриходОС.Ссылка.Проведен)
+ГДЕ
+	игсУчетЗабалансовыхОСПриходОС.Ссылка.Проведен
+{ГДЕ
+	(игсУчетЗабалансовыхОСПриходОС.Ссылка.Организация = &amp;Организация
+			И игсУчетЗабалансовыхОСРасходОС.Ссылка.Организация = &amp;Организация)}
 
 ИНДЕКСИРОВАТЬ ПО
 	ОсновноеСредство,
@@ -126,7 +141,7 @@
 	0 КАК СуммаПриход,
 	0 КАК СуммаРасход
 ИЗ
-	РегистрНакопления.игсАрендованныеОС.ОстаткиИОбороты КАК игсАрендованныеОСОстаткиИОбороты
+	РегистрНакопления.игсАрендованныеОС.ОстаткиИОбороты({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, , , {(Организация = &amp;Организация)}) КАК игсАрендованныеОСОстаткиИОбороты
 
 ОБЪЕДИНИТЬ ВСЕ
 
@@ -151,8 +166,8 @@
 	игсАрендованныеОСОбороты.СуммаПриход,
 	игсАрендованныеОСОбороты.СуммаРасход
 ИЗ
-	РегистрНакопления.игсАрендованныеОС.Обороты(, , Регистратор, ) КАК игсАрендованныеОСОбороты
-		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТПеремещения КАК ВТПеремещения
+	РегистрНакопления.игсАрендованныеОС.Обороты({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, Регистратор, {(Организация = &amp;Организация)}) КАК игсАрендованныеОСОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТПеремещения КАК ВТПеремещения
 		ПО игсАрендованныеОСОбороты.Регистратор = ВТПеремещения.Ссылка
 			И игсАрендованныеОСОбороты.ОсновноеСредство = ВТПеремещения.ОсновноеСредство
 ;
@@ -218,7 +233,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<expression>НачалоПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -236,11 +251,30 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<expression>КонецПериода(&amp;ПериодОтчета.ДатаОкончания, "День")</expression>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ведомость по арендованным ОС</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -294,6 +328,12 @@
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:userSettingID>b2b39686-0f93-4b31-881d-429f13b94e35</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>c035a555-2399-4af6-a142-8ae5593ade57</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -328,6 +368,13 @@
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
 							<dcsset:field>ДоговорКонтрагента.Дата</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДоговорКонтрагента.СрокДействия</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

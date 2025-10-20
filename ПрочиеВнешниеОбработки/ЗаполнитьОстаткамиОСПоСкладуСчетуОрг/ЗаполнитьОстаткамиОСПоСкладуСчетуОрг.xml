@@ -197,7 +197,6 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Form>Форма</Form>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>

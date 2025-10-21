@@ -170,7 +170,7 @@
 	ЗатратыПоСправкамРаспределения.СуммаРасход КАК Расход,
 	ЗатратыПоСправкамРаспределения.ОсновноеСредство КАК ОсновноеСредство
 ИЗ
-	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОстаткиИОбороты КАК ЗатратыПоСправкамРаспределения</query>
+	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОстаткиИОбороты(, , , , ) КАК ЗатратыПоСправкамРаспределения</query>
 	</dataSet>
 	<totalField>
 		<dataPath>НачальныйОстаток</dataPath>
@@ -331,7 +331,7 @@
 	РезультатРаспределенияПоСправкамОбороты.ВосстановительныеРаботы КАК ВосстановительныеРаботы,
 	РезультатРаспределенияПоСправкамОбороты.СуммаОборот КАК Сумма
 ИЗ
-	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты КАК РезультатРаспределенияПоСправкамОбороты</query>
+	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты(, , , ) КАК РезультатРаспределенияПоСправкамОбороты</query>
 			</dataSet>
 			<totalField>
 				<dataPath>Сумма</dataPath>
@@ -353,6 +353,7 @@
 				</valueType>
 				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 				<useRestriction>false</useRestriction>
+				<use>Always</use>
 			</parameter>
 			<parameter>
 				<name>КонецПериода</name>
@@ -370,6 +371,7 @@
 				</valueType>
 				<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 				<useRestriction>false</useRestriction>
+				<use>Always</use>
 			</parameter>
 			<settingsVariant>
 				<dcsset:name>Основной</dcsset:name>
@@ -378,18 +380,6 @@
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ОбъектРаспределения</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Бурение</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Бурение</dcsset:field>
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Признак этапа</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>СчетЗатрат</dcsset:field>
@@ -404,58 +394,13 @@
 							<dcsset:field>Сумма</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
-					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>Бурение</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter>
-								<dcsset:item xsi:type="dcsset:FilterItemComparison">
-									<dcsset:left xsi:type="dcscor:Field">Бурение</dcsset:left>
-									<dcsset:comparisonType>Equal</dcsset:comparisonType>
-									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-								</dcsset:item>
-							</dcsset:filter>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Текст</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Все этапы</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
 						</dcsset:item>
-						<dcsset:item>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>Бурение</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter>
-								<dcsset:item xsi:type="dcsset:FilterItemComparison">
-									<dcsset:left xsi:type="dcscor:Field">Бурение</dcsset:left>
-									<dcsset:comparisonType>Equal</dcsset:comparisonType>
-									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-								</dcsset:item>
-							</dcsset:filter>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Текст</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Этапы бурения</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-						</dcsset:item>
-					</dcsset:conditionalAppearance>
+					</dcsset:filter>
 					<dcsset:outputParameters>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
@@ -544,6 +489,10 @@
 					<dcscor:parameter>КонецПериода</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:Field">ОбъектНастройкиВладелец.ПараметрыДанных.КонецПериода</dcscor:value>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:Field">ОбъектНастройкиВладелец.ПараметрыДанных.Организация</dcscor:value>
+				</dcscor:item>
 			</dcsset:dataParameters>
 		</settings>
 	</nestedSchema>
@@ -571,12 +520,6 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Бурение</dcsset:field>
-					<dcsset:lwsTitle>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Признак этапа</v8:content>
-						</v8:item>
-					</dcsset:lwsTitle>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ОсновноеСредство</dcsset:field>
@@ -585,6 +528,14 @@
 					<dcsset:field>КонечныйОстаток</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>b06038df-cd7b-4f6e-a57e-6963a421fe59</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
@@ -604,58 +555,6 @@
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
-			<dcsset:conditionalAppearance>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Бурение</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Бурение</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>Текст</dcscor:parameter>
-							<dcscor:value xsi:type="v8:LocalStringType">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Этапы бурения</v8:content>
-								</v8:item>
-							</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Бурение</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Бурение</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>Текст</dcscor:parameter>
-							<dcscor:value xsi:type="v8:LocalStringType">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Все этапы</v8:content>
-								</v8:item>
-							</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-			</dcsset:conditionalAppearance>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -700,15 +599,6 @@
 							<dcsset:field>ОбъектРаспределения</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Бурение</dcsset:field>
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Признак этапа</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>СчетЗатрат</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -731,58 +621,6 @@
 							<dcscor:value xsi:type="dcscor:Field">ОбъектНастройкиВладелец.ПараметрыДанных.КонецПериода</dcscor:value>
 						</dcscor:item>
 					</dcsset:dataParameters>
-					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>Бурение</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter>
-								<dcsset:item xsi:type="dcsset:FilterItemComparison">
-									<dcsset:left xsi:type="dcscor:Field">Бурение</dcsset:left>
-									<dcsset:comparisonType>Equal</dcsset:comparisonType>
-									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-								</dcsset:item>
-							</dcsset:filter>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Текст</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Все этапы</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>Бурение</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter>
-								<dcsset:item xsi:type="dcsset:FilterItemComparison">
-									<dcsset:left xsi:type="dcscor:Field">Бурение</dcsset:left>
-									<dcsset:comparisonType>Equal</dcsset:comparisonType>
-									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-								</dcsset:item>
-							</dcsset:filter>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Текст</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Этапы бурения</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-						</dcsset:item>
-					</dcsset:conditionalAppearance>
 					<dcsset:outputParameters>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>

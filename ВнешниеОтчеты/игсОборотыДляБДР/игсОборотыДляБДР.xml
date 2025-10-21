@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
-	<ExternalReport uuid="c1e3b83c-88fa-4c23-b25c-749752c753bf">
+	<ExternalReport uuid="61584466-c761-4a60-9213-62f7150a9dda">
 		<InternalInfo>
 			<xr:ContainedObject>
 				<xr:ClassId>e41aff26-25cf-4bb6-b6c1-3f478a75f374</xr:ClassId>
-				<xr:ObjectId>e82f7907-abf4-422b-963f-ba5ee245eeb5</xr:ObjectId>
+				<xr:ObjectId>dabfc9ba-3375-4952-880e-d33e4bad74c7</xr:ObjectId>
 			</xr:ContainedObject>
 			<xr:GeneratedType name="ExternalReportObject.игсОборотыДляБДР" category="Object">
-				<xr:TypeId>e11fffcb-c7f3-4597-af3b-dc6d55ded740</xr:TypeId>
-				<xr:ValueId>d6311f12-d66b-4c05-a37e-9200d966c53f</xr:ValueId>
+				<xr:TypeId>4fcc3286-14d4-41be-929c-4ab4cf03f2d4</xr:TypeId>
+				<xr:ValueId>558150af-5dba-4fb4-a694-5a7d0f3d20fd</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -274,8 +274,6 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Form>ФормаОтчета</Form>
-			<Form>ФормаНастроек</Form>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
 		</ChildObjects>
 	</ExternalReport>

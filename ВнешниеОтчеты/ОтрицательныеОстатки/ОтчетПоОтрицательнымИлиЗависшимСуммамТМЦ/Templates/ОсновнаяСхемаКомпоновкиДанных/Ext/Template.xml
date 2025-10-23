@@ -36,6 +36,9 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
 			<field>Организация</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Субконто3</dataPath>
@@ -79,7 +82,8 @@
 	ХозрасчетныйОстатки.Субконто1 КАК Номенклатура,
 	ХозрасчетныйОстатки.Субконто2 КАК Склад,
 	ХозрасчетныйОстатки.КоличествоОстаток КАК КоличествоОстаток,
-	ХозрасчетныйОстатки.СуммаОстаток КАК СуммаОстаток
+	ХозрасчетныйОстатки.СуммаОстаток КАК СуммаОстаток,
+	ХозрасчетныйОстатки.Организация КАК Организация
 ИЗ
 	РегистрБухгалтерии.Хозрасчетный.Остатки(, Счет В ИЕРАРХИИ (&amp;Счета), , ) КАК ХозрасчетныйОстатки
 ГДЕ
@@ -131,6 +135,20 @@
 		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -154,6 +172,12 @@
 					<dcsset:field>СуммаОстаток</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Период</dcscor:parameter>
@@ -161,6 +185,11 @@
 						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
 					</dcscor:value>
 					<dcsset:userSettingID>dee93da3-0ff1-4786-a3cf-0a1e71954986</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>391d68bf-fb5b-4840-ae15-6848e9a526de</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">

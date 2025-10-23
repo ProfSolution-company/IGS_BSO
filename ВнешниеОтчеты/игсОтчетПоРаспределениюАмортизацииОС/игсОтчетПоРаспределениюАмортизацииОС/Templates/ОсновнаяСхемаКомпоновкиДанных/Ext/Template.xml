@@ -15,6 +15,9 @@
 					<v8:content>Организация</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Организации</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СчетЗатрат</dataPath>
@@ -65,6 +68,9 @@
 					<v8:content>Восстановительные работы</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Сумма</dataPath>
@@ -75,6 +81,14 @@
 					<v8:content>Сумма</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СправкаРаспределения</dataPath>
@@ -95,6 +109,9 @@
 					<v8:content>Основное средство</v8:content>
 				</v8:item>
 			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ОсновныеСредства</v8:Type>
+			</valueType>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<objectName>ТаблицаПроводок</objectName>
@@ -169,7 +186,7 @@
 					<dcscor:parameter>ДатаПериода</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardBeginningDate">
 						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
-						<v8:date>2025-09-01T00:00:00</v8:date>
+						<v8:date>0001-01-01T00:00:00</v8:date>
 					</dcscor:value>
 					<dcsset:userSettingID>474aab04-8d8a-41c8-8915-0f312ebf9f91</dcsset:userSettingID>
 				</dcscor:item>

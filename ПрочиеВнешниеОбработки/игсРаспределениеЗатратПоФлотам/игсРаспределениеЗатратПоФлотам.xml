@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
-	<ExternalDataProcessor uuid="86b5f745-7122-473f-820a-d419aa3b3a8b">
+	<ExternalDataProcessor uuid="e4743e39-1ca6-497f-85b1-e73446c5532d">
 		<InternalInfo>
 			<xr:ContainedObject>
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
-				<xr:ObjectId>abc48827-953c-476c-becc-fa0ae0ef6c89</xr:ObjectId>
+				<xr:ObjectId>4d217f73-3b20-4a99-9e0c-6222afa377f0</xr:ObjectId>
 			</xr:ContainedObject>
 			<xr:GeneratedType name="ExternalDataProcessorObject.игсРаспределениеЗатратПоФлотам" category="Object">
-				<xr:TypeId>3b26fb36-614c-45f3-bb9c-ed696b4bf5d0</xr:TypeId>
-				<xr:ValueId>ea3f84ce-e19b-4e3d-983c-1059bdb686e4</xr:ValueId>
+				<xr:TypeId>c551ac3f-f096-4ab0-a7fb-4e7dc761fbbf</xr:TypeId>
+				<xr:ValueId>c7833af9-36a1-4f88-ad31-83572919912d</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -24,7 +24,7 @@
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="84d2ea6e-b84b-4a7f-a97b-3aedc01a800d">
+			<Attribute uuid="4f9cab0c-3fa0-46e7-8594-67ec32ad6f7c">
 				<Properties>
 					<Name>Дата</Name>
 					<Synonym>
@@ -61,7 +61,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="b7929135-a98f-4294-9f61-3d9e84edeff2">
+			<Attribute uuid="2d9a4306-5172-471d-9bbe-3f37e8584920">
 				<Properties>
 					<Name>Организация</Name>
 					<Synonym>
@@ -95,7 +95,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="d396e63c-130a-40ef-9a14-f6b086ba883c">
+			<Attribute uuid="859f037e-74fb-493d-a95c-4b7339625abd">
 				<Properties>
 					<Name>ОперацияБух</Name>
 					<Synonym>

@@ -491,7 +491,7 @@
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>[Казначей]/[период]</v8:content>
+							<v8:content>[Казначей]/[Период]</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -1578,7 +1578,7 @@
 		<font>3</font>
 		<bottomBorder>0</bottomBorder>
 		<width>46</width>
-		<horizontalAlignment>Center</horizontalAlignment>
+		<horizontalAlignment>Right</horizontalAlignment>
 		<fillType>Template</fillType>
 	</format>
 	<format>

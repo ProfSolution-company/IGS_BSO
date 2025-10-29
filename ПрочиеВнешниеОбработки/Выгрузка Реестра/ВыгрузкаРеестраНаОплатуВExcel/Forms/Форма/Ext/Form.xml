@@ -5,6 +5,60 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="Настройки" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="НастройкиРасширеннаяПодсказка" id="62"/>
+			<ChildItems>
+				<InputField name="ИнициаторОтбор" id="41">
+					<DataPath>ИнициаторОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственный</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ИнициаторОтборКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ИнициаторОтборРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="КонтрагентОтбор" id="44">
+					<DataPath>КонтрагентОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КонтрагентОтборКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="КонтрагентОтборРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ПериодОтбор" id="54">
+					<DataPath>ПериодОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПериодОтборКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="ПериодОтборРасширеннаяПодсказка" id="56"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="СтраницыВыгрузки" id="57">
 			<Title>
 				<v8:item>
@@ -154,47 +208,6 @@
 							</Picture>
 							<ExtendedTooltip name="ЗаполнитьРасширеннаяПодсказка" id="51"/>
 						</Button>
-					</ChildItems>
-				</Page>
-				<Page name="Настройки" id="61">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Настройки</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Настройки</v8:content>
-						</v8:item>
-					</ToolTip>
-					<ExtendedTooltip name="НастройкиРасширеннаяПодсказка" id="62"/>
-					<ChildItems>
-						<InputField name="ИнициаторОтбор" id="41">
-							<DataPath>ИнициаторОтбор</DataPath>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="ИнициаторОтборКонтекстноеМеню" id="42"/>
-							<ExtendedTooltip name="ИнициаторОтборРасширеннаяПодсказка" id="43"/>
-						</InputField>
-						<InputField name="КонтрагентОтбор" id="44">
-							<DataPath>КонтрагентОтбор</DataPath>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="КонтрагентОтборКонтекстноеМеню" id="45"/>
-							<ExtendedTooltip name="КонтрагентОтборРасширеннаяПодсказка" id="46"/>
-						</InputField>
-						<InputField name="НомерОтбор" id="47">
-							<DataPath>НомерОтбор</DataPath>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="НомерОтборКонтекстноеМеню" id="48"/>
-							<ExtendedTooltip name="НомерОтборРасширеннаяПодсказка" id="49"/>
-						</InputField>
-						<InputField name="ПериодОтбор" id="54">
-							<DataPath>ПериодОтбор</DataPath>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="ПериодОтборКонтекстноеМеню" id="55"/>
-							<ExtendedTooltip name="ПериодОтборРасширеннаяПодсказка" id="56"/>
-						</InputField>
 					</ChildItems>
 				</Page>
 			</ChildItems>

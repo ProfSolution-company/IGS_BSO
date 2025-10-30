@@ -7,6 +7,37 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто2</dataPath>
+			<field>Субконто2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто3</dataPath>
+			<field>Субконто3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Счет</dataPath>
+			<field>Счет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто1</dataPath>
+			<field>Субконто1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>СправкаРаспределения</dataPath>
 			<field>СправкаРаспределения</field>
 			<title xsi:type="v8:LocalStringType">
@@ -15,13 +46,6 @@
 					<v8:content>Справка распределения</v8:content>
 				</v8:item>
 			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Организация</dataPath>
-			<field>Организация</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>НоменклатурнаяГруппа</dataPath>
@@ -70,10 +94,6 @@
 					<v8:content>Сумма</v8:content>
 				</v8:item>
 			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Подразделение</dataPath>
-			<field>Подразделение</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Регистратор</dataPath>
@@ -143,28 +163,8 @@
 			<field>СчетЗатрат</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Субконто1</dataPath>
-			<field>Субконто1</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>ВосстановительныеРаботы</dataPath>
 			<field>ВосстановительныеРаботы</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Счет</dataPath>
-			<field>Счет</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Валюта</dataPath>
-			<field>Валюта</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Субконто2</dataPath>
-			<field>Субконто2</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Субконто3</dataPath>
-			<field>Субконто3</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КорСубконто1</dataPath>
@@ -207,12 +207,7 @@
 	NULL КАК Позиция,
 	игсРезультатРаспределенияПоПроизводственнойПрограммеОбороты.Период КАК Период
 ИЗ
-	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты(
-			&amp;ДатаНачала,
-			&amp;ДатаОкончания,
-			Регистратор,
-			Организация = &amp;ОРганизация
-				ИЛИ &amp;Организация = ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)) КАК игсРезультатРаспределенияПоПроизводственнойПрограммеОбороты
+	РегистрНакопления.игсРезультатРаспределенияПоПроизводственнойПрограмме.Обороты(&amp;ДатаНачала, &amp;ДатаОкончания, Регистратор, ) КАК игсРезультатРаспределенияПоПроизводственнойПрограммеОбороты
 
 ОБЪЕДИНИТЬ ВСЕ
 
@@ -232,17 +227,7 @@
 	ХозрасчетныйОбороты.Субконто3,
 	ХозрасчетныйОбороты.Период
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Обороты(
-			&amp;ДатаНачала,
-			&amp;ДатаОкончания,
-			Регистратор,
-			Счет В ИЕРАРХИИ (&amp;счет2001),
-			&amp;НГСЗП_субконто,
-			Субконто1 &lt;&gt; ЗНАЧЕНИЕ(Справочник.НоменклатурныеГруппы.ПустаяСсылка)
-				И (Организация = &amp;ОРганизация
-					ИЛИ &amp;Организация = ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)),
-			,
-			) КАК ХозрасчетныйОбороты
+	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;ДатаНачала, &amp;ДатаОкончания, Регистратор, Счет В ИЕРАРХИИ (&amp;счет2001), &amp;НГСЗП_субконто, Субконто1 &lt;&gt; ЗНАЧЕНИЕ(Справочник.НоменклатурныеГруппы.ПустаяСсылка), , ) КАК ХозрасчетныйОбороты
 ГДЕ
 	(ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.АвансовыйОтчет)
 			ИЛИ ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.ПоступлениеТоваровУслуг)
@@ -274,17 +259,7 @@
 	NULL,
 	ХозрасчетныйОбороты.Период
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Обороты(
-			&amp;ДатаНачала,
-			&amp;ДатаОкончания,
-			Регистратор,
-			Счет В ИЕРАРХИИ (&amp;счет2001),
-			&amp;НГСЗП_субконто,
-			Субконто1 &lt;&gt; ЗНАЧЕНИЕ(Справочник.НоменклатурныеГруппы.ПустаяСсылка)
-				И (Организация = &amp;ОРганизация
-					ИЛИ &amp;Организация = ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)),
-			,
-			) КАК ХозрасчетныйОбороты
+	РегистрБухгалтерии.Хозрасчетный.Обороты(&amp;ДатаНачала, &amp;ДатаОкончания, Регистратор, Счет В ИЕРАРХИИ (&amp;счет2001), &amp;НГСЗП_субконто, Субконто1 &lt;&gt; ЗНАЧЕНИЕ(Справочник.НоменклатурныеГруппы.ПустаяСсылка), , ) КАК ХозрасчетныйОбороты
 ГДЕ
 	НЕ(ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.АвансовыйОтчет)
 				ИЛИ ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.ПоступлениеТоваровУслуг)
@@ -303,24 +278,6 @@
 		<expression>Сумма(Сумма)</expression>
 	</totalField>
 	<parameter>
-		<name>ПериодОтчета</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Период отчета</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>v8:StandardPeriod</v8:Type>
-		</valueType>
-		<value xsi:type="v8:StandardPeriod">
-			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
-			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
-			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
-		</value>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -335,7 +292,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
 		<expression>&amp;ПериодОтчета.Датаначала</expression>
 	</parameter>
 	<parameter>
@@ -353,7 +310,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
 		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
 	</parameter>
 	<parameter>
@@ -420,56 +377,27 @@
 		<valueType>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
 		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОсновноеПроизводство</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОсновноеПроизводство_</value>
 		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>ОРганизация</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Организация</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Детализация распределения по справкам</v8:content>
-			</v8:item>
-		</dcsset:presentation>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
-			<dcsset:dataParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
-					<dcscor:value xsi:type="v8:StandardPeriod">
-						<v8:variant xsi:type="v8:StandardPeriodVariant">FromBeginningOfThisMonth</v8:variant>
-					</dcscor:value>
-					<dcsset:userSettingID>159db8eb-92a2-4b73-903a-8fda4997b3ea</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ОРганизация</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</dcscor:value>
-					<dcsset:userSettingID>d654095b-6ab1-4d06-807d-e1778d0a33e6</dcsset:userSettingID>
-				</dcscor:item>
-			</dcsset:dataParameters>
-			<dcsset:outputParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
-					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-				</dcscor:item>
-			</dcsset:outputParameters>
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОсновноеСредство</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОсновноеСредство.Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстаточнаяСтоимость</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">

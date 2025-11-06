@@ -24,9 +24,19 @@
 				</v8:item>
 			</title>
 			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
 			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СчетДт</dataPath>
@@ -61,6 +71,16 @@
 				<dcscom:dimension>true</dcscom:dimension>
 				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
 			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СубконтоДт2</dataPath>
@@ -84,9 +104,20 @@
 				</v8:item>
 			</title>
 			<role>
-				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
 				<dcscom:periodType>Main</dcscom:periodType>
 			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
@@ -107,19 +138,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПодразделениеКт</dataPath>
 			<field>ПодразделениеКт</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Работник</dataPath>
-			<field>Работник</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Работник</v8:content>
-				</v8:item>
-			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Должность</dataPath>
@@ -162,150 +180,125 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ФИО</dataPath>
-			<field>ФИО</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>ФИО</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">55</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">55</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ТекущиеКадровыеДанныеСотрудников.Сотрудник КАК Сотрудник,
-	ТекущиеКадровыеДанныеСотрудников.ТекущаяДолжность КАК ТекущаяДолжность,
-	ТекущиеКадровыеДанныеСотрудников.ТекущееПодразделение КАК ТекущееПодразделение,
+	ХозрасчетныйОбороты.Период КАК ДатаВыдачи,
+	ХозрасчетныйОбороты.Регистратор КАК Документ,
+	ХозрасчетныйОбороты.СубконтоКт1 КАК Номенклатура,
+	ХозрасчетныйОбороты.Организация КАК Организация,
+	ХозрасчетныйОбороты.ПодразделениеДт КАК Подразделение,
+	ХозрасчетныйОбороты.СуммаОборот КАК Сумма,
+	ХозрасчетныйОбороты.КоличествоОборотКт КАК Количество
+ПОМЕСТИТЬ ВТ_ХозрасчетныйОборотыДтКт
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(, &amp;Дата, Регистратор, СчетДт В ИЕРАРХИИ (&amp;СчетаДт), , СчетКт = &amp;Счет10_10, , {Организация = &amp;Организация}) КАК ХозрасчетныйОбороты
+ГДЕ
+	(ХозрасчетныйОбороты.СуммаОборот &lt;&gt; 0
+			ИЛИ ХозрасчетныйОбороты.КоличествоОборотКт &lt;&gt; 0)
+	И ХозрасчетныйОбороты.Регистратор ССЫЛКА Документ.ПередачаМатериаловВЭксплуатацию
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ХозрасчетныйОборотыДтКт.ДатаВыдачи КАК ДатаВыдачи,
+	ВТ_ХозрасчетныйОборотыДтКт.Документ КАК Документ,
+	ВТ_ХозрасчетныйОборотыДтКт.Номенклатура КАК Номенклатура,
+	ВТ_ХозрасчетныйОборотыДтКт.Организация КАК Организация,
+	ВТ_ХозрасчетныйОборотыДтКт.Подразделение КАК Подразделение,
+	ВТ_ХозрасчетныйОборотыДтКт.Количество КАК Количество,
+	ВТ_ХозрасчетныйОборотыДтКт.Сумма КАК Сумма,
+	ПередачаМатериаловВЭксплуатациюСпецодежда.ФизЛицо КАК ФизЛицо
+ПОМЕСТИТЬ ВТ_ПередачаМатериалов
+ИЗ
+	ВТ_ХозрасчетныйОборотыДтКт КАК ВТ_ХозрасчетныйОборотыДтКт
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПередачаМатериаловВЭксплуатацию.Спецодежда КАК ПередачаМатериаловВЭксплуатациюСпецодежда
+		ПО ВТ_ХозрасчетныйОборотыДтКт.Документ = ПередачаМатериаловВЭксплуатациюСпецодежда.Ссылка
+			И ВТ_ХозрасчетныйОборотыДтКт.Номенклатура = ПередачаМатериаловВЭксплуатациюСпецодежда.Номенклатура
+ГДЕ
+	ПередачаМатериаловВЭксплуатациюСпецодежда.Ссылка.Дата &lt;= &amp;Дата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА &amp;БезОдежды = ЛОЖЬ
+			ТОГДА ТекущиеКадровыеДанныеСотрудников.Сотрудник
+		КОГДА &amp;БезОдежды = ИСТИНА
+				И ВТ_ПередачаМатериалов.Номенклатура ЕСТЬ NULL
+			ТОГДА ТекущиеКадровыеДанныеСотрудников.Сотрудник
+	КОНЕЦ КАК Сотрудник,
+	ВЫБОР
+		КОГДА ТекущиеКадровыеДанныеСотрудников.ТекущееПодразделение = ЗНАЧЕНИЕ(Справочник.ПодразделенияОрганизаций.ПустаяСсылка)
+			ТОГДА "-"
+		ИНАЧЕ ТекущиеКадровыеДанныеСотрудников.ТекущееПодразделение
+	КОНЕЦ КАК Подразделение,
+	ТекущиеКадровыеДанныеСотрудников.ТекущаяДолжность КАК Должность,
+	ВЫБОР
+		КОГДА ТекущиеКадровыеДанныеСотрудников.ДатаУвольнения = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА "-"
+		ИНАЧЕ ТекущиеКадровыеДанныеСотрудников.ДатаУвольнения
+	КОНЕЦ КАК ДатаУвольнения,
 	ТекущиеКадровыеДанныеСотрудников.ДатаПриема КАК ДатаПриема,
-	ТекущиеКадровыеДанныеСотрудников.ДатаУвольнения КАК ДатаУвольнения,
-	ТекущиеКадровыеДанныеСотрудников.ФизическоеЛицо КАК ФизическоеЛицо
-ПОМЕСТИТЬ Вт_Сотрудники
+	ЕСТЬNULL(ВТ_ПередачаМатериалов.Номенклатура, "-") КАК Номенклатура,
+	ЕСТЬNULL(ВТ_ПередачаМатериалов.Количество, 0) КАК Количество,
+	ЕСТЬNULL(ВТ_ПередачаМатериалов.Сумма, 0) КАК Сумма,
+	ЕСТЬNULL(ВТ_ПередачаМатериалов.ДатаВыдачи, "-") КАК ДатаВыдачи,
+	ЕСТЬNULL(ВТ_ПередачаМатериалов.Документ, "-") КАК Документ
+ПОМЕСТИТЬ ВТ_Результат
 ИЗ
 	РегистрСведений.ТекущиеКадровыеДанныеСотрудников КАК ТекущиеКадровыеДанныеСотрудников
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПередачаМатериалов КАК ВТ_ПередачаМатериалов
+		ПО ТекущиеКадровыеДанныеСотрудников.ФизическоеЛицо = ВТ_ПередачаМатериалов.ФизЛицо
 ГДЕ
-	ТекущиеКадровыеДанныеСотрудников.ТекущийВидЗанятости В(&amp;ТекущийВидЗанятости)
-	И (ТекущиеКадровыеДанныеСотрудников.ДатаУвольнения = ДАТАВРЕМЯ(1, 1, 1)
-			ИЛИ ТекущиеКадровыеДанныеСотрудников.ДатаУвольнения &gt;= &amp;Дата)
-	И ТекущиеКадровыеДанныеСотрудников.ДатаПриема &lt; &amp;Дата
-	И ТекущиеКадровыеДанныеСотрудников.ТекущаяОрганизация = &amp;ТекущаяОрганизация
+	ТекущиеКадровыеДанныеСотрудников.ДатаПриема &lt; &amp;Дата
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ХозрасчетныйОборотыДтКт.СубконтоДт1 КАК Номенклатура,
-	ХозрасчетныйОборотыДтКт.СубконтоДт2 КАК Документ,
-	ХозрасчетныйОборотыДтКт.СубконтоДт3 КАК Сотрудник,
-	ХозрасчетныйОборотыДтКт.СуммаОборот КАК СуммаОборот,
-	ХозрасчетныйОборотыДтКт.КоличествоОборотДт КАК КоличествоОборот,
-	ХозрасчетныйОборотыДтКт.Период КАК ДатаВыдачи,
-	ХозрасчетныйОборотыДтКт.Регистратор КАК Регистратор
-ПОМЕСТИТЬ Вт_Спецодежда
+	ВТ_Результат.Сотрудник КАК Сотрудник,
+	ВТ_Результат.Подразделение КАК Подразделение,
+	ВТ_Результат.Должность КАК Должность,
+	ВТ_Результат.ДатаУвольнения КАК ДатаУвольнения,
+	ВТ_Результат.ДатаПриема КАК ДатаПриема,
+	ВТ_Результат.Номенклатура КАК Номенклатура,
+	ВТ_Результат.Количество КАК Количество,
+	ВТ_Результат.Сумма КАК Сумма,
+	ВТ_Результат.ДатаВыдачи КАК ДатаВыдачи,
+	ВТ_Результат.Документ КАК Документ
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(, &amp;Граница, Регистратор, СчетДт = &amp;Счет10_11_1, , СчетКт = &amp;Счет10_10, , ) КАК ХозрасчетныйОборотыДтКт
+	ВТ_Результат КАК ВТ_Результат
 ГДЕ
-	(ХозрасчетныйОборотыДтКт.СуммаОборот &lt;&gt; 0
-			ИЛИ ХозрасчетныйОборотыДтКт.КоличествоОборотДт &lt;&gt; 0)
+	НЕ ВТ_Результат.Сотрудник ЕСТЬ NULL
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	Вт_Сотрудники.ФизическоеЛицо КАК Работник,
-	Вт_Сотрудники.ТекущаяДолжность КАК Должность,
-	Вт_Сотрудники.ТекущееПодразделение КАК Подразделение,
-	Вт_Сотрудники.ДатаПриема КАК ДатаПриема,
-	Вт_Спецодежда.Документ КАК Документ,
-	Вт_Спецодежда.Номенклатура КАК Номенклатура,
-	ЕСТЬNULL(Вт_Спецодежда.СуммаОборот, 0) КАК Сумма,
-	ЕСТЬNULL(Вт_Спецодежда.КоличествоОборот, 0) КАК Количество,
-	Вт_Спецодежда.ДатаВыдачи КАК ДатаВыдачи,
-	Вт_Сотрудники.ДатаУвольнения КАК ДатаУвольнения,
-	Вт_Сотрудники.ФизическоеЛицо.ФИО КАК ФИО
-ИЗ
-	Вт_Сотрудники КАК Вт_Сотрудники
-		ЛЕВОЕ СОЕДИНЕНИЕ Вт_Спецодежда КАК Вт_Спецодежда
-		ПО Вт_Сотрудники.ФизическоеЛицо = Вт_Спецодежда.Сотрудник
-
-ОБЪЕДИНИТЬ ВСЕ
-
-ВЫБРАТЬ
-	Вт_Сотрудники.ФизическоеЛицо,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	0,
-	0,
-	NULL,
-	NULL,
-	Вт_Сотрудники.ФизическоеЛицо.ФИО
-ИЗ
-	Вт_Сотрудники КАК Вт_Сотрудники
-		ЛЕВОЕ СОЕДИНЕНИЕ Вт_Спецодежда КАК Вт_Спецодежда
-		ПО Вт_Сотрудники.ФизическоеЛицо = Вт_Спецодежда.Сотрудник
-ГДЕ
-	Вт_Спецодежда.Номенклатура = НЕОПРЕДЕЛЕНО
-
-УПОРЯДОЧИТЬ ПО
-	Работник,
-	Документ
+УНИЧТОЖИТЬ ВТ_ХозрасчетныйОборотыДтКт
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-УНИЧТОЖИТЬ Вт_Сотрудники
-;
-
-////////////////////////////////////////////////////////////////////////////////
-УНИЧТОЖИТЬ Вт_Спецодежда</query>
+УНИЧТОЖИТЬ ВТ_ПередачаМатериалов</query>
 	</dataSet>
-	<totalField>
-		<dataPath>Сумма</dataPath>
-		<expression>Сумма(Сумма)</expression>
-	</totalField>
 	<totalField>
 		<dataPath>Количество</dataPath>
 		<expression>Сумма(Количество)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>ДатаПриема</dataPath>
-		<expression>Максимум(ДатаПриема)</expression>
-		<group>Работник</group>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
 	</totalField>
-	<totalField>
-		<dataPath>ДатаУвольнения</dataPath>
-		<expression>Максимум(ДатаУвольнения)</expression>
-		<group>Работник</group>
-	</totalField>
-	<totalField>
-		<dataPath>Номенклатура</dataPath>
-		<expression>Значение(Справочник.Номенклатура.ПустаяСсылка)</expression>
-	</totalField>
-	<parameter>
-		<name>ТекущийВидЗанятости</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Текущий вид занятости</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ВидыЗанятости</v8:Type>
-		</valueType>
-		<useRestriction>false</useRestriction>
-		<availableValue>
-			<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.ОсновноеМестоРаботы</value>
-		</availableValue>
-		<availableValue>
-			<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.Совместительство</value>
-		</availableValue>
-		<availableValue>
-			<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.ВнутреннееСовместительство</value>
-		</availableValue>
-		<availableValue>
-			<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.Подработка</value>
-		</availableValue>
-		<valueListAllowed>true</valueListAllowed>
-	</parameter>
 	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
@@ -322,41 +315,25 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(&amp;Период.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Конец периода</v8:content>
+				<v8:content>Дата отчета</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type>xs:dateTime</v8:Type>
 			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
+				<v8:DateFractions>Date</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Граница</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Граница</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
-		<expression>&amp;Дата</expression>
+		<useRestriction>false</useRestriction>
+		<expression>ДобавитьКДате(КонецПериода(&amp;Период.ДатаОкончания, "День"), "Секунда", 1)</expression>
 	</parameter>
 	<parameter>
 		<name>Дата</name>
@@ -369,11 +346,12 @@
 		<valueType>
 			<v8:Type>xs:dateTime</v8:Type>
 			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
+				<v8:DateFractions>Date</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;КонецПериода</expression>
 	</parameter>
 	<parameter>
 		<name>Счет10_10</name>
@@ -390,25 +368,30 @@
 		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
-		<name>Счет10_11_1</name>
+		<name>СчетаДт</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Счет10 11 1</v8:content>
+				<v8:content>Счета дт</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
 		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СпецодеждаВЭксплуатации</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОсновноеПроизводство_</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ВспомогательныеПроизводства_</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОбщепроизводственныеРасходы</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОбщехозяйственныеРасходы</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ПрочиеРасходы</value>
 		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
 	</parameter>
 	<parameter>
-		<name>ТекущаяОрганизация</name>
+		<name>Организация</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Текущая организация</v8:content>
+				<v8:content>Организация</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -418,11 +401,11 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ВыводитьБезОдежды</name>
+		<name>БезОдежды</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Выводить без одежды</v8:content>
+				<v8:content>Без одежды</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -430,6 +413,25 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -912,54 +914,54 @@
 		<dcsset:presentation xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>ОТЧЕТ ПО КОНТРОЛЮ ВЫДАЧИ СПЕЦОДЕЖДЫ РАБОТНИКАМ</v8:content>
+				<v8:content>Отчет по контролю выдачи спецодежды работникам</v8:content>
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ТекущийВидЗанятости</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.ОсновноеМестоРаботы</dcscor:value>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.Совместительство</dcscor:value>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.ВнутреннееСовместительство</dcscor:value>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗанятости.Подработка</dcscor:value>
-					<dcsset:userSettingID>9c852425-9f2a-4aae-ac56-56fd51c64fcb</dcsset:userSettingID>
-					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Виды занятости</v8:content>
-						</v8:item>
-					</dcsset:userSettingPresentation>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>43e6c174-5e13-4dd4-943e-bd2d483b34f2</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Дата</dcscor:parameter>
-					<dcscor:value xsi:type="v8:StandardBeginningDate">
-						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
-					</dcscor:value>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:userSettingID>dd97f26e-c271-48c9-940a-eec642d59c08</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ТекущаяОрганизация</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</dcscor:value>
-					<dcsset:userSettingID>f8b31f5c-2703-4d98-8136-647c4ac05283</dcsset:userSettingID>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>c604df04-ff4c-42f8-95ca-4991c39587c7</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьБезОдежды</dcscor:parameter>
+					<dcscor:parameter>БезОдежды</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
-					<dcsset:userSettingID>88642e0e-1270-47dc-8a58-c2e1edfd99ec</dcsset:userSettingID>
+					<dcsset:userSettingID>fcfb4cc5-a713-4ca1-8665-e8e5b8c30cde</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Выводить сотрудников без спецодежды</v8:content>
+							<v8:content>Вывод сотрудников без спецодежды</v8:content>
 						</v8:item>
 					</dcsset:userSettingPresentation>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -967,83 +969,39 @@
 					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">BeginAndEnd</dcscor:value>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
 					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
 					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Работник</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Подразделение</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Должность</dcsset:field>
+						<dcsset:field>Сотрудник</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
-				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemGroup">
-						<dcsset:groupType>OrGroup</dcsset:groupType>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Количество</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПараметрыДанных.ВыводитьБезОдежды</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:item>
-				</dcsset:filter>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Работник</dcsset:field>
-						<dcsset:viewMode>Inaccessible</dcsset:viewMode>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Подразделение</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Должность</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ДатаПриема</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ДатаУвольнения</dcsset:field>
+						<dcsset:field>Сотрудник</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Данные по выдаче спецодежды				</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Номенклатура</dcsset:field>
-						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>Количество</dcsset:field>
 						</dcsset:item>
@@ -1055,21 +1013,18 @@
 				</dcsset:selection>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:use>false</dcscor:use>
 						<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
 						<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">Begin</dcscor:value>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
 					</dcscor:item>
 				</dcsset:outputParameters>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
@@ -1078,13 +1033,10 @@
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Работник</dcsset:field>
+							<dcsset:field>Должность</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>Подразделение</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Должность</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>ДатаПриема</dcsset:field>
@@ -1096,17 +1048,11 @@
 							<dcsset:lwsTitle>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Данные по выдаче спецодежды				</v8:content>
+									<v8:content>Данные по выдаче спецодежды</v8:content>
 								</v8:item>
 							</dcsset:lwsTitle>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>Номенклатура</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Количество</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Сумма</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>ДатаВыдачи</dcsset:field>
@@ -1116,30 +1062,41 @@
 							</dcsset:item>
 							<dcsset:placement>Horizontally</dcsset:placement>
 						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Сумма</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Количество</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
 					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+							<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+							<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+							<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+							<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+							<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+							<dcsset:useInResourceFieldsHeader>DontUse</dcsset:useInResourceFieldsHeader>
+							<dcsset:useInOverallHeader>DontUse</dcsset:useInOverallHeader>
+							<dcsset:useInOverallResourceFieldsHeader>DontUse</dcsset:useInOverallResourceFieldsHeader>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
 					<dcsset:outputParameters>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:use>false</dcscor:use>
-							<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
-							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:use>false</dcscor:use>
-							<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:use>false</dcscor:use>
-							<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
-							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+							<dcscor:parameter>МакетОформления</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
 						</dcscor:item>
 					</dcsset:outputParameters>
 				</dcsset:item>

@@ -58,6 +58,10 @@
 			<dataPath>ОкончаниеПериодаСписания</dataPath>
 			<field>ОкончаниеПериодаСписания</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	игсПрочиеЗатратыКРаспределениюПроводки.Ссылка КАК Ссылка,
@@ -69,7 +73,8 @@
 	игсПрочиеЗатратыКРаспределениюПроводки.СубконтоДт2 КАК Статья_затрат,
 	игсПрочиеЗатратыКРаспределениюПроводки.СубконтоДт3 КАК СубконтоДт3,
 	игсПрочиеЗатратыКРаспределениюПроводки.НачалоПериодаСписания КАК НачалоПериодаСписания,
-	игсПрочиеЗатратыКРаспределениюПроводки.ОкончаниеПериодаСписания КАК ОкончаниеПериодаСписания
+	игсПрочиеЗатратыКРаспределениюПроводки.ОкончаниеПериодаСписания КАК ОкончаниеПериодаСписания,
+	игсПрочиеЗатратыКРаспределению.Организация КАК Организация
 ИЗ
 	Документ.игсПрочиеЗатратыКРаспределению.Проводки КАК игсПрочиеЗатратыКРаспределениюПроводки
 		ЛЕВОЕ СОЕДИНЕНИЕ Документ.игсПрочиеЗатратыКРаспределению КАК игсПрочиеЗатратыКРаспределению
@@ -77,7 +82,7 @@
 ГДЕ
 	игсПрочиеЗатратыКРаспределению.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
 	И НЕ игсПрочиеЗатратыКРаспределению.ПометкаУдаления
-	И игсПрочиеЗатратыКРаспределению.Организация = &amp;Организация</query>
+	И игсПрочиеЗатратыКРаспределению.ВидОперации = &amp;ВидОперации</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>ПроектВерхнегоУровня</dataPath>
@@ -114,20 +119,6 @@
 		<expression>Сумма(Сумма)</expression>
 	</totalField>
 	<parameter>
-		<name>Организация</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Организация</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>ПериодФормирования</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -161,7 +152,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодФормирования.ДатаНачала</expression>
+		<expression>НачалоПериода(&amp;ПериодФормирования.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>ДатаОкончания</name>
@@ -179,11 +170,30 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодФормирования.ДатаОкончания</expression>
+		<expression>КонецПериода(&amp;ПериодФормирования.ДатаОкончания, "День")</expression>
+	</parameter>
+	<parameter>
+		<name>ВидОперации</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид операции</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.игсВидыОперацийПрочихЗатратКРаспределению</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.игсВидыОперацийПрочихЗатратКРаспределению.РеестрНачисленийПоНесписаннымМатериалам</value>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ96 резерв под затраты по МТР</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -220,12 +230,15 @@
 					<dcsset:field>ПричинаНачисления</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>022e9126-cae9-4ce2-b45e-47d42872b3cb</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>Организация</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>555401c1-ac58-45fa-8982-c8daa0910234</dcsset:userSettingID>
-				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПериодФормирования</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">

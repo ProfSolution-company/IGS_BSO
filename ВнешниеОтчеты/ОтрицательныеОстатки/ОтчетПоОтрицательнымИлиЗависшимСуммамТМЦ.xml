@@ -6,23 +6,23 @@
 				<xr:ClassId>e41aff26-25cf-4bb6-b6c1-3f478a75f374</xr:ClassId>
 				<xr:ObjectId>981ff4ab-62ad-4c59-9cf4-de7da91e3064</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalReportObject.ОтчетПоОтрицательнымИлиЗависшимСуммамТМЦ1" category="Object">
+			<xr:GeneratedType name="ExternalReportObject.ОтчетПоОтрицательнымИлиЗависшимСуммамТМЦ" category="Object">
 				<xr:TypeId>6519adc0-a03e-4f12-b12f-c750cb4b431c</xr:TypeId>
 				<xr:ValueId>09af839e-39af-4218-8c57-73a30f52b162</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ОтчетПоОтрицательнымИлиЗависшимСуммамТМЦ1</Name>
+			<Name>ОтчетПоОтрицательнымИлиЗависшимСуммамТМЦ</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Отчет по отрицательным или зависшим суммам ТМЦ1</v8:content>
+					<v8:content>Отчет по отрицательным или зависшим суммам ТМЦ</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment> &lt;ИГС&gt; ПР Прудько А. #Задача №  0245</Comment>
 			<DefaultForm/>
 			<AuxiliaryForm/>
-			<MainDataCompositionSchema>ExternalReport.ОтчетПоОтрицательнымИлиЗависшимСуммамТМЦ1.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<MainDataCompositionSchema>ExternalReport.ОтчетПоОтрицательнымИлиЗависшимСуммамТМЦ.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
 			<AuxiliarySettingsForm/>
 			<DefaultVariantForm/>

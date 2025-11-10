@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
-	<ExternalDataProcessor uuid="67725a1b-292c-4857-be01-893d40b11f87">
+	<ExternalReport uuid="54e5d1f0-da4c-4aa9-bc0e-7e40cd634886">
 		<InternalInfo>
 			<xr:ContainedObject>
-				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
-				<xr:ObjectId>b84049a2-22ba-429e-8ab2-8ab4dceb9174</xr:ObjectId>
+				<xr:ClassId>e41aff26-25cf-4bb6-b6c1-3f478a75f374</xr:ClassId>
+				<xr:ObjectId>4bcaa12c-932b-4397-b43c-94f530fa7c01</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.игсПерераспределение46" category="Object">
-				<xr:TypeId>2d6e7f97-68f3-4815-9667-d42d9f381ff8</xr:TypeId>
-				<xr:ValueId>aedb4b32-a53e-4d76-987e-a370ec8e4b44</xr:ValueId>
+			<xr:GeneratedType name="ExternalReportObject.игсПерераспределение46" category="Object">
+				<xr:TypeId>cbc78bb4-1848-40e7-8ec2-75e23ba319f0</xr:TypeId>
+				<xr:ValueId>d4a3c16e-bc84-4618-b768-c75c157147f1</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -20,11 +20,17 @@
 				</v8:item>
 			</Synonym>
 			<Comment>&lt;ИГС&gt; ПР Потылицын Г.С. #0142</Comment>
-			<DefaultForm>ExternalDataProcessor.игсПерераспределение46.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalReport.игсПерераспределение46.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
+			<MainDataCompositionSchema/>
+			<DefaultSettingsForm/>
+			<AuxiliarySettingsForm/>
+			<DefaultVariantForm/>
+			<VariantsStorage/>
+			<SettingsStorage/>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="6b2b982a-793b-4fc8-bbd4-66fd41ce75a3">
+			<Attribute uuid="d55b1153-57be-4c08-99b6-d65998b39a07">
 				<Properties>
 					<Name>Дата</Name>
 					<Synonym>
@@ -61,7 +67,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="6f01ab2b-f82e-4c59-8a95-5113621ba34c">
+			<Attribute uuid="32604566-a4c9-4f62-8336-c3426e40639d">
 				<Properties>
 					<Name>Организация</Name>
 					<Synonym>
@@ -95,7 +101,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="92ee2d6c-eb7c-4829-a692-4c6783082cc7">
+			<Attribute uuid="1629198c-b218-4141-8cf9-4527cc954bf8">
 				<Properties>
 					<Name>ОперацияБух</Name>
 					<Synonym>
@@ -131,5 +137,5 @@
 			</Attribute>
 			<Form>Форма</Form>
 		</ChildObjects>
-	</ExternalDataProcessor>
+	</ExternalReport>
 </MetaDataObject>

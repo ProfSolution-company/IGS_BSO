@@ -71,43 +71,18 @@
 			</role>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ХозрасчетныйОстатки.Субконто1 КАК Номенклатура,
 	ХозрасчетныйОстатки.Субконто2 КАК Склад,
 	СУММА(ХозрасчетныйОстатки.СуммаОстаток) КАК СуммаОстаток,
 	СУММА(ХозрасчетныйОстатки.КоличествоОстаток) КАК КоличествоОстаток
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;КонПериода, Счет В ИЕРАРХИИ (&amp;Счет10), &amp;НоменклатураСклад, ) КАК ХозрасчетныйОстатки
+	РегистрБухгалтерии.Хозрасчетный.Остатки(&amp;КонПериода, Счет В ИЕРАРХИИ (&amp;Счет10), &amp;НоменклатураСклад, Субконто1 В ИЕРАРХИИ (&amp;Номенклатура)) КАК ХозрасчетныйОстатки
 
 СГРУППИРОВАТЬ ПО
 	ХозрасчетныйОстатки.Субконто1,
 	ХозрасчетныйОстатки.Субконто2</query>
 	</dataSet>
-	<calculatedField>
-		<dataPath>Цена</dataPath>
-		<expression>Выбор
-	Когда КоличествоОстаток = 0
-		Тогда 0
-	Иначе СуммаОстаток / КоличествоОстаток
-Конец</expression>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Цена</v8:content>
-			</v8:item>
-		</title>
-		<appearance>
-			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-				<dcscor:parameter>Формат</dcscor:parameter>
-				<dcscor:value xsi:type="v8:LocalStringType">
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ЧДЦ=2</v8:content>
-					</v8:item>
-				</dcscor:value>
-			</dcscor:item>
-		</appearance>
-	</calculatedField>
 	<totalField>
 		<dataPath>КоличествоОстаток</dataPath>
 		<expression>Сумма(КоличествоОстаток)</expression>
@@ -153,6 +128,21 @@
 		<expression>&amp;Период</expression>
 	</parameter>
 	<parameter>
+		<name>Номенклатура</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
 		<name>Счет10</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -184,13 +174,39 @@
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Средняя цена остатка ТМЦ</v8:content>
-			</v8:item>
-		</dcsset:presentation>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле1</dcsset:dataPath>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цена</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:detailExpression>Выбор
+	Когда КоличествоОстаток = 0
+		Тогда 0
+	Иначе СуммаОстаток / КоличествоОстаток
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда [Количество Остаток] = 0
+		Тогда 0
+	Иначе [Сумма Остаток] / [Количество Остаток]
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Выбор
+	Когда КоличествоОстаток = 0
+		Тогда 0
+	Иначе СуммаОстаток / КоличествоОстаток
+Конец</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Выбор
+	Когда [Количество Остаток] = 0
+		Тогда 0
+	Иначе [Сумма Остаток] / [Количество Остаток]
+Конец</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+			</dcsset:userFields>
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>КоличествоОстаток</dcsset:field>
@@ -199,16 +215,9 @@
 					<dcsset:field>СуммаОстаток</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Цена</dcsset:field>
+					<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
-			<dcsset:filter>
-				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Номенклатура</dcsset:left>
-					<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
-					<dcsset:userSettingID>265984db-d9e7-4ef9-9dfa-a25ea0f6c419</dcsset:userSettingID>
-				</dcsset:item>
-			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Период</dcscor:parameter>
@@ -223,14 +232,12 @@
 						</v8:item>
 					</dcsset:userSettingPresentation>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Номенклатура</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>602a963e-0d48-485a-90e1-962a52830fc2</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
-			<dcsset:conditionalAppearance>
-				<dcsset:item>
-					<dcsset:selection/>
-					<dcsset:filter/>
-					<dcsset:appearance/>
-				</dcsset:item>
-			</dcsset:conditionalAppearance>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>

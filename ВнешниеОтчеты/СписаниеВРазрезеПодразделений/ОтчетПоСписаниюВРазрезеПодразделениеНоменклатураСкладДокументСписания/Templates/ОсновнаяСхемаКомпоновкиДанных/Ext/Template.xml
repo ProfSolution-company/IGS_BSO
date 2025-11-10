@@ -158,7 +158,7 @@
 	ХозрасчетныйОборотыДтКт.СуммаОборот КАК Себестоимость,
 	НЕОПРЕДЕЛЕНО КАК Работник
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт В ИЕРАРХИИ (&amp;СписокЗатратныхСчетов), , СчетКт В ИЕРАРХИИ (&amp;Счет10), &amp;НоменклатураСклады, Организация = &amp;Организация) КАК ХозрасчетныйОборотыДтКт
+	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт В ИЕРАРХИИ (&amp;СписокЗатратныхСчетов), , СчетКт В ИЕРАРХИИ (&amp;Счет10), &amp;НоменклатураСклады, ) КАК ХозрасчетныйОборотыДтКт
 ГДЕ
 	ХозрасчетныйОборотыДтКт.КоличествоОборотКт &lt;&gt; 0
 
@@ -173,7 +173,7 @@
 	ХозрасчетныйОборотыДтКт.СуммаОборот,
 	ВЫРАЗИТЬ(ХозрасчетныйОборотыДтКт.СубконтоКт2 КАК Справочник.ФизическиеЛица)
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт В ИЕРАРХИИ (&amp;СписокЗатратныхСчетов), , СчетКт В ИЕРАРХИИ (&amp;Счет10), &amp;НоменклатураРаботники, Организация = &amp;Организация) КАК ХозрасчетныйОборотыДтКт
+	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт В ИЕРАРХИИ (&amp;СписокЗатратныхСчетов), , СчетКт В ИЕРАРХИИ (&amp;Счет10), &amp;НоменклатураРаботники, ) КАК ХозрасчетныйОборотыДтКт
 ГДЕ
 	ХозрасчетныйОборотыДтКт.КоличествоОборотКт &lt;&gt; 0
 
@@ -188,7 +188,7 @@
 	ХозрасчетныйОборотыДтКт.СуммаОборот,
 	НЕОПРЕДЕЛЕНО
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт В ИЕРАРХИИ (&amp;СписокЗатратныхСчетов), , СчетКт = &amp;Счет10112, &amp;НоменклатураПартии, Организация = &amp;Организация) КАК ХозрасчетныйОборотыДтКт
+	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, СчетДт В ИЕРАРХИИ (&amp;СписокЗатратныхСчетов), , СчетКт = &amp;Счет10112, &amp;НоменклатураПартии, ) КАК ХозрасчетныйОборотыДтКт
 ГДЕ
 	ХозрасчетныйОборотыДтКт.КоличествоОборотКт &lt;&gt; 0</query>
 	</dataSet>
@@ -303,21 +303,6 @@
 		<valueListAllowed>true</valueListAllowed>
 	</parameter>
 	<parameter>
-		<name>Организация</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Организация</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
-		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</value>
-		<useRestriction>false</useRestriction>
-		<denyIncompleteValues>true</denyIncompleteValues>
-	</parameter>
-	<parameter>
 		<name>СписокЗатратныхСчетов</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -404,6 +389,14 @@
 					<dcsset:field>Себестоимость</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>cd4bf642-2501-4635-b6a0-9ef430bfbf57</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
@@ -411,11 +404,6 @@
 						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
 					</dcscor:value>
 					<dcsset:userSettingID>761ca6c0-cd5a-4e8d-bbe8-e760bba17025</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>Организация</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</dcscor:value>
-					<dcsset:userSettingID>1c78d8e9-1b0a-46c7-ad26-9d4e6d432d4e</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>

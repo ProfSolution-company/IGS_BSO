@@ -33,6 +33,9 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
 			<field>Организация</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СчетДт</dataPath>
@@ -132,16 +135,6 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Склад</dataPath>
-			<field>Склад</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Склад</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>ЭтоПеремещение</dataPath>
 			<field>ЭтоПеремещение</field>
 			<title xsi:type="v8:LocalStringType">
@@ -180,41 +173,27 @@
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВЫРАЗИТЬ(ХозрасчетныйОстаткиИОбороты.Субконто1 КАК Справочник.Номенклатура) КАК Номенклатура,
-	ВЫБОР
-		КОГДА &amp;БезУчетаМестХранения
-			ТОГДА ЗНАЧЕНИЕ(Справочник.Склады.ПустаяСсылка)
-		ИНАЧЕ ВЫРАЗИТЬ(ХозрасчетныйОстаткиИОбороты.Субконто2 КАК Справочник.Склады)
-	КОНЕЦ КАК Склад,
 	СУММА(ХозрасчетныйОстаткиИОбороты.СуммаНачальныйОстаток) КАК СуммаНачальныйОстаток,
 	СУММА(ХозрасчетныйОстаткиИОбороты.КоличествоНачальныйОстаток) КАК КоличествоНачальныйОстаток,
-	СУММА(ХозрасчетныйОстаткиИОбороты.КоличествоКонечныйОстаток) КАК КоличествоКонечныйОстаток
+	СУММА(ХозрасчетныйОстаткиИОбороты.КоличествоКонечныйОстаток) КАК КоличествоКонечныйОстаток,
+	ХозрасчетныйОстаткиИОбороты.Организация КАК Организация
 ПОМЕСТИТЬ ТаблицаНачало
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, , , Счет В ИЕРАРХИИ (&amp;Счет), &amp;НоменклатураСклад, ) КАК ХозрасчетныйОстаткиИОбороты
+	РегистрБухгалтерии.Хозрасчетный.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, , , , &amp;НоменклатураСклад, ) КАК ХозрасчетныйОстаткиИОбороты
 
 СГРУППИРОВАТЬ ПО
 	ВЫРАЗИТЬ(ХозрасчетныйОстаткиИОбороты.Субконто1 КАК Справочник.Номенклатура),
-	ВЫБОР
-		КОГДА &amp;БезУчетаМестХранения
-			ТОГДА ЗНАЧЕНИЕ(Справочник.Склады.ПустаяСсылка)
-		ИНАЧЕ ВЫРАЗИТЬ(ХозрасчетныйОстаткиИОбороты.Субконто2 КАК Справочник.Склады)
-	КОНЕЦ
+	ХозрасчетныйОстаткиИОбороты.Организация
 
 ИНДЕКСИРОВАТЬ ПО
-	Номенклатура,
-	Склад
+	Номенклатура
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВЫРАЗИТЬ(ХозрасчетныйДвиженияССубконто.СубконтоКт1 КАК Справочник.Номенклатура) КАК Номенклатура,
-	ВЫБОР
-		КОГДА &amp;БезУчетаМестХранения
-			ТОГДА ЗНАЧЕНИЕ(Справочник.Склады.ПустаяСсылка)
-		ИНАЧЕ ВЫРАЗИТЬ(ХозрасчетныйДвиженияССубконто.СубконтоКт2 КАК Справочник.Склады)
-	КОНЕЦ КАК Склад,
 	ВЫБОР
 		КОГДА ТИПЗНАЧЕНИЯ(ХозрасчетныйДвиженияССубконто.Регистратор) = ТИП(Документ.ПеремещениеТоваров)
 			ТОГДА ИСТИНА
@@ -224,14 +203,14 @@
 	ХозрасчетныйДвиженияССубконто.СчетКт КАК СчетКт,
 	ХозрасчетныйДвиженияССубконто.КоличествоКт КАК КоличествоКт,
 	ХозрасчетныйДвиженияССубконто.Период КАК Период,
-	ХозрасчетныйДвиженияССубконто.Сумма КАК Сумма
+	ХозрасчетныйДвиженияССубконто.Сумма КАК Сумма,
+	ХозрасчетныйДвиженияССубконто.Организация КАК Организация
 ПОМЕСТИТЬ Вт
 ИЗ
 	РегистрБухгалтерии.Хозрасчетный.ДвиженияССубконто(
 			&amp;НачалоПериода,
 			&amp;КонецПериода,
-			СчетКт В ИЕРАРХИИ (&amp;Счет)
-				И ВидСубконто1 = ЗНАЧЕНИЕ(ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Номенклатура)
+			ВидСубконто1 = ЗНАЧЕНИЕ(ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Номенклатура)
 				И ВидСубконто2 = ЗНАЧЕНИЕ(ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Склады),
 			,
 			) КАК ХозрасчетныйДвиженияССубконто
@@ -240,7 +219,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	Вт.Номенклатура КАК Номенклатура,
-	Вт.Склад КАК Склад,
 	Вт.ЭтоПеремещение КАК ЭтоПеремещение,
 	Вт.Регистратор КАК Регистратор,
 	Вт.СчетКт КАК СчетКт,
@@ -254,14 +232,12 @@
 		КОГДА ТаблицаНачало.КоличествоНачальныйОстаток - Вт.КоличествоКт &gt; 0
 			ТОГДА ТаблицаНачало.КоличествоНачальныйОстаток - Вт.КоличествоКт
 		ИНАЧЕ 0
-	КОНЕЦ КАК Количество
+	КОНЕЦ КАК Количество,
+	Вт.Организация КАК Организация
 ИЗ
 	ТаблицаНачало КАК ТаблицаНачало
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Вт КАК Вт
 		ПО ТаблицаНачало.Номенклатура = Вт.Номенклатура
-			И ТаблицаНачало.Склад = Вт.Склад
-ГДЕ
-	Вт.ЭтоПеремещение &lt;&gt; &amp;БезУчетаМестХранения
 
 СГРУППИРОВАТЬ ПО
 	Вт.ЭтоПеремещение,
@@ -269,12 +245,12 @@
 	Вт.Номенклатура,
 	Вт.Регистратор,
 	Вт.СчетКт,
-	Вт.Склад,
 	ВЫБОР
 		КОГДА ТаблицаНачало.КоличествоНачальныйОстаток - Вт.КоличествоКт &gt; 0
 			ТОГДА ТаблицаНачало.КоличествоНачальныйОстаток - Вт.КоличествоКт
 		ИНАЧЕ 0
-	КОНЕЦ
+	КОНЕЦ,
+	Вт.Организация
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -343,20 +319,6 @@
 		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
 	</parameter>
 	<parameter>
-		<name>БезУчетаМестХранения</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Без учета мест хранения</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:boolean</v8:Type>
-		</valueType>
-		<value xsi:type="xs:boolean">false</value>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>НоменклатураСклад</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -369,20 +331,6 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Счет</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Счет</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
 		<name>Первые</name>
@@ -402,6 +350,48 @@
 		</valueType>
 		<value xsi:type="xs:decimal">0</value>
 		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Счет</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>БезУчетаМестХранения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Без учета мест хранения</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -427,6 +417,12 @@
 					<dcsset:field>Сумма</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
@@ -436,19 +432,19 @@
 					<dcsset:userSettingID>9a9fc396-2077-47ad-9b07-a0d3d5251675</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>БезУчетаМестХранения</dcscor:parameter>
-					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
-					<dcsset:userSettingID>8585509f-1168-4365-b8d9-3f80c2bc53ef</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НоменклатураСклад</dcscor:parameter>
+					<dcscor:parameter>Организация</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>e5e588db-553d-4972-ba8b-93ff6ed4621d</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Счет</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.Материалы</dcscor:value>
-					<dcsset:userSettingID>6fec7a98-85eb-4569-a6fe-e5edde6bc9ba</dcsset:userSettingID>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>fee13b6a-47cd-421f-af79-bda1822e3ff9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>БезУчетаМестХранения</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>e7554f6e-8e20-4e74-8a8c-27bda554b6f4</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>

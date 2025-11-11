@@ -26,6 +26,7 @@
 		<ChildObjects>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
 			<Template>МакетОтчета</Template>
+			<Template>Настройки</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>

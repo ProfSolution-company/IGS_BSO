@@ -245,7 +245,7 @@
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ТекущиеКадровыеДанныеСотрудников.Сотрудник КАК Сотрудник,
 	ТекущиеКадровыеДанныеСотрудников.ТекущаяОрганизация КАК ТекущаяОрганизация,
 	ТекущиеКадровыеДанныеСотрудников.ТекущееПодразделение КАК ТекущееПодразделение,
@@ -265,11 +265,10 @@
 			ИНАЧЕ ТекущиеКадровыеДанныеСотрудников.ДатаПриема МЕЖДУ &amp;НачДата И &amp;КонДата
 					ИЛИ ТекущиеКадровыеДанныеСотрудников.ДатаУвольнения МЕЖДУ &amp;НачДата И &amp;КонДата
 		КОНЕЦ
-	И ТекущиеКадровыеДанныеСотрудников.ТекущаяОрганизация = &amp;ТекущаяОрганизация
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ХозрасчетныйОбороты.Счет КАК Счет,
 	ХозрасчетныйОбороты.Организация КАК Организация,
 	ХозрасчетныйОбороты.Субконто1 КАК Субконто1,
@@ -282,8 +281,8 @@
 ПОМЕСТИТЬ ВТ_ДанныеОбороты
 ИЗ
 	РегистрБухгалтерии.Хозрасчетный.Обороты(
-			&amp;ПустойПериод,
-			&amp;ПустойПериод,
+			,
+			,
 			,
 			Счет.КодБыстрогоВыбора = &amp;Счет10111,
 			,
@@ -298,7 +297,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ХозрасчетныйОстатки.Счет КАК Счет,
 	ХозрасчетныйОстатки.Организация КАК Организация,
 	ХозрасчетныйОстатки.Субконто1 КАК Субконто1,
@@ -309,7 +308,7 @@
 ПОМЕСТИТЬ ВТ_ДанныеОстатки
 ИЗ
 	РегистрБухгалтерии.Хозрасчетный.Остатки(
-			&amp;ПустойПериод,
+			,
 			Счет.КодБыстрогоВыбора = &amp;Счет10111,
 			,
 			Субконто3 В
@@ -320,7 +319,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ХозрасчетныйОборотыДтКт.СчетКт КАК СчетКт,
 	ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК СубконтоКт1,
 	ХозрасчетныйОборотыДтКт.Организация КАК Организация,
@@ -329,18 +328,20 @@
 ПОМЕСТИТЬ ВТ_ДанныеОборотыДТКТ
 ИЗ
 	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(
-			&amp;ПустойПериод,
-			&amp;ПустойПериод,
 			,
-			СчетДт В (&amp;Счет25, &amp;Счет26, &amp;Счет20),
+			,
+			Регистратор,
+			СчетДт В ИЕРАРХИИ (&amp;СчетаДт),
 			&amp;СписокСубконто,
-			СчетКт.КодБыстрогоВыбора = &amp;Счет10111,
+			СчетКт = &amp;СчетКт1010,
 			,
 			СубконтоКТ3 В
 				(ВЫБРАТЬ РАЗЛИЧНЫЕ
 					ВТ_Сотрудники.ФизическоеЛицо
 				ИЗ
 					ВТ_Сотрудники)) КАК ХозрасчетныйОборотыДтКт
+ГДЕ
+	ХозрасчетныйОборотыДтКт.Регистратор ССЫЛКА Документ.ПередачаМатериаловВЭксплуатацию
 
 СГРУППИРОВАТЬ ПО
 	ХозрасчетныйОборотыДтКт.СчетКт,
@@ -349,7 +350,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ПередачаМатериаловВЭксплуатациюСпецодежда.СчетПередачи КАК Счет,
 	ПередачаМатериаловВЭксплуатациюСпецодежда.Номенклатура КАК Субконто1,
 	ПередачаМатериаловВЭксплуатациюСпецодежда.Ссылка КАК Субконто2,
@@ -368,7 +369,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ВТ_ДанныеПоСпособам.Счет КАК Счет,
 	ВТ_ДанныеПоСпособам.Субконто1 КАК Субконто1,
 	ВТ_ДанныеПоСпособам.Субконто2 КАК Субконто2,
@@ -496,6 +497,24 @@
 		<expression>Сумма(СуммаОстаток)</expression>
 	</totalField>
 	<parameter>
+		<name>НачДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Нач дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(&amp;ПериодСтандарт.ДатаНачала, "День")</expression>
+	</parameter>
+	<parameter>
 		<name>КонДата</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -506,11 +525,12 @@
 		<valueType>
 			<v8:Type>xs:dateTime</v8:Type>
 			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
+				<v8:DateFractions>Date</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;ПериодСтандарт.ДатаОкончания, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -551,7 +571,7 @@
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>ПериодОстатков</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -562,6 +582,24 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПериодСтандарт</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период стандарт</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
 		<name>ВыводитьВсехРаботающихВПериод</name>
@@ -576,40 +614,7 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>НачДата</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Нач дата</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>ПустойПериод</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Пустой период</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>true</useRestriction>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>СписокСубконто</name>
@@ -672,62 +677,6 @@
 		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
-		<name>Счет20</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Счет20</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
-		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОсновноеПроизводство</value>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Счет25</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Счет25</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
-		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОбщепроизводственныеРасходы</value>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Счет26</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Счет26</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
-		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОбщехозяйственныеРасходы</value>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>ТекущаяОрганизация</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Текущая организация</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
 		<name>ТолькоРаботающиеБезСпецодежды</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -740,10 +689,49 @@
 		</valueType>
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СчетаДт</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>СчетаДт</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОсновноеПроизводство_</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ВспомогательныеПроизводства_</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОбщепроизводственныеРасходы</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОбщехозяйственныеРасходы</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ПрочиеРасходы</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СчетКт1010</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>СчетКт1010</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СпецоснасткаИСпецодеждаНаСкладе</value>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
-		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контроль движения спецодежды</v8:content>
+			</v8:item>
+		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -834,26 +822,16 @@
 					<dcsset:field>РазныеПодразделения</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>3ef120c4-5a8b-45d2-9fbe-4a0000efb1ce</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>КонДата</dcscor:parameter>
-					<dcscor:value xsi:type="v8:StandardBeginningDate">
-						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
-					</dcscor:value>
-					<dcsset:userSettingID>2b29e6e4-0443-4a7c-8e8e-ef0b5f1613f7</dcsset:userSettingID>
-					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Конечная дата</v8:content>
-						</v8:item>
-					</dcsset:userSettingPresentation>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьВсехРаботающихВПериод</dcscor:parameter>
-					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
-					<dcsset:userSettingID>2fb1745f-8108-43d1-9052-ba37c2038a21</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>НачДата</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:userSettingID>4a5690d9-77e3-4e3c-b7f0-3faae8c1ff24</dcsset:userSettingID>
@@ -866,6 +844,43 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонДата</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>2b29e6e4-0443-4a7c-8e8e-ef0b5f1613f7</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конечная дата</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>7b8fd7a5-3125-49f0-b2f8-bbe997627b68</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПериодСтандарт</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>f61b9bef-457d-4e4f-bc36-c5067705cb9d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьВсехРаботающихВПериод</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>2fb1745f-8108-43d1-9052-ba37c2038a21</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Счет10</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
@@ -875,22 +890,16 @@
 					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Счет26</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ТекущаяОрганизация</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</dcscor:value>
-					<dcsset:userSettingID>0e985220-215c-4ed6-84aa-7aab1144cda8</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ТолькоРаботающиеБезСпецодежды</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					<dcsset:userSettingID>4e764466-b382-41ce-86bd-85951d6affe8</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
 					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>

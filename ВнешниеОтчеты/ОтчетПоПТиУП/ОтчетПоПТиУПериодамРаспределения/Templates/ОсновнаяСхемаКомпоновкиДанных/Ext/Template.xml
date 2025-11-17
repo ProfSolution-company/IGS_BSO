@@ -11,10 +11,6 @@
 			<field>Контрагент</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>игсДатаОкончания</dataPath>
-			<field>игсДатаОкончания</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Номер</dataPath>
 			<field>Номер</field>
 		</field>
@@ -25,30 +21,24 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СчетЗатрат</dataPath>
 			<field>СчетЗатрат</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Дата</dataPath>
 			<field>Дата</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>игсНомерЛСЗ</dataPath>
-			<field>игсНомерЛСЗ</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>ДатаВходящегоДокумента</dataPath>
 			<field>ДатаВходящегоДокумента</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>игсДатаНачала</dataPath>
-			<field>игсДатаНачала</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>игсОбъектРаспределения</dataPath>
-			<field>игсОбъектРаспределения</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>ПодразделениеОрганизации</dataPath>
 			<field>ПодразделениеОрганизации</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаБезНДС</dataPath>
@@ -69,83 +59,200 @@
 					<v8:content>Регистратор</v8:content>
 				</v8:item>
 			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">55</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">55</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>НомерСчетаФактуры</dataPath>
-			<field>НомерСчетаФактуры</field>
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Бурение</dataPath>
+			<field>Бурение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяЗатрат</dataPath>
+			<field>СтатьяЗатрат</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрочийДоходРасход</dataPath>
+			<field>ПрочийДоходРасход</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетЗатратНУ</dataPath>
+			<field>СчетЗатратНУ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектРаспределения</dataPath>
+			<field>ОбъектРаспределения</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СправкаРаспределения</dataPath>
+			<field>СправкаРаспределения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Позиция</dataPath>
+			<field>Позиция</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачалаДляОС</dataPath>
+			<field>ДатаНачалаДляОС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновноеСредство</dataPath>
+			<field>ОсновноеСредство</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОкончанияДляОС</dataPath>
+			<field>ДатаОкончанияДляОС</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВосстановительныеРаботы</dataPath>
+			<field>ВосстановительныеРаботы</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерЛСЗ</dataPath>
+			<field>НомерЛСЗ</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Номер счета фактуры</v8:content>
+					<v8:content>Номер ЛСЗ</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ДатаСчетаФактуры</dataPath>
-			<field>ДатаСчетаФактуры</field>
+			<dataPath>ДатаНачала</dataPath>
+			<field>ДатаНачала</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Дата счета фактуры</v8:content>
+					<v8:content>Дата начала</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСФ</dataPath>
+			<field>НомерСФ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер СФ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСФ</dataPath>
+			<field>ДатаСФ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата СФ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОкончания</dataPath>
+			<field>ДатаОкончания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата окончания</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
-	ПоступлениеТоваровУслуг.Ссылка КАК Регистратор,
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗатратыКРаспределению.Регистратор КАК Регистратор,
+	ЗатратыКРаспределению.ОбъектРаспределения КАК ОбъектРаспределения,
+	ЗатратыКРаспределению.СчетЗатрат КАК СчетЗатрат,
+	ЗатратыКРаспределению.ПодразделениеОрганизации КАК ПодразделениеОрганизации,
+	ЗатратыКРаспределению.СтатьяЗатрат КАК СтатьяЗатрат,
+	ЗатратыКРаспределению.СуммаОборот КАК СуммаОборот,
+	ЗатратыКРаспределению.СправкаРаспределения КАК СправкаРаспределения
+ПОМЕСТИТЬ ВТ_ЗатратыКРаспределениюОбороты
+ИЗ
+	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, ) КАК ЗатратыКРаспределению
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ЗатратыКРаспределениюОбороты.Регистратор КАК Регистратор,
 	ПоступлениеТоваровУслуг.Номер КАК Номер,
 	ПоступлениеТоваровУслуг.Дата КАК Дата,
-	ПоступлениеТоваровУслуг.игсНомерЛСЗ КАК игсНомерЛСЗ,
+	ПоступлениеТоваровУслуг.игсНомерЛСЗ КАК НомерЛСЗ,
 	ПоступлениеТоваровУслуг.Контрагент КАК Контрагент,
-	ПоступлениеТоваровУслуг.НомерВходящегоДокумента КАК НомерВходящегоДокумента,
-	ПоступлениеТоваровУслуг.ДатаВходящегоДокумента КАК ДатаВходящегоДокумента,
-	ПоступлениеТоваровУслугУслуги.игсДатаНачала КАК игсДатаНачала,
-	ПоступлениеТоваровУслугУслуги.игсДатаОкончания КАК игсДатаОкончания,
-	ПоступлениеТоваровУслугУслуги.игсОбъектРаспределения КАК игсОбъектРаспределения,
-	ПоступлениеТоваровУслугУслуги.СчетЗатрат КАК СчетЗатрат,
-	ПоступлениеТоваровУслуг.ПодразделениеОрганизации КАК ПодразделениеОрганизации,
 	ВЫБОР
-		КОГДА ПоступлениеТоваровУслуг.СуммаВключаетНДС
-			ТОГДА ПоступлениеТоваровУслугУслуги.Сумма - ПоступлениеТоваровУслугУслуги.СуммаНДС
-		ИНАЧЕ ПоступлениеТоваровУслугУслуги.Сумма
-	КОНЕЦ КАК СуммаБезНДС,
-	СчетФактураПолученный.НомерВходящегоДокумента КАК НомерСчетаФактуры,
-	СчетФактураПолученный.ДатаВходящегоДокумента КАК ДатаСчетаФактуры
+		КОГДА ПоступлениеТоваровУслуг.ЭтоУниверсальныйДокумент
+			ТОГДА ПоступлениеТоваровУслуг.НомерВходящегоДокумента
+		ИНАЧЕ СчетФактураПолученный.НомерВходящегоДокумента
+	КОНЕЦ КАК НомерВходящегоДокумента,
+	ВЫБОР
+		КОГДА ПоступлениеТоваровУслуг.ЭтоУниверсальныйДокумент
+			ТОГДА ПоступлениеТоваровУслуг.ДатаВходящегоДокумента
+		ИНАЧЕ СчетФактураПолученный.ДатаВходящегоДокумента
+	КОНЕЦ КАК ДатаВходящегоДокумента,
+	ВЫБОР
+		КОГДА ПоступлениеТоваровУслуг.ЭтоУниверсальныйДокумент
+			ТОГДА "УПД"
+		ИНАЧЕ СчетФактураПолученный.Номер
+	КОНЕЦ КАК НомерСФ,
+	ВЫБОР
+		КОГДА ПоступлениеТоваровУслуг.ЭтоУниверсальныйДокумент
+			ТОГДА "УПД"
+		ИНАЧЕ СчетФактураПолученный.Дата
+	КОНЕЦ КАК ДатаСФ,
+	ПоступлениеТоваровУслугУслуги.игсДатаНачала КАК ДатаНачала,
+	ПоступлениеТоваровУслугУслуги.игсДатаОкончания КАК ДатаОкончания,
+	ВТ_ЗатратыКРаспределениюОбороты.ОбъектРаспределения КАК ОбъектРаспределения,
+	ВТ_ЗатратыКРаспределениюОбороты.СчетЗатрат КАК СчетЗатрат,
+	ВТ_ЗатратыКРаспределениюОбороты.ПодразделениеОрганизации КАК ПодразделениеОрганизации,
+	ВТ_ЗатратыКРаспределениюОбороты.СтатьяЗатрат КАК СтатьяЗатрат,
+	ВТ_ЗатратыКРаспределениюОбороты.СуммаОборот КАК СуммаБезНДС
 ИЗ
-	Документ.ПоступлениеТоваровУслуг.Услуги КАК ПоступлениеТоваровУслугУслуги
-		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПоступлениеТоваровУслуг КАК ПоступлениеТоваровУслуг
-			ПРАВОЕ СОЕДИНЕНИЕ Документ.СчетФактураПолученный КАК СчетФактураПолученный
-			ПО (СчетФактураПолученный.ДокументОснование = ПоступлениеТоваровУслуг.Ссылка)
-		ПО ПоступлениеТоваровУслугУслуги.Ссылка = ПоступлениеТоваровУслуг.Ссылка
+	ВТ_ЗатратыКРаспределениюОбороты КАК ВТ_ЗатратыКРаспределениюОбороты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ПоступлениеТоваровУслуг КАК ПоступлениеТоваровУслуг
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ПоступлениеТоваровУслуг.Услуги КАК ПоступлениеТоваровУслугУслуги
+			ПО ПоступлениеТоваровУслуг.Ссылка = ПоступлениеТоваровУслугУслуги.Ссылка
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.СчетФактураПолученный КАК СчетФактураПолученный
+			ПО ПоступлениеТоваровУслуг.Ссылка = СчетФактураПолученный.ДокументОснование
+		ПО ВТ_ЗатратыКРаспределениюОбороты.СправкаРаспределения = ПоступлениеТоваровУслуг.Ссылка
 ГДЕ
-	ПоступлениеТоваровУслуг.ВидОперации = &amp;ВидОперации
-	И ПоступлениеТоваровУслуг.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-	И ПоступлениеТоваровУслуг.Организация = &amp;Организация</query>
+	ПоступлениеТоваровУслуг.Проведен
+	И НЕ ПоступлениеТоваровУслуг.ПометкаУдаления
+	И ПоступлениеТоваровУслуг.ВидОперации В(&amp;ВидОперации)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВТ_ЗатратыКРаспределениюОбороты</query>
 	</dataSet>
 	<totalField>
 		<dataPath>СуммаБезНДС</dataPath>
 		<expression>Сумма(СуммаБезНДС)</expression>
 	</totalField>
 	<parameter>
-		<name>ВидОперации</name>
+		<name>Период</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Вид операции</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ВидыОперацийПоступлениеТоваровУслуг</v8:Type>
-		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийПоступлениеТоваровУслуг.ПокупкаКомиссия</value>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>ПериодДокумента</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Период документа</v8:content>
+				<v8:content>Период</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -159,11 +266,11 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ДатаНачала</name>
+		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Дата начала</v8:content>
+				<v8:content>Начало периода</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -174,14 +281,14 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодДокумента.ДатаНачала</expression>
+		<expression>НачалоПериода(&amp;Период.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
-		<name>ДатаОкончания</name>
+		<name>КонецПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Дата окончания</v8:content>
+				<v8:content>Конец периода</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -192,22 +299,23 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;ПериодДокумента.ДатаОкончания</expression>
+		<expression>КонецПериода(&amp;Период.ДатаОкончания, "День")</expression>
 	</parameter>
 	<parameter>
-		<name>Организация</name>
+		<name>ВидОперации</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Организация</v8:content>
+				<v8:content>Вид операции</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ВидыОперацийПоступлениеТоваровУслуг</v8:Type>
 		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-		<denyIncompleteValues>true</denyIncompleteValues>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийПоступлениеТоваровУслуг.Услуги</value>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыОперацийПоступлениеТоваровУслуг.ПокупкаКомиссия</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -229,31 +337,55 @@
 					<dcsset:field>Дата</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>игсНомерЛСЗ</dcsset:field>
+					<dcsset:field>НомерЛСЗ</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Контрагент</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>НомерВходящегоДокумента</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер документа сторонней организации</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДатаВходящегоДокумента</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата документа сторонней организации</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>НомерСчетаФактуры</dcsset:field>
+					<dcsset:field>НомерСФ</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер счета фактуры</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДатаСчетаФактуры</dcsset:field>
+					<dcsset:field>ДатаСФ</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата счета фактуры</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>игсДатаНачала</dcsset:field>
+					<dcsset:field>ДатаНачала</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>игсДатаОкончания</dcsset:field>
+					<dcsset:field>ДатаОкончания</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>игсОбъектРаспределения</dcsset:field>
+					<dcsset:field>ОбъектРаспределения</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СчетЗатрат</dcsset:field>
@@ -265,25 +397,40 @@
 					<dcsset:field>СуммаБезНДС</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>e4916d56-b214-45a4-bff9-50ab1cb80b93</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ВидОперации</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ПериодДокумента</dcscor:parameter>
+					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
-						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 					</dcscor:value>
-					<dcsset:userSettingID>700ecc7d-0cab-451b-bee4-bdb7b82a0090</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>Организация</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>1ce9cdad-b5a5-4b9e-b324-006f7651d36f</dcsset:userSettingID>
+					<dcsset:userSettingID>2d6ac1c8-1821-4326-88d7-433c3ce81e6e</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>

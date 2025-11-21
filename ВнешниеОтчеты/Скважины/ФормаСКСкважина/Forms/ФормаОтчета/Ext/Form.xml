@@ -4,10 +4,17 @@
 	<AutoShowState>Auto</AutoShowState>
 	<ReportResultViewMode>Auto</ReportResultViewMode>
 	<ViewModeApplicationOnSetReportResult>Auto</ViewModeApplicationOnSetReportResult>
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
-	<Events>
-		<Event name="OnOpen">ПриОткрытии</Event>
-	</Events>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Сформировать" id="18">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Сформировать</CommandName>
+				<ExtendedTooltip name="СформироватьРасширеннаяПодсказка" id="19"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
 	<ChildItems>
 		<UsualGroup name="Настройки" id="1">
 			<Title>
@@ -22,45 +29,88 @@
 					<v8:content>Настройки</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
 			<ExtendedTooltip name="НастройкиРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
-				<InputField name="Скважина" id="6">
-					<DataPath>Скважина</DataPath>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="СкважинаКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="СкважинаРасширеннаяПодсказка" id="8"/>
-				</InputField>
-				<InputField name="Сценарий" id="9">
-					<DataPath>Сценарий</DataPath>
-					<ListChoiceMode>true</ListChoiceMode>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ChooseType>false</ChooseType>
-					<ContextMenu name="СценарийКонтекстноеМеню" id="10"/>
-					<ExtendedTooltip name="СценарийРасширеннаяПодсказка" id="11"/>
-				</InputField>
-				<InputField name="СценарийФакт" id="12">
-					<DataPath>СценарийФакт</DataPath>
-					<ListChoiceMode>true</ListChoiceMode>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="СценарийФактКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="СценарийФактРасширеннаяПодсказка" id="14"/>
-				</InputField>
+				<UsualGroup name="ГруппаНастройкиЛевая" id="25">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки левая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки левая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиЛеваяРасширеннаяПодсказка" id="26"/>
+					<ChildItems>
+						<InputField name="ПериодОтчета" id="20">
+							<DataPath>ПериодОтчета</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПериодОтчетаКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="ПериодОтчетаРасширеннаяПодсказка" id="22"/>
+							<Events>
+								<Event name="OnChange">ПериодОтчетаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Скважина" id="6">
+							<DataPath>Скважина</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+							<ContextMenu name="СкважинаКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="СкважинаРасширеннаяПодсказка" id="8"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНастройкиПравая" id="23">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки правая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки правая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиПраваяРасширеннаяПодсказка" id="24"/>
+					<ChildItems>
+						<InputField name="Сценарий" id="9">
+							<DataPath>Сценарий</DataPath>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="СценарийКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="СценарийРасширеннаяПодсказка" id="11"/>
+						</InputField>
+						<InputField name="СценарийФакт" id="12">
+							<DataPath>СценарийФакт</DataPath>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="СценарийФактКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="СценарийФактРасширеннаяПодсказка" id="14"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<PeriodField name="ПериодОтчета" id="3">
-			<DataPath>ПериодОтчета</DataPath>
-			<ContextMenu name="ПериодОтчетаКонтекстноеМеню" id="4"/>
-			<ExtendedTooltip name="ПериодОтчетаРасширеннаяПодсказка" id="5"/>
-		</PeriodField>
-		<Button name="Сформировать" id="18">
-			<Type>UsualButton</Type>
-			<CommandName>Form.Command.Сформировать</CommandName>
-			<ExtendedTooltip name="СформироватьРасширеннаяПодсказка" id="19"/>
-		</Button>
-		<SpreadSheetDocumentField name="ПолеТабличногоДокумента" id="15">
+		<SpreadSheetDocumentField name="ПолеТабличногоДокумента" id="27">
 			<DataPath>ПолеТабличногоДокумента</DataPath>
-			<ContextMenu name="ПолеТабличногоДокументаКонтекстноеМеню" id="16"/>
-			<ExtendedTooltip name="ПолеТабличногоДокументаРасширеннаяПодсказка" id="17"/>
+			<TitleLocation>None</TitleLocation>
+			<ContextMenu name="ПолеТабличногоДокументаКонтекстноеМеню" id="28"/>
+			<ExtendedTooltip name="ПолеТабличногоДокументаРасширеннаяПодсказка" id="29"/>
 		</SpreadSheetDocumentField>
 	</ChildItems>
 	<Attributes>
@@ -114,7 +164,13 @@
 					<v8:content>Сценарий</v8:content>
 				</v8:item>
 			</Title>
-			<Type/>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 		<Attribute name="СценарийФакт" id="6">
 			<Title>
@@ -123,7 +179,13 @@
 					<v8:content>Сценарий факт</v8:content>
 				</v8:item>
 			</Title>
-			<Type/>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 		<Attribute name="ПолеТабличногоДокумента" id="7">
 			<Title>

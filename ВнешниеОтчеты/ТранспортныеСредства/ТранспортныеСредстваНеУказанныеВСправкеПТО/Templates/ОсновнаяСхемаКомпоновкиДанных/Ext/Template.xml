@@ -7,151 +7,188 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СчетДт</dataPath>
-			<field>СчетДт</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СубконтоКт2</dataPath>
-			<field>СубконтоКт2</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СубконтоДт1</dataPath>
-			<field>СубконтоДт1</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СчетКт</dataPath>
-			<field>СчетКт</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СубконтоКт3</dataPath>
-			<field>СубконтоКт3</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СубконтоДт2</dataPath>
-			<field>СубконтоДт2</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СубконтоДт3</dataPath>
-			<field>СубконтоДт3</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СубконтоКт1</dataPath>
-			<field>СубконтоКт1</field>
+			<dataPath>Флот</dataPath>
+			<field>Флот</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
 			<field>Организация</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Организации</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВалютаДт</dataPath>
-			<field>ВалютаДт</field>
+			<dataPath>Проект</dataPath>
+			<field>Проект</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВалютаКт</dataPath>
-			<field>ВалютаКт</field>
+			<dataPath>ПодразделениеОрганизации</dataPath>
+			<field>ПодразделениеОрганизации</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ПодразделениеДт</dataPath>
-			<field>ПодразделениеДт</field>
+			<dataPath>СчетЗатрат</dataPath>
+			<field>СчетЗатрат</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ПодразделениеКт</dataPath>
-			<field>ПодразделениеКт</field>
+			<dataPath>СтатьяЗатрат</dataPath>
+			<field>СтатьяЗатрат</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Сумма</dataPath>
-			<field>Сумма</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>НоменклатурнаяГруппа</dataPath>
+			<field>НоменклатурнаяГруппа</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ТС</dataPath>
-			<field>ТС</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>ТС</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>ТранспортноеСредство</dataPath>
+			<field>ТранспортноеСредство</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.игсБуровыеУстановки</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">60</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">60</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПервичныйДокумент</dataPath>
+			<field>ПервичныйДокумент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСчет</dataPath>
+			<field>КорСчет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто1</dataPath>
+			<field>КорСубконто1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто2</dataPath>
+			<field>КорСубконто2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто3</dataPath>
+			<field>КорСубконто3</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
-	&amp;Дата КАК Период,
-	ХозрасчетныйОборотыДтКт.Организация КАК Организация,
-	ХозрасчетныйОборотыДтКт.СчетДт КАК СчетЗатрат,
-	ХозрасчетныйОборотыДтКт.ПодразделениеДт КАК ПодразделениеОрганизации,
-	ВЫБОР
-		КОГДА ХозрасчетныйОборотыДтКт.СубконтоДт1 = ЗНАЧЕНИЕ(Справочник.НоменклатурныеГруппы.ПустаяСсылка)
-				И НЕ игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОбъектРаспределения ЕСТЬ NULL
-			ТОГДА игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОбъектРаспределения.НоменклатурнаяГруппа
-		ИНАЧЕ ХозрасчетныйОборотыДтКт.СубконтоДт1
-	КОНЕЦ КАК НоменклатурнаяГруппа,
-	игсЗатратыКРаспределениюПоПроизводственнойПрограмме.ОбъектРаспределения КАК ТранспортноеСредство,
-	игсЗатратыКРаспределениюПоПроизводственнойПрограмме.СтатьяЗатрат КАК СтатьяЗатрат,
-	ХозрасчетныйОборотыДтКт.Регистратор КАК ДокументЗатрат,
-	ХозрасчетныйОборотыДтКт.СчетКт КАК КорСчет,
-	ХозрасчетныйОборотыДтКт.СубконтоКт1 КАК КорСубконто1,
-	ХозрасчетныйОборотыДтКт.СубконтоКт2 КАК КорСубконто2,
-	ХозрасчетныйОборотыДтКт.СубконтоКт3 КАК КорСубконто3,
-	ХозрасчетныйОборотыДтКт.СуммаОборот КАК КРаспределению
-ПОМЕСТИТЬ Затраты
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	игсСоставФлотаСрезПоследних.Период КАК Период,
+	игсСоставФлотаСрезПоследних.Флот КАК Флот,
+	игсСоставФлотаСрезПоследних.СоставФлота КАК СоставФлота,
+	игсСоставФлотаСрезПоследних.Регистратор КАК Регистратор
+ПОМЕСТИТЬ ВТ_ФлотыСрезПоследних
 ИЗ
-	РегистрНакопления.игсЗатратыКРаспределениюПоПроизводственнойПрограмме КАК игсЗатратыКРаспределениюПоПроизводственнойПрограмме
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт(&amp;НачалоПериода, &amp;КонецПериодаГраница, Запись, СчетДт = &amp;Счет2001, , , , Организация &lt;&gt; ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)) КАК ХозрасчетныйОборотыДтКт
-		ПО игсЗатратыКРаспределениюПоПроизводственнойПрограмме.Регистратор = ХозрасчетныйОборотыДтКт.Регистратор
-			И игсЗатратыКРаспределениюПоПроизводственнойПрограмме.Позиция = ХозрасчетныйОборотыДтКт.НомерСтроки
+	РегистрСведений.игсСоставФлота.СрезПоследних(&amp;ДатаСреза, ) КАК игсСоставФлотаСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ФлотыСрезПоследних.Период КАК Период,
+	ВТ_ФлотыСрезПоследних.Флот КАК Флот,
+	ВТ_ФлотыСрезПоследних.СоставФлота КАК СоставФлота,
+	игсИзменениеСоставаФлотаСостав.ТранспортноеСредство КАК ТранспортноеСредство
+ПОМЕСТИТЬ ВТ_СоставФлотов
+ИЗ
+	ВТ_ФлотыСрезПоследних КАК ВТ_ФлотыСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.игсИзменениеСоставаФлота КАК игсИзменениеСоставаФлота
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.игсИзменениеСоставаФлота.Состав КАК игсИзменениеСоставаФлотаСостав
+			ПО игсИзменениеСоставаФлота.Ссылка = игсИзменениеСоставаФлотаСостав.Ссылка
+		ПО ВТ_ФлотыСрезПоследних.Регистратор = игсИзменениеСоставаФлота.Ссылка
+{ГДЕ
+	игсИзменениеСоставаФлота.Организация = &amp;Организация}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	игсСправкаПТО.Ссылка КАК СсылкаПТО,
+	игсСправкаПТОЭтапы.БуроваяУстановка КАК БуроваяУстановкаПТО
+ПОМЕСТИТЬ ВТ_СправкиПТО
+ИЗ
+	Документ.игсСправкаПТО КАК игсСправкаПТО
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.игсСправкаПТО.Этапы КАК игсСправкаПТОЭтапы
+		ПО игсСправкаПТО.Ссылка = игсСправкаПТОЭтапы.Ссылка
 ГДЕ
-	ХозрасчетныйОборотыДтКт.СубконтоДт1 = ЗНАЧЕНИЕ(Справочник.НоменклатурныеГруппы.ПустаяСсылка)
+	НЕ игсСправкаПТО.ПометкаУдаления
+	И игсСправкаПТО.Проведен
+	И игсСправкаПТО.Дата МЕЖДУ &amp;Дата1 И &amp;Дата2
+
+СГРУППИРОВАТЬ ПО
+	игсСправкаПТО.Ссылка,
+	игсСправкаПТОЭтапы.БуроваяУстановка
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	игсСправкаПТО.Ссылка,
+	игсСправкаПТОЭтапыДежурство.БуроваяУстановка
+ИЗ
+	Документ.игсСправкаПТО КАК игсСправкаПТО
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.игсСправкаПТО.ЭтапыДежурство КАК игсСправкаПТОЭтапыДежурство
+		ПО игсСправкаПТО.Ссылка = игсСправкаПТОЭтапыДежурство.Ссылка
+ГДЕ
+	НЕ игсСправкаПТО.ПометкаУдаления
+	И игсСправкаПТО.Проведен
+	И игсСправкаПТО.Дата МЕЖДУ &amp;Дата1 И &amp;Дата2
+
+СГРУППИРОВАТЬ ПО
+	игсСправкаПТО.Ссылка,
+	игсСправкаПТОЭтапыДежурство.БуроваяУстановка
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	СУММА(Затраты.КРаспределению) КАК Сумма,
-	ВЫБОР
-		КОГДА Затраты.ТранспортноеСредство = &amp;ПустоеТС
-			ТОГДА ЕСТЬNULL(игсБуровыеУстановки.Ссылка, &amp;ПустоеТС)
-		ИНАЧЕ Затраты.ТранспортноеСредство
-	КОНЕЦ КАК ТС
+	ВТ_СоставФлотов.ТранспортноеСредство КАК ТранспортноеСредство
+ПОМЕСТИТЬ ВТ_БУ_не_в_ПТО
 ИЗ
-	Затраты КАК Затраты
-		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.игсБуровыеУстановки КАК игсБуровыеУстановки
-		ПО Затраты.НоменклатурнаяГруппа = игсБуровыеУстановки.НоменклатурнаяГруппа
+	ВТ_СоставФлотов КАК ВТ_СоставФлотов
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СправкиПТО КАК ВТ_СправкиПТО
+		ПО ВТ_СоставФлотов.ТранспортноеСредство = ВТ_СправкиПТО.БуроваяУстановкаПТО
 ГДЕ
-	ВЫБОР
-			КОГДА Затраты.ТранспортноеСредство = &amp;ПустоеТС
-				ТОГДА ЕСТЬNULL(игсБуровыеУстановки.Ссылка, &amp;ПустоеТС)
-			ИНАЧЕ Затраты.ТранспортноеСредство
-		КОНЕЦ &lt;&gt; &amp;ПустоеТС
+	ВТ_СправкиПТО.БуроваяУстановкаПТО ЕСТЬ NULL
+;
 
-СГРУППИРОВАТЬ ПО
-	ВЫБОР
-		КОГДА Затраты.ТранспортноеСредство = &amp;ПустоеТС
-			ТОГДА ЕСТЬNULL(игсБуровыеУстановки.Ссылка, &amp;ПустоеТС)
-		ИНАЧЕ Затраты.ТранспортноеСредство
-	КОНЕЦ</query>
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	игсВыручкаИЗатратыПоФлотамОбороты.ТранспортноеСредство КАК ТранспортноеСредство
+ПОМЕСТИТЬ ВТ_РегистрПоФлотам
+ИЗ
+	РегистрНакопления.игсВыручкаИЗатратыПоФлотам.Обороты(&amp;Дата1, &amp;Дата2, Запись, ) КАК игсВыручкаИЗатратыПоФлотамОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_БУ_не_в_ПТО.ТранспортноеСредство КАК ТранспортноеСредство
+ИЗ
+	ВТ_БУ_не_в_ПТО КАК ВТ_БУ_не_в_ПТО
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_РегистрПоФлотам КАК ВТ_РегистрПоФлотам
+		ПО ВТ_БУ_не_в_ПТО.ТранспортноеСредство = ВТ_РегистрПоФлотам.ТранспортноеСредство
+ГДЕ
+	ВТ_РегистрПоФлотам.ТранспортноеСредство ЕСТЬ NULL
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВТ_ФлотыСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВТ_СоставФлотов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВТ_СправкиПТО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВТ_БУ_не_в_ПТО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВТ_РегистрПоФлотам</query>
 	</dataSet>
-	<totalField>
-		<dataPath>Сумма</dataPath>
-		<expression>Сумма(Сумма)</expression>
-	</totalField>
-	<parameter>
-		<name>Дата</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Дата</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>v8:StandardPeriod</v8:Type>
-		</valueType>
-		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
-	</parameter>
 	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
@@ -168,7 +205,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;Дата.ДатаНачала</expression>
+		<expression>НачалоПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -186,14 +223,14 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;Дата.ДатаОкончания</expression>
+		<expression>КонецПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
-		<name>КонецПериодаГраница</name>
+		<name>Период</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Конец периода граница</v8:content>
+				<v8:content>Период</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -204,37 +241,93 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>&amp;Дата.ДатаОкончания</expression>
+		<expression>&amp;ДатаСреза</expression>
 	</parameter>
 	<parameter>
-		<name>ПустоеТС</name>
+		<name>Дата1</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Пустое ТС</v8:content>
+				<v8:content>Дата1</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.игсБуровыеУстановки</v8:Type>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
 		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">Справочник.игсБуровыеУстановки.ПустаяСсылка</value>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
-		<name>Счет2001</name>
+		<name>Дата2</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Счет2001</v8:content>
+				<v8:content>Дата2</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
 		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ОсновноеПроизводство</value>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаСреза</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата среза</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;ПериодОтчета.ДатаНачала, "День")</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -245,54 +338,46 @@
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
-			<dcsset:selection>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ТС</dcsset:field>
-				</dcsset:item>
-			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>Дата</dcscor:parameter>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
-						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 					</dcscor:value>
-					<dcsset:userSettingID>a01cfa9e-6399-4467-a536-069bc3c522f8</dcsset:userSettingID>
-					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Период отчета</v8:content>
-						</v8:item>
-					</dcsset:userSettingPresentation>
+					<dcsset:userSettingID>f33db512-0708-4824-a7ed-540e068c42e1</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ПустоеТС</dcscor:parameter>
+					<dcscor:parameter>Организация</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Счет2001</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>f8362ea9-6544-44e8-b308-9ab0a3abc43a</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:groupItems>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ТС</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ТранспортноеСредство</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
 			</dcsset:item>
 		</dcsset:settings>

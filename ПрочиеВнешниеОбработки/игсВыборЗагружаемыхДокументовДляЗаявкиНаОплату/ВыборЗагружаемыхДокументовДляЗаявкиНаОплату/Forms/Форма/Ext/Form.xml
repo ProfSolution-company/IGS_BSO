@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ЗРДС" id="63">
+			<DataPath>Объект.ЗРДС</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ЗРДСКонтекстноеМеню" id="64"/>
+			<ExtendedTooltip name="ЗРДСРасширеннаяПодсказка" id="65"/>
+		</InputField>
+		<Table name="Файлы" id="6">
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Файлы</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ФайлыКонтекстноеМеню" id="7"/>
+			<AutoCommandBar name="ФайлыКоманднаяПанель" id="8">
+				<ChildItems>
+					<Button name="ФайлыУстановитьГалочки" id="47">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.УстановитьГалочки</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.CheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ФайлыУстановитьГалочкиРасширеннаяПодсказка" id="48"/>
+					</Button>
+					<Button name="ФайлыСнятьГалочки" id="45">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СнятьГалочки</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ФайлыСнятьГалочкиРасширеннаяПодсказка" id="46"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ФайлыРасширеннаяПодсказка" id="9"/>
+			<SearchStringAddition name="ФайлыСтрокаПоиска" id="10">
+				<AdditionSource>
+					<Item>Файлы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ФайлыСтрокаПоискаКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="ФайлыСтрокаПоискаРасширеннаяПодсказка" id="12"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ФайлыСостояниеПросмотра" id="13">
+				<AdditionSource>
+					<Item>Файлы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ФайлыСостояниеПросмотраКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="ФайлыСостояниеПросмотраРасширеннаяПодсказка" id="15"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ФайлыУправлениеПоиском" id="16">
+				<AdditionSource>
+					<Item>Файлы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ФайлыУправлениеПоискомКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="ФайлыУправлениеПоискомРасширеннаяПодсказка" id="18"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ФайлыВыбор</Event>
+				<Event name="OnChange">ФайлыПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ФайлыНомерСтроки" id="19">
+					<DataPath>Объект.Файлы.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ФайлыНомерСтрокиКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ФайлыНомерСтрокиРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<CheckBoxField name="ФайлыВыбор" id="22">
+					<DataPath>Объект.Файлы.Выбор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФайлыВыборКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ФайлыВыборРасширеннаяПодсказка" id="24"/>
+					<Events>
+						<Event name="OnChange">ФайлыВыборПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ФайлыИмяФайла" id="25">
+					<DataPath>Объект.Файлы.Наименование</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ФайлыИмяФайлаКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ФайлыИмяФайлаРасширеннаяПодсказка" id="27"/>
+				</InputField>
+				<InputField name="ФайлыРасширениеФайла" id="28">
+					<DataPath>Объект.Файлы.Расширение</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ФайлыРасширениеФайлаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ФайлыРасширениеФайлаРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="ФайлыДанныеФайлаBase64" id="31">
+					<DataPath>Объект.Файлы.ДанныеФайлаBase64</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ФайлыДанныеФайлаBase64КонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ФайлыДанныеФайлаBase64РасширеннаяПодсказка" id="33"/>
+				</InputField>
+				<InputField name="ФайлыИсточник" id="49">
+					<DataPath>Объект.Файлы.Источник</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ФайлыИсточникКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ФайлыИсточникРасширеннаяПодсказка" id="51"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПодвал" id="57">
+			<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<UsualGroup name="ПодГруппаПодвал1" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Под группа подвал1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Под группа подвал1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПодГруппаПодвал1РасширеннаяПодсказка" id="60"/>
+					<ChildItems>
+						<RadioButtonField name="ИсточникФайлов" id="52">
+							<DataPath>Объект.ИсточникФайлов</DataPath>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>ДО</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ДО</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>МТО (ERP)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">МТО (ERP)</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вх. акт (накладную ЭДО)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ЭДО</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Договорной документ (ДО)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ДО: Договорной документ</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ИсточникФайловКонтекстноеМеню" id="53"/>
+							<ExtendedTooltip name="ИсточникФайловРасширеннаяПодсказка" id="54"/>
+						</RadioButtonField>
+						<Button name="ПолучитьФайлыСмежныхСистем" id="55">
+							<Type>UsualButton</Type>
+							<Representation>PictureAndText</Representation>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.ПолучитьФайлыСмежныхСистем</CommandName>
+							<Picture>
+								<xr:Ref>CommonPicture.КонтактнаяИнформацияПерейтиПоСсылке</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="ПолучитьФайлыСмежныхСистемРасширеннаяПодсказка" id="56"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ПодГруппаПодвал2" id="61">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Под группа подвал2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Под группа подвал2</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПодГруппаПодвал2РасширеннаяПодсказка" id="62"/>
+				</UsualGroup>
+				<Button name="ЗагрузитьВПрисоединенныеФайлы" id="34">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.ЗагрузитьВПрисоединенныеФайлы</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.MoveDown</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="ЗагрузитьВПрисоединенныеФайлыРасширеннаяПодсказка" id="35"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТабличнаяЧастьЗаявки" id="66">
+			<Visible>false</Visible>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТабличнаяЧастьЗаявки</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТабличнаяЧастьЗаявкиКонтекстноеМеню" id="67"/>
+			<AutoCommandBar name="ТабличнаяЧастьЗаявкиКоманднаяПанель" id="68"/>
+			<ExtendedTooltip name="ТабличнаяЧастьЗаявкиРасширеннаяПодсказка" id="69"/>
+			<SearchStringAddition name="ТабличнаяЧастьЗаявкиСтрокаПоиска" id="70">
+				<AdditionSource>
+					<Item>ТабличнаяЧастьЗаявки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧастьЗаявкиСтрокаПоискаКонтекстноеМеню" id="71"/>
+				<ExtendedTooltip name="ТабличнаяЧастьЗаявкиСтрокаПоискаРасширеннаяПодсказка" id="72"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТабличнаяЧастьЗаявкиСостояниеПросмотра" id="73">
+				<AdditionSource>
+					<Item>ТабличнаяЧастьЗаявки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧастьЗаявкиСостояниеПросмотраКонтекстноеМеню" id="74"/>
+				<ExtendedTooltip name="ТабличнаяЧастьЗаявкиСостояниеПросмотраРасширеннаяПодсказка" id="75"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТабличнаяЧастьЗаявкиУправлениеПоиском" id="76">
+				<AdditionSource>
+					<Item>ТабличнаяЧастьЗаявки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧастьЗаявкиУправлениеПоискомКонтекстноеМеню" id="77"/>
+				<ExtendedTooltip name="ТабличнаяЧастьЗаявкиУправлениеПоискомРасширеннаяПодсказка" id="78"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТабличнаяЧастьЗаявкиНомерСтроки" id="79">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиНомерСтрокиКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиНомерСтрокиРасширеннаяПодсказка" id="81"/>
+				</LabelField>
+				<InputField name="ТабличнаяЧастьЗаявкиСсылка" id="100">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.Ссылка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиСсылкаКонтекстноеМеню" id="101"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиСсылкаРасширеннаяПодсказка" id="102"/>
+				</InputField>
+				<InputField name="ТабличнаяЧастьЗаявкиГУИД" id="82">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.ГУИД</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиГУИДКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиГУИДРасширеннаяПодсказка" id="84"/>
+				</InputField>
+				<InputField name="ТабличнаяЧастьЗаявкиНомерЛСЗ" id="85">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.НомерЛСЗ</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиНомерЛСЗКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиНомерЛСЗРасширеннаяПодсказка" id="87"/>
+				</InputField>
+				<InputField name="ТабличнаяЧастьЗаявкиСуммаДокумента" id="88">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.СуммаДокумента</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиСуммаДокументаКонтекстноеМеню" id="89"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиСуммаДокументаРасширеннаяПодсказка" id="90"/>
+				</InputField>
+				<InputField name="ТабличнаяЧастьЗаявкиНомерВходящегоДокумента" id="91">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.НомерВходящегоДокумента</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиНомерВходящегоДокументаКонтекстноеМеню" id="92"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиНомерВходящегоДокументаРасширеннаяПодсказка" id="93"/>
+				</InputField>
+				<InputField name="ТабличнаяЧастьЗаявкиДатаВходящегоДокумента" id="94">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.ДатаВходящегоДокумента</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиДатаВходящегоДокументаКонтекстноеМеню" id="95"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиДатаВходящегоДокументаРасширеннаяПодсказка" id="96"/>
+				</InputField>
+				<InputField name="ТабличнаяЧастьЗаявкиИНН" id="97">
+					<DataPath>Объект.ТабличнаяЧастьЗаявки.ИНН</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТабличнаяЧастьЗаявкиИННКонтекстноеМеню" id="98"/>
+					<ExtendedTooltip name="ТабличнаяЧастьЗаявкиИННРасширеннаяПодсказка" id="99"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ВыборЗагружаемыхДокументовДляЗаявкиНаОплату</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьВПрисоединенныеФайлы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поместить в Заявку на оплату</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить в присоединенные файлы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьВПрисоединенныеФайлы</Action>
+		</Command>
+		<Command name="УстановитьГалочки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить галочки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить галочки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьГалочки</Action>
+		</Command>
+		<Command name="СнятьГалочки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять галочки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять галочки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СнятьГалочки</Action>
+		</Command>
+		<Command name="ПолучитьФайлыСмежныхСистем" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить файлы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить файлы смежных систем</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьФайлыСмежныхСистем</Action>
+		</Command>
+	</Commands>
+</Form>

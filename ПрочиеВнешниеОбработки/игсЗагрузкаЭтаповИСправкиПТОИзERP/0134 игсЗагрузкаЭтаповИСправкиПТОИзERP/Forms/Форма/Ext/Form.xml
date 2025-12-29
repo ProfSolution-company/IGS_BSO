@@ -1,0 +1,1497 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="ЗагрузкаЭтаповСтраница" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка этапов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка этапов страница</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ЗагрузкаЭтаповСтраницаРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<Table name="Этапы" id="7">
+							<ChangeRowSet>false</ChangeRowSet>
+							<MultipleChoice>true</MultipleChoice>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Этапы</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЭтапыКонтекстноеМеню" id="8"/>
+							<AutoCommandBar name="ЭтапыКоманднаяПанель" id="9">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="УстановитьГалочки" id="58">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+										<CommandName>Form.Command.УстановитьГалочки</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.CheckAll</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Установить галочки в таблице</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="УстановитьГалочкиРасширеннаяПодсказка" id="59"/>
+									</Button>
+									<Button name="СнятьГалочки" id="60">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+										<CommandName>Form.Command.СнятьГалочки</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Снять галочки в таблице</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="СнятьГалочкиРасширеннаяПодсказка" id="61"/>
+									</Button>
+									<Button name="Обновить" id="62">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.ПрочитатьДанные</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.Refresh</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Обновить</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="63"/>
+									</Button>
+									<Button name="СоздатьЭтапы" id="64">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.СоздатьЭтапы</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="СоздатьЭтапыРасширеннаяПодсказка" id="65"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЭтапыРасширеннаяПодсказка" id="10"/>
+							<SearchStringAddition name="ЭтапыСтрокаПоиска" id="11">
+								<AdditionSource>
+									<Item>Этапы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭтапыСтрокаПоискаКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="ЭтапыСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЭтапыСостояниеПросмотра" id="14">
+								<AdditionSource>
+									<Item>Этапы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭтапыСостояниеПросмотраКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="ЭтапыСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЭтапыУправлениеПоиском" id="17">
+								<AdditionSource>
+									<Item>Этапы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭтапыУправлениеПоискомКонтекстноеМеню" id="18"/>
+								<ExtendedTooltip name="ЭтапыУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЭтапыНомерСтроки" id="20">
+									<DataPath>Объект.Этапы.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЭтапыНомерСтрокиКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ЭтапыНомерСтрокиРасширеннаяПодсказка" id="22"/>
+								</LabelField>
+								<CheckBoxField name="ЭтапыВыбор" id="23">
+									<DataPath>Объект.Этапы.Выбор</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыВыборКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ЭтапыВыборРасширеннаяПодсказка" id="25"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыСценарий" id="26">
+									<DataPath>Объект.Этапы.Сценарий</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыСценарийКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ЭтапыСценарийРасширеннаяПодсказка" id="28"/>
+								</InputField>
+								<InputField name="ЭтапыПроект" id="29">
+									<DataPath>Объект.Этапы.Проект</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыПроектКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ЭтапыПроектРасширеннаяПодсказка" id="31"/>
+									<Events>
+										<Event name="OnChange">ЭтапыПроектПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ЭтапыПроектЭтоСтрока" id="141">
+									<DataPath>Объект.Этапы.ПроектЭтоСтрока</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыПроектЭтоСтрокаКонтекстноеМеню" id="142"/>
+									<ExtendedTooltip name="ЭтапыПроектЭтоСтрокаРасширеннаяПодсказка" id="143"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыМесторождение" id="32">
+									<DataPath>Объект.Этапы.Месторождение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыМесторождениеКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ЭтапыМесторождениеРасширеннаяПодсказка" id="34"/>
+									<Events>
+										<Event name="OnChange">ЭтапыМесторождениеПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ЭтапыМесторождениеЭтоСтрока" id="144">
+									<DataPath>Объект.Этапы.МесторождениеЭтоСтрока</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыМесторождениеЭтоСтрокаКонтекстноеМеню" id="145"/>
+									<ExtendedTooltip name="ЭтапыМесторождениеЭтоСтрокаРасширеннаяПодсказка" id="146"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыКуст" id="35">
+									<DataPath>Объект.Этапы.Куст</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыКустКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ЭтапыКустРасширеннаяПодсказка" id="37"/>
+									<Events>
+										<Event name="OnChange">ЭтапыКустПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ЭтапыКустЭтоСтрока" id="147">
+									<DataPath>Объект.Этапы.КустЭтоСтрока</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыКустЭтоСтрокаКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="ЭтапыКустЭтоСтрокаРасширеннаяПодсказка" id="149"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыСкважина" id="38">
+									<DataPath>Объект.Этапы.Скважина</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыСкважинаКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ЭтапыСкважинаРасширеннаяПодсказка" id="40"/>
+									<Events>
+										<Event name="OnChange">ЭтапыСкважинаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ЭтапыСкважинаЭтоСтрока" id="150">
+									<DataPath>Объект.Этапы.СкважинаЭтоСтрока</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыСкважинаЭтоСтрокаКонтекстноеМеню" id="151"/>
+									<ExtendedTooltip name="ЭтапыСкважинаЭтоСтрокаРасширеннаяПодсказка" id="152"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыЭтап" id="41">
+									<DataPath>Объект.Этапы.Этап</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыЭтапКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ЭтапыЭтапРасширеннаяПодсказка" id="43"/>
+									<Events>
+										<Event name="OnChange">ЭтапыЭтапПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ЭтапыЭтапЭтоСтрока" id="156">
+									<DataPath>Объект.Этапы.ЭтапЭтоСтрока</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыЭтапЭтоСтрокаКонтекстноеМеню" id="157"/>
+									<ExtendedTooltip name="ЭтапыЭтапЭтоСтрокаРасширеннаяПодсказка" id="158"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыВидРабот" id="44">
+									<DataPath>Объект.Этапы.ВидРабот</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыВидРаботКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ЭтапыВидРаботРасширеннаяПодсказка" id="46"/>
+									<Events>
+										<Event name="OnChange">ЭтапыВидРаботПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ЭтапыВидРаботЭтоСтрока" id="153">
+									<DataPath>Объект.Этапы.ВидРаботЭтоСтрока</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыВидРаботЭтоСтрокаКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="ЭтапыВидРаботЭтоСтрокаРасширеннаяПодсказка" id="155"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыИмяФайла" id="47">
+									<DataPath>Объект.Этапы.ИмяФайла</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыИмяФайлаКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ЭтапыИмяФайлаРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<CheckBoxField name="ЭтапыПроектРедактируется" id="159">
+									<DataPath>Объект.Этапы.ПроектРедактируется</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыПроектРедактируетсяКонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="ЭтапыПроектРедактируетсяРасширеннаяПодсказка" id="161"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЭтапыВидРаботРедактируется" id="162">
+									<DataPath>Объект.Этапы.ВидРаботРедактируется</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыВидРаботРедактируетсяКонтекстноеМеню" id="163"/>
+									<ExtendedTooltip name="ЭтапыВидРаботРедактируетсяРасширеннаяПодсказка" id="164"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЭтапыЭтапРедактируется" id="165">
+									<DataPath>Объект.Этапы.ЭтапРедактируется</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыЭтапРедактируетсяКонтекстноеМеню" id="166"/>
+									<ExtendedTooltip name="ЭтапыЭтапРедактируетсяРасширеннаяПодсказка" id="167"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЭтапыСкважинаРедактируется" id="168">
+									<DataPath>Объект.Этапы.СкважинаРедактируется</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыСкважинаРедактируетсяКонтекстноеМеню" id="169"/>
+									<ExtendedTooltip name="ЭтапыСкважинаРедактируетсяРасширеннаяПодсказка" id="170"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЭтапыКустРедактируется" id="171">
+									<DataPath>Объект.Этапы.КустРедактируется</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыКустРедактируетсяКонтекстноеМеню" id="172"/>
+									<ExtendedTooltip name="ЭтапыКустРедактируетсяРасширеннаяПодсказка" id="173"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЭтапыМесторождениеРедактируется" id="174">
+									<DataPath>Объект.Этапы.МесторождениеРедактируется</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыМесторождениеРедактируетсяКонтекстноеМеню" id="175"/>
+									<ExtendedTooltip name="ЭтапыМесторождениеРедактируетсяРасширеннаяПодсказка" id="176"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СправкаПТОЭтапыСтраница" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Справка ПТО (Этапы)</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Справка ПТОЭтапы страница</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СправкаПТОЭтапыСтраницаРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаКнопкиСтр2" id="129">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКнопкиСтр2РасширеннаяПодсказка" id="130"/>
+							<ChildItems>
+								<Button name="ЗаполнитьЗаново" id="139">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.ЗаполнитьЗаново</CommandName>
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Picture>
+										<xr:Ref>StdPicture.Reread</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ЗаполнитьЗановоРасширеннаяПодсказка" id="140"/>
+								</Button>
+								<Button name="Прочитать" id="131">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.Прочитать</CommandName>
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Picture>
+										<xr:Ref>StdPicture.MoveDown</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ПрочитатьРасширеннаяПодсказка" id="132"/>
+								</Button>
+								<Button name="Записать" id="133">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.Записать</CommandName>
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Picture>
+										<xr:Ref>StdPicture.Write</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="134"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаРеквизитыСтр2" id="127">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРеквизитыСтр2РасширеннаяПодсказка" id="128"/>
+							<ChildItems>
+								<InputField name="Организация" id="121">
+									<DataPath>Объект.Организация</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ОрганизацияКонтекстноеМеню" id="122"/>
+									<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="123"/>
+								</InputField>
+								<InputField name="Период" id="124">
+									<DataPath>Объект.Период</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПериодКонтекстноеМеню" id="125"/>
+									<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="126"/>
+									<Events>
+										<Event name="OnChange">ПериодПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ЭтапыПТО" id="66">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ЭтапыПТО</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЭтапыПТОКонтекстноеМеню" id="67"/>
+							<AutoCommandBar name="ЭтапыПТОКоманднаяПанель" id="68"/>
+							<ExtendedTooltip name="ЭтапыПТОРасширеннаяПодсказка" id="69"/>
+							<SearchStringAddition name="ЭтапыПТОСтрокаПоиска" id="70">
+								<AdditionSource>
+									<Item>ЭтапыПТО</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭтапыПТОСтрокаПоискаКонтекстноеМеню" id="71"/>
+								<ExtendedTooltip name="ЭтапыПТОСтрокаПоискаРасширеннаяПодсказка" id="72"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЭтапыПТОСостояниеПросмотра" id="73">
+								<AdditionSource>
+									<Item>ЭтапыПТО</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭтапыПТОСостояниеПросмотраКонтекстноеМеню" id="74"/>
+								<ExtendedTooltip name="ЭтапыПТОСостояниеПросмотраРасширеннаяПодсказка" id="75"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЭтапыПТОУправлениеПоиском" id="76">
+								<AdditionSource>
+									<Item>ЭтапыПТО</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭтапыПТОУправлениеПоискомКонтекстноеМеню" id="77"/>
+								<ExtendedTooltip name="ЭтапыПТОУправлениеПоискомРасширеннаяПодсказка" id="78"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЭтапыПТОНомерСтроки" id="79">
+									<DataPath>Объект.ЭтапыПТО.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЭтапыПТОНомерСтрокиКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="ЭтапыПТОНомерСтрокиРасширеннаяПодсказка" id="81"/>
+								</LabelField>
+								<InputField name="ЭтапыПТОНоменклатурнаяГруппа" id="82">
+									<DataPath>Объект.ЭтапыПТО.НоменклатурнаяГруппа</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыПТОНоменклатурнаяГруппаКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="ЭтапыПТОНоменклатурнаяГруппаРасширеннаяПодсказка" id="84"/>
+									<Events>
+										<Event name="OnChange">ЭтапыПТОНоменклатурнаяГруппаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="ЭтапыПТО_ПериодГруппа" id="137">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Этапы ПТО период группа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ЭтапыПТО_ПериодГруппаРасширеннаяПодсказка" id="138"/>
+									<ChildItems>
+										<InputField name="ЭтапыПТОДатаНачала" id="85">
+											<DataPath>Объект.ЭтапыПТО.ДатаНачала</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>с</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ЭтапыПТОДатаНачалаКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="ЭтапыПТОДатаНачалаРасширеннаяПодсказка" id="87"/>
+											<Events>
+												<Event name="OnChange">ЭтапыПТОДатаНачалаПриИзменении</Event>
+												<Event name="StartChoice">ЭтапыПТОДатаНачалаНачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ЭтапыПТОДатаОкончания" id="88">
+											<DataPath>Объект.ЭтапыПТО.ДатаОкончания</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>по</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ЭтапыПТОДатаОкончанияКонтекстноеМеню" id="89"/>
+											<ExtendedTooltip name="ЭтапыПТОДатаОкончанияРасширеннаяПодсказка" id="90"/>
+											<Events>
+												<Event name="OnChange">ЭтапыПТОДатаОкончанияПриИзменении</Event>
+												<Event name="StartChoice">ЭтапыПТОДатаОкончанияНачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ЭтапыПТОКоличествоСуток" id="91">
+									<DataPath>Объект.ЭтапыПТО.КоличествоСуток</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыПТОКоличествоСутокКонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="ЭтапыПТОКоличествоСутокРасширеннаяПодсказка" id="93"/>
+								</InputField>
+								<ColumnGroup name="ЭтапыПТО_ГруппаИнтервал" id="135">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Интервал, м</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Этапы ПТО группа интервал</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ЭтапыПТО_ГруппаИнтервалРасширеннаяПодсказка" id="136"/>
+									<ChildItems>
+										<InputField name="ЭтапыПТОНачалоИнтервала" id="94">
+											<DataPath>Объект.ЭтапыПТО.НачалоИнтервала</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>от</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ЭтапыПТОНачалоИнтервалаКонтекстноеМеню" id="95"/>
+											<ExtendedTooltip name="ЭтапыПТОНачалоИнтервалаРасширеннаяПодсказка" id="96"/>
+											<Events>
+												<Event name="OnChange">ЭтапыПТОНачалоИнтервалаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ЭтапыПТООкончаниеИнтервала" id="97">
+											<DataPath>Объект.ЭтапыПТО.ОкончаниеИнтервала</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>до</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ЭтапыПТООкончаниеИнтервалаКонтекстноеМеню" id="98"/>
+											<ExtendedTooltip name="ЭтапыПТООкончаниеИнтервалаРасширеннаяПодсказка" id="99"/>
+											<Events>
+												<Event name="OnChange">ЭтапыПТООкончаниеИнтервалаПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ЭтапыПТОПроходка" id="100">
+									<DataPath>Объект.ЭтапыПТО.Проходка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыПТОПроходкаКонтекстноеМеню" id="101"/>
+									<ExtendedTooltip name="ЭтапыПТОПроходкаРасширеннаяПодсказка" id="102"/>
+								</InputField>
+								<CheckBoxField name="ЭтапыПТОУдалитьЭтоБурение" id="103">
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыПТОУдалитьЭтоБурениеКонтекстноеМеню" id="104"/>
+									<ExtendedTooltip name="ЭтапыПТОУдалитьЭтоБурениеРасширеннаяПодсказка" id="105"/>
+								</CheckBoxField>
+								<InputField name="ЭтапыПТОБригада" id="106">
+									<DataPath>Объект.ЭтапыПТО.Бригада</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыПТОБригадаКонтекстноеМеню" id="107"/>
+									<ExtendedTooltip name="ЭтапыПТОБригадаРасширеннаяПодсказка" id="108"/>
+									<Events>
+										<Event name="OnChange">ЭтапыПТОБригадаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ЭтапыПТОБуроваяУстановка" id="109">
+									<DataPath>Объект.ЭтапыПТО.БуроваяУстановка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыПТОБуроваяУстановкаКонтекстноеМеню" id="110"/>
+									<ExtendedTooltip name="ЭтапыПТОБуроваяУстановкаРасширеннаяПодсказка" id="111"/>
+									<Events>
+										<Event name="OnChange">ЭтапыПТОБуроваяУстановкаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ЭтапыПТОГУИДЭтапа" id="112">
+									<DataPath>Объект.ЭтапыПТО.ГУИДЭтапа</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ЭтапыПТОГУИДЭтапаКонтекстноеМеню" id="113"/>
+									<ExtendedTooltip name="ЭтапыПТОГУИДЭтапаРасширеннаяПодсказка" id="114"/>
+								</InputField>
+								<CheckBoxField name="ЭтапыПТОСогласованоДляВыгрузкиВУСО" id="115">
+									<DataPath>Объект.ЭтапыПТО.СогласованоДляВыгрузкиВУСО</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыПТОСогласованоДляВыгрузкиВУСОКонтекстноеМеню" id="116"/>
+									<ExtendedTooltip name="ЭтапыПТОСогласованоДляВыгрузкиВУСОРасширеннаяПодсказка" id="117"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЭтапыПТОВыгружатьВУСО" id="118">
+									<DataPath>Объект.ЭтапыПТО.ВыгружатьВУСО</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтапыПТОВыгружатьВУСОКонтекстноеМеню" id="119"/>
+									<ExtendedTooltip name="ЭтапыПТОВыгружатьВУСОРасширеннаяПодсказка" id="120"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаПодвал" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="57"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="53">
+					<DataPath>Объект.Комментарий</DataPath>
+					<Width>35</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="Ответственный" id="50">
+					<DataPath>Объект.Ответственный</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="52"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.игсЗагрузкаЭтаповИСправкиПТОИзERP</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.ЭтапыПТО">
+					<Column name="НоменклатурнаяГруппаЭтоСтрока" id="1">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="БуроваяУстановкаЭтоСтрока" id="2">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="БригадаЭтоСтрока" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Бригада это строка</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="Объект.Этапы">
+					<Column name="ПроектЭтоСтрока" id="1">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="МесторождениеЭтоСтрока" id="2">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КустЭтоСтрока" id="3">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СкважинаЭтоСтрока" id="4">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ЭтапЭтоСтрока" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Этап это строка</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВидРаботЭтоСтрока" id="6">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ПроектРедактируется" id="7">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Проект редактируется</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="МесторождениеРедактируется" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Месторождение редактируется</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КустРедактируется" id="9">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Куст редактируется</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СкважинаРедактируется" id="10">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Скважина редактируется</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ЭтапРедактируется" id="11">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Этап редактируется</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВидРаботРедактируется" id="12">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Вид работ редактируется</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДействияЗагрузкаЭтапов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Действия загрузка этапов</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ОсновнаяПапкаПроектов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная папка проектов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.НоменклатурныеГруппы</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыПроект</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ПроектЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыМесторождение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.МесторождениеЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыКуст</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.КустЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыСкважина</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.СкважинаЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыЭтап</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ЭтапЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыВидРабот</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ВидРаботЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:use>false</dcsset:use>
+				<dcsset:selection/>
+				<dcsset:filter/>
+				<dcsset:appearance/>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыПТОНоменклатурнаяГруппа</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ЭтапыПТО.НоменклатурнаяГруппаЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыПТОБуроваяУстановка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ЭтапыПТО.БуроваяУстановкаЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыПТОБригада</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.ЭтапыПТО.БригадаЭтоСтрока</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:use>false</dcsset:use>
+				<dcsset:selection/>
+				<dcsset:filter/>
+				<dcsset:appearance/>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыПроект</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ПроектРедактируется</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыМесторождение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.МесторождениеРедактируется</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыКуст</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.КустРедактируется</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыСкважина</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.СкважинаРедактируется</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыЭтап</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ЭтапРедактируется</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыВидРабот</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ВидРаботРедактируется</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAFAF</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:use>false</dcsset:use>
+				<dcsset:selection/>
+				<dcsset:filter/>
+				<dcsset:appearance/>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыПроект</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ПроектРедактируется</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ПроектЭтоСтрока</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFFD4</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыМесторождение</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.МесторождениеРедактируется</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.МесторождениеЭтоСтрока</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFFD4</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыКуст</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.КустРедактируется</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.КустЭтоСтрока</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFFD4</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыСкважина</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.СкважинаРедактируется</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.СкважинаЭтоСтрока</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFFD4</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыЭтап</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ЭтапРедактируется</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ЭтапЭтоСтрока</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFFD4</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЭтапыВидРабот</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ВидРаботРедактируется</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.Этапы.ВидРаботЭтоСтрока</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFFFD4</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Доступность</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="УстановитьГалочки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить галочки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>УстановитьГалочки</Action>
+		</Command>
+		<Command name="СнятьГалочки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять галочки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СнятьГалочки</Action>
+		</Command>
+		<Command name="ПрочитатьДанные" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПрочитатьДанные</Action>
+		</Command>
+		<Command name="СоздатьЭтапы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать этапы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать этапы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьЭтапы</Action>
+		</Command>
+		<Command name="Прочитать" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Прочитать</Action>
+		</Command>
+		<Command name="Записать" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Записать</Action>
+		</Command>
+		<Command name="ЗаполнитьЗаново" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить заново</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить заново</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьЗаново</Action>
+		</Command>
+	</Commands>
+</Form>

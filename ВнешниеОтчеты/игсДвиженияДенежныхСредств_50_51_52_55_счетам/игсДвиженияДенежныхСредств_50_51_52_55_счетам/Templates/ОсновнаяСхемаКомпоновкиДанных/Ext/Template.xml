@@ -1,0 +1,2031 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetUnion">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Счет</dataPath>
+			<field>Счет</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто1</dataPath>
+			<field>Субконто1</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто2</dataPath>
+			<field>Субконто2</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проект</dataPath>
+			<field>Проект</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НазначениеПлатежа</dataPath>
+			<field>НазначениеПлатежа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначение платежа</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Организации</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерПП</dataPath>
+			<field>НомерПП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ПП №</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Субконто3</dataPath>
+			<field>Субконто3</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто2</dataPath>
+			<field>КорСубконто2</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто1</dataPath>
+			<field>КорСубконто1</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСубконто3</dataPath>
+			<field>КорСубконто3</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаКор</dataPath>
+			<field>ВалютаКор</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКор</dataPath>
+			<field>ПодразделениеКор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КорСчет</dataPath>
+			<field>КорСчет</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяФинПлана</dataPath>
+			<field>СтатьяФинПлана</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статья фин плана</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РС_Касса</dataPath>
+			<field>РС_Касса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Месяц</dataPath>
+			<field>Месяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='ММMM yy'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПервыйУровень</dataPath>
+			<field>ПервыйУровень</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уровень 1</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВторойУровень</dataPath>
+			<field>ВторойУровень</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уровень 2</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетКт</dataPath>
+			<field>СчетКт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет Кт</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">8</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТретийУровень</dataPath>
+			<field>ТретийУровень</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уровень 3</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЧетвертыйУровень</dataPath>
+			<field>ЧетвертыйУровень</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уровень 4</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПятыйУровень</dataPath>
+			<field>ПятыйУровень</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уровень 5</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>Код</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код статьи</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЮрЛицо</dataPath>
+			<field>ЮрЛицо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юр. лицо</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Размещение</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПП</dataPath>
+			<field>ДатаПП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ПП Дата</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">9</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетДт</dataPath>
+			<field>СчетДт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет Дт</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">8</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<item xsi:type="DataSetQuery">
+			<name>50.01_50.02</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Счет</dataPath>
+				<field>Счет</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Субконто1</dataPath>
+				<field>Субконто1</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Субконто2</dataPath>
+				<field>Субконто2</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Проект</dataPath>
+				<field>Проект</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проект</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Контрагент</dataPath>
+				<field>Контрагент</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Контрагент</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НазначениеПлатежа</dataPath>
+				<field>НазначениеПлатежа</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Назначение платежа</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НомерПП</dataPath>
+				<field>НомерПП</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Номер ПП</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Субконто3</dataPath>
+				<field>Субконто3</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСубконто2</dataPath>
+				<field>КорСубконто2</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подразделение</dataPath>
+				<field>Подразделение</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСубконто1</dataPath>
+				<field>КорСубконто1</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСубконто3</dataPath>
+				<field>КорСубконто3</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВалютаКор</dataPath>
+				<field>ВалютаКор</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодразделениеКор</dataPath>
+				<field>ПодразделениеКор</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСчет</dataPath>
+				<field>КорСчет</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Сумма</dataPath>
+				<field>Сумма</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сумма</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяФинПлана</dataPath>
+				<field>СтатьяФинПлана</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Статья фин плана</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>РС_Касса</dataPath>
+				<field>РС_Касса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Р с касса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Месяц</dataPath>
+				<field>Месяц</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Месяц</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:periodNumber>3</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПервыйУровень</dataPath>
+				<field>ПервыйУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Первый уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВторойУровень</dataPath>
+				<field>ВторойУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Второй уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетКт</dataPath>
+				<field>СчетКт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет кт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТретийУровень</dataPath>
+				<field>ТретийУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Третий уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЧетвертыйУровень</dataPath>
+				<field>ЧетвертыйУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Четвертый уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПятыйУровень</dataPath>
+				<field>ПятыйУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пятый уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Код</dataPath>
+				<field>Код</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Код</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЮрЛицо</dataPath>
+				<field>ЮрЛицо</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Юр лицо</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаПП</dataPath>
+				<field>ДатаПП</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата ПП</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетДт</dataPath>
+				<field>СчетДт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет дт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Период</dataPath>
+				<field>Период</field>
+				<role>
+					<dcscom:periodNumber>2</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ВЫБОР
+		КОГДА &amp;ОборотыПо50_1
+			ТОГДА ЗНАЧЕНИЕ(ПланСчетов.Хозрасчетный.КассаОрганизации)
+	КОНЕЦ КАК Счет
+ПОМЕСТИТЬ ОтборПоСчетам
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;ОборотыПо50_1
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА &amp;ОборотыПо50_2
+			ТОГДА ЗНАЧЕНИЕ(ПланСчетов.Хозрасчетный.ОперационнаяКасса)
+	КОНЕЦ
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;ОборотыПо50_2
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ХозрасчетныйОбороты.Счет КАК Счет,
+	ХозрасчетныйОбороты.Субконто1 КАК СтатьяФинПлана,
+	НЕОПРЕДЕЛЕНО КАК РС_Касса,
+	ХозрасчетныйОбороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.КорСубконто1 ССЫЛКА Справочник.Контрагенты
+			ТОГДА ВЫРАЗИТЬ(ХозрасчетныйОбороты.КорСубконто2 КАК Справочник.Контрагенты)
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Контрагент,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.КорСубконто2 ССЫЛКА Справочник.ДоговорыКонтрагентов
+			ТОГДА ВЫРАЗИТЬ(ХозрасчетныйОбороты.КорСубконто2 КАК Справочник.ДоговорыКонтрагентов)
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Договор,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.СуммаОборотДт &lt;&gt; 0
+			ТОГДА ХозрасчетныйОбороты.Счет
+		ИНАЧЕ ХозрасчетныйОбороты.КорСчет
+	КОНЕЦ КАК СчетДт,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.СуммаОборотКт &lt;&gt; 0
+			ТОГДА ХозрасчетныйОбороты.Счет
+		ИНАЧЕ ХозрасчетныйОбороты.КорСчет
+	КОНЕЦ КАК СчетКт,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.ПлатежноеПоручение)
+			ТОГДА ХозрасчетныйОбороты.Регистратор.НомерВходящегоДокумента
+		ИНАЧЕ ХозрасчетныйОбороты.Регистратор.Номер
+	КОНЕЦ КАК НомерПП,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.ПлатежноеПоручение)
+			ТОГДА ХозрасчетныйОбороты.Регистратор.ДатаВходящегоДокумента
+		ИНАЧЕ ХозрасчетныйОбороты.Регистратор.Дата
+	КОНЕЦ КАК ДатаПП,
+	ХозрасчетныйОбороты.Организация КАК ЮрЛицо,
+	ХозрасчетныйОбороты.Регистратор.НазначениеПлатежа КАК НазначениеПлатежа,
+	ХозрасчетныйОбороты.СуммаОборот КАК Сумма,
+	ХозрасчетныйОбороты.Период КАК Период
+ПОМЕСТИТЬ ВТ_Обороты_50
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Обороты(
+			,
+			,
+			Регистратор,
+			Счет В ИЕРАРХИИ
+				(ВЫБРАТЬ
+					Таб.Счет
+				ИЗ
+					ОтборПоСчетам КАК Таб),
+			&amp;ВидыСубконто_50,
+			(&amp;ОборотыПо50_1
+				ИЛИ &amp;ОборотыПо50_2)
+				И Организация = &amp;Организация,
+			,
+			) КАК ХозрасчетныйОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ПервыйУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаПервыйУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_50 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ВторойУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаВторойУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаПервыйУровень КАК СтатьиФинПланаПервыйУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаПервыйУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_50 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ТретийУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаТретийУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаВторойУровень КАК СтатьиФинПланаВторойУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаВторойУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_50 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ЧетвертыйУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаЧетвертыйУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаТретийУровень КАК СтатьиФинПланаТретийУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаТретийУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_50 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ПятыйУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаПятыйУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаЧетвертыйУровень КАК СтатьиФинПланаЧетвертыйУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаЧетвертыйУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_50 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СтатьиФинПланаПервыйУровень.СтатьяФинПлана КАК СтатьяФинПлана,
+	СтатьиФинПланаПервыйУровень.ПервыйУровень КАК ПервыйУровень,
+	СтатьиФинПланаВторойУровень.ВторойУровень КАК ВторойУровень,
+	СтатьиФинПланаТретийУровень.ТретийУровень КАК ТретийУровень,
+	СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень КАК ЧетвертыйУровень,
+	СтатьиФинПланаПятыйУровень.ПятыйУровень КАК ПятыйУровень
+ПОМЕСТИТЬ СтатьиФинПланаСУровнями
+ИЗ
+	СтатьиФинПланаПервыйУровень КАК СтатьиФинПланаПервыйУровень
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаВторойУровень КАК СтатьиФинПланаВторойУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаВторойУровень.СтатьяФинПлана
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаТретийУровень КАК СтатьиФинПланаТретийУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаТретийУровень.СтатьяФинПлана
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаЧетвертыйУровень КАК СтатьиФинПланаЧетвертыйУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаЧетвертыйУровень.СтатьяФинПлана
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаПятыйУровень КАК СтатьиФинПланаПятыйУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаПятыйУровень.СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Обороты_50.Счет КАК Счет,
+	ВТ_Обороты_50.СтатьяФинПлана КАК СтатьяФинПлана,
+	ВТ_Обороты_50.РС_Касса КАК РС_Касса,
+	ВТ_Обороты_50.Регистратор КАК Регистратор,
+	ВТ_Обороты_50.Сумма КАК Сумма,
+	СтатьиФинПланаСУровнями.ПервыйУровень КАК ПервыйУровень,
+	СтатьиФинПланаСУровнями.ВторойУровень КАК ВторойУровень,
+	СтатьиФинПланаСУровнями.ТретийУровень КАК ТретийУровень,
+	СтатьиФинПланаСУровнями.ЧетвертыйУровень КАК ЧетвертыйУровень,
+	СтатьиФинПланаСУровнями.ПятыйУровень КАК ПятыйУровень,
+	ВЫБОР
+		КОГДА НЕ СтатьиФинПланаСУровнями.ПятыйУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ПятыйУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ЧетвертыйУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ЧетвертыйУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ТретийУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ТретийУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ВторойУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ВторойУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ПервыйУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ПервыйУровень.Код
+		ИНАЧЕ ""
+	КОНЕЦ КАК Код,
+	ВТ_Обороты_50.НазначениеПлатежа КАК НазначениеПлатежа,
+	ВТ_Обороты_50.ЮрЛицо КАК ЮрЛицо,
+	ВТ_Обороты_50.ДатаПП КАК ДатаПП,
+	ВТ_Обороты_50.НомерПП КАК НомерПП,
+	ВТ_Обороты_50.СчетКт КАК СчетКт,
+	ВТ_Обороты_50.СчетДт КАК СчетДт,
+	ВТ_Обороты_50.Контрагент КАК Контрагент,
+	ВТ_Обороты_50.Период КАК Период,
+	ВТ_Обороты_50.Период КАК Месяц,
+	ВТ_Обороты_50.Регистратор.игсПроект КАК Проект
+ИЗ
+	ВТ_Обороты_50 КАК ВТ_Обороты_50
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаСУровнями КАК СтатьиФинПланаСУровнями
+		ПО ВТ_Обороты_50.СтатьяФинПлана = СтатьиФинПланаСУровнями.СтатьяФинПлана</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>51_52_55</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Счет</dataPath>
+				<field>Счет</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Субконто1</dataPath>
+				<field>Субконто1</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Субконто2</dataPath>
+				<field>Субконто2</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Проект</dataPath>
+				<field>Проект</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проект</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Контрагент</dataPath>
+				<field>Контрагент</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Контрагент</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НазначениеПлатежа</dataPath>
+				<field>НазначениеПлатежа</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Назначение платежа</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НомерПП</dataPath>
+				<field>НомерПП</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Номер ПП</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Субконто3</dataPath>
+				<field>Субконто3</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСубконто2</dataPath>
+				<field>КорСубконто2</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подразделение</dataPath>
+				<field>Подразделение</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСубконто1</dataPath>
+				<field>КорСубконто1</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСубконто3</dataPath>
+				<field>КорСубконто3</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВалютаКор</dataPath>
+				<field>ВалютаКор</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодразделениеКор</dataPath>
+				<field>ПодразделениеКор</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>КорСчет</dataPath>
+				<field>КорСчет</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Сумма</dataPath>
+				<field>Сумма</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сумма</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтатьяФинПлана</dataPath>
+				<field>СтатьяФинПлана</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Статья фин плана</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>РС_Касса</dataPath>
+				<field>РС_Касса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Р с касса</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Месяц</dataPath>
+				<field>Месяц</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Месяц</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:periodNumber>3</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПервыйУровень</dataPath>
+				<field>ПервыйУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Первый уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВторойУровень</dataPath>
+				<field>ВторойУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Второй уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетКт</dataPath>
+				<field>СчетКт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет кт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТретийУровень</dataPath>
+				<field>ТретийУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Третий уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЧетвертыйУровень</dataPath>
+				<field>ЧетвертыйУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Четвертый уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПятыйУровень</dataPath>
+				<field>ПятыйУровень</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пятый уровень</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Код</dataPath>
+				<field>Код</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Код</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЮрЛицо</dataPath>
+				<field>ЮрЛицо</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Юр лицо</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаПП</dataPath>
+				<field>ДатаПП</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата ПП</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетДт</dataPath>
+				<field>СчетДт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет дт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Период</dataPath>
+				<field>Период</field>
+				<role>
+					<dcscom:periodNumber>2</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ВЫБОР
+		КОГДА &amp;ОборотыПо51
+			ТОГДА ЗНАЧЕНИЕ(ПланСчетов.Хозрасчетный.РасчетныеСчета)
+	КОНЕЦ КАК Счет
+ПОМЕСТИТЬ ОтборПоСчетам
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;ОборотыПо51
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА &amp;ОборотыПо52
+			ТОГДА ЗНАЧЕНИЕ(ПланСчетов.Хозрасчетный.ВалютныеСчета)
+	КОНЕЦ
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;ОборотыПо52
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА &amp;ОборотыПо55
+			ТОГДА ЗНАЧЕНИЕ(ПланСчетов.Хозрасчетный.СпециальныеСчета)
+	КОНЕЦ
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;ОборотыПо55
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ХозрасчетныйОбороты.Счет КАК Счет,
+	ХозрасчетныйОбороты.Субконто2 КАК СтатьяФинПлана,
+	ХозрасчетныйОбороты.Субконто1 КАК РС_Касса,
+	ХозрасчетныйОбороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.КорСубконто1 ССЫЛКА Справочник.Контрагенты
+			ТОГДА ХозрасчетныйОбороты.КорСубконто1
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Контрагент,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.КорСубконто2 ССЫЛКА Справочник.ДоговорыКонтрагентов
+			ТОГДА ВЫРАЗИТЬ(ХозрасчетныйОбороты.КорСубконто2 КАК Справочник.ДоговорыКонтрагентов)
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Договор,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.СуммаОборотДт &lt;&gt; 0
+			ТОГДА ХозрасчетныйОбороты.Счет
+		ИНАЧЕ ХозрасчетныйОбороты.КорСчет
+	КОНЕЦ КАК СчетДт,
+	ВЫБОР
+		КОГДА ХозрасчетныйОбороты.СуммаОборотКт &lt;&gt; 0
+			ТОГДА ХозрасчетныйОбороты.Счет
+		ИНАЧЕ ХозрасчетныйОбороты.КорСчет
+	КОНЕЦ КАК СчетКт,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.ПлатежноеПоручение)
+			ТОГДА ХозрасчетныйОбороты.Регистратор.НомерВходящегоДокумента
+		ИНАЧЕ ХозрасчетныйОбороты.Регистратор.Номер
+	КОНЕЦ КАК НомерПП,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(ХозрасчетныйОбороты.Регистратор) = ТИП(Документ.ПлатежноеПоручение)
+			ТОГДА ХозрасчетныйОбороты.Регистратор.ДатаВходящегоДокумента
+		ИНАЧЕ ХозрасчетныйОбороты.Регистратор.Дата
+	КОНЕЦ КАК ДатаПП,
+	ХозрасчетныйОбороты.Организация КАК ЮрЛицо,
+	ХозрасчетныйОбороты.Регистратор.НазначениеПлатежа КАК НазначениеПлатежа,
+	ХозрасчетныйОбороты.СуммаОборот КАК Сумма,
+	ХозрасчетныйОбороты.Период КАК Период
+ПОМЕСТИТЬ ВТ_Обороты_51_52_55
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Обороты(
+			,
+			,
+			Регистратор,
+			Счет В ИЕРАРХИИ
+				(ВЫБРАТЬ
+					Таб.Счет
+				ИЗ
+					ОтборПоСчетам КАК Таб),
+			&amp;ВидыСубконто_51_52_55,
+			(&amp;ОборотыПо51
+				ИЛИ &amp;ОборотыПо52
+				ИЛИ &amp;ОборотыПо55)
+				И Организация = &amp;Организация,
+			,
+			) КАК ХозрасчетныйОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = ЗНАЧЕНИЕ(Справочник.СтатьиДвиженияДенежныхСредств.ПустаяСсылка)
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ПервыйУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаПервыйУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_51_52_55 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаПервыйУровень.ПервыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ВторойУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаВторойУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаПервыйУровень КАК СтатьиФинПланаПервыйУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаПервыйУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_51_52_55 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаВторойУровень.ВторойУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ТретийУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаТретийУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаВторойУровень КАК СтатьиФинПланаВторойУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаВторойУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_51_52_55 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаТретийУровень.ТретийУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ЧетвертыйУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаЧетвертыйУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаТретийУровень КАК СтатьиФинПланаТретийУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаТретийУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_51_52_55 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Ссылка
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель
+		КОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель = СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень
+			ТОГДА СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель
+		ИНАЧЕ СтатьиДвиженияДенежныхСредств.Родитель.Родитель.Родитель.Родитель.Родитель
+	КОНЕЦ КАК ПятыйУровень,
+	СтатьиДвиженияДенежныхСредств.Ссылка КАК СтатьяФинПлана
+ПОМЕСТИТЬ СтатьиФинПланаПятыйУровень
+ИЗ
+	Справочник.СтатьиДвиженияДенежныхСредств КАК СтатьиДвиженияДенежныхСредств
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаЧетвертыйУровень КАК СтатьиФинПланаЧетвертыйУровень
+		ПО СтатьиДвиженияДенежныхСредств.Ссылка = СтатьиФинПланаЧетвертыйУровень.СтатьяФинПлана
+ГДЕ
+	СтатьиДвиженияДенежныхСредств.Ссылка В
+			(ВЫБРАТЬ РАЗЛИЧНЫЕ
+				Таб.СтатьяФинПлана
+			ИЗ
+				ВТ_Обороты_51_52_55 КАК Таб)
+
+ИНДЕКСИРОВАТЬ ПО
+	СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СтатьиФинПланаПервыйУровень.СтатьяФинПлана КАК СтатьяФинПлана,
+	СтатьиФинПланаПервыйУровень.ПервыйУровень КАК ПервыйУровень,
+	СтатьиФинПланаВторойУровень.ВторойУровень КАК ВторойУровень,
+	СтатьиФинПланаТретийУровень.ТретийУровень КАК ТретийУровень,
+	СтатьиФинПланаЧетвертыйУровень.ЧетвертыйУровень КАК ЧетвертыйУровень,
+	СтатьиФинПланаПятыйУровень.ПятыйУровень КАК ПятыйУровень
+ПОМЕСТИТЬ СтатьиФинПланаСУровнями
+ИЗ
+	СтатьиФинПланаПервыйУровень КАК СтатьиФинПланаПервыйУровень
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаВторойУровень КАК СтатьиФинПланаВторойУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаВторойУровень.СтатьяФинПлана
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаТретийУровень КАК СтатьиФинПланаТретийУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаТретийУровень.СтатьяФинПлана
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаЧетвертыйУровень КАК СтатьиФинПланаЧетвертыйУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаЧетвертыйУровень.СтатьяФинПлана
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаПятыйУровень КАК СтатьиФинПланаПятыйУровень
+		ПО СтатьиФинПланаПервыйУровень.СтатьяФинПлана = СтатьиФинПланаПятыйУровень.СтатьяФинПлана
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Обороты_51_52_55.Счет КАК Счет,
+	ВТ_Обороты_51_52_55.СтатьяФинПлана КАК СтатьяФинПлана,
+	ВТ_Обороты_51_52_55.РС_Касса КАК РС_Касса,
+	ВТ_Обороты_51_52_55.Регистратор КАК Регистратор,
+	ВТ_Обороты_51_52_55.Сумма КАК Сумма,
+	СтатьиФинПланаСУровнями.ПервыйУровень КАК ПервыйУровень,
+	СтатьиФинПланаСУровнями.ВторойУровень КАК ВторойУровень,
+	СтатьиФинПланаСУровнями.ТретийУровень КАК ТретийУровень,
+	СтатьиФинПланаСУровнями.ЧетвертыйУровень КАК ЧетвертыйУровень,
+	СтатьиФинПланаСУровнями.ПятыйУровень КАК ПятыйУровень,
+	ВЫБОР
+		КОГДА НЕ СтатьиФинПланаСУровнями.ПятыйУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ПятыйУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ЧетвертыйУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ЧетвертыйУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ТретийУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ТретийУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ВторойУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ВторойУровень.Код
+		КОГДА НЕ СтатьиФинПланаСУровнями.ПервыйУровень ЕСТЬ NULL
+			ТОГДА СтатьиФинПланаСУровнями.ПервыйУровень.Код
+		ИНАЧЕ ""
+	КОНЕЦ КАК Код,
+	ВТ_Обороты_51_52_55.НазначениеПлатежа КАК НазначениеПлатежа,
+	ВТ_Обороты_51_52_55.ЮрЛицо КАК ЮрЛицо,
+	ВТ_Обороты_51_52_55.ДатаПП КАК ДатаПП,
+	ВТ_Обороты_51_52_55.НомерПП КАК НомерПП,
+	ВТ_Обороты_51_52_55.СчетКт КАК СчетКт,
+	ВТ_Обороты_51_52_55.СчетДт КАК СчетДт,
+	ВТ_Обороты_51_52_55.Контрагент КАК Контрагент,
+	ВТ_Обороты_51_52_55.Договор КАК Договор,
+	ВТ_Обороты_51_52_55.Период КАК Период,
+	ВТ_Обороты_51_52_55.Период КАК Месяц,
+	ВТ_Обороты_51_52_55.Регистратор.Подразделение КАК Подразделение,
+	ВТ_Обороты_51_52_55.Регистратор.игсПроект КАК Проект
+ИЗ
+	ВТ_Обороты_51_52_55 КАК ВТ_Обороты_51_52_55
+		ЛЕВОЕ СОЕДИНЕНИЕ СтатьиФинПланаСУровнями КАК СтатьиФинПланаСУровнями
+		ПО ВТ_Обороты_51_52_55.СтатьяФинПлана = СтатьиФинПланаСУровнями.СтатьяФинПлана</query>
+		</item>
+	</dataSet>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ВидыСубконто_50</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Виды субконто 50</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.СтатьиДвиженияДенежныхСредств</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ОборотыПо50_1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить обороты по счету 50.01</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ОборотыПо50_2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить обороты по счету 50.02</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ОборотыПо51</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить обороты по 51 счету</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ОборотыПо52</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить обороты по 52 счету</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ОборотыПо55</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить обороты по 55 счету</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ВидыСубконто_51_52_55</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Виды субконто 51 52 55</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.БанковскиеСчета</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.СтатьиДвиженияДенежныхСредств</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Движения денежных средств по 50.01, 50.02, 51, 52 и 55 счетам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Период</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Месяц</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПервыйУровень</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВторойУровень</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТретийУровень</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЧетвертыйУровень</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПятыйУровень</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Договор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетДт</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетКт</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НазначениеПлатежа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РС_Касса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерПП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Проект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЮрЛицо</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</dcscor:value>
+					<dcsset:userSettingID>ecfc31a3-8862-46cf-afd9-3d1cad7c683f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>00ce3924-c867-4357-b8a0-3a6eac5a4cfe</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОборотыПо50_1</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>5295a99a-ac01-47f4-b023-486471cd429a</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОборотыПо50_2</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>229f90b4-6def-4ade-acda-a32357c768ae</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОборотыПо51</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>2ba2d0b2-3cef-45da-bf18-92d06add8bb3</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОборотыПо52</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>a7b914a9-d2ee-439e-885d-497275193d48</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОборотыПо55</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>a9b9b81f-5e49-498f-a445-b4e1f0a483f9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидыСубконто_51_52_55</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Период</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

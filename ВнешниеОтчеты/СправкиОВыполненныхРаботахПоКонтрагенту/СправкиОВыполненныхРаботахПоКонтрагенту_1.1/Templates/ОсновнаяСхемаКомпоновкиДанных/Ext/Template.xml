@@ -26,10 +26,9 @@
 					<v8:content>Этап</v8:content>
 				</v8:item>
 			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
-			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.НоменклатурныеГруппы</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
@@ -44,10 +43,9 @@
 					<v8:content>Контрагент</v8:content>
 				</v8:item>
 			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
-			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
 			<appearance>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
@@ -78,10 +76,9 @@
 					<v8:content>Договор</v8:content>
 				</v8:item>
 			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
-			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Сумма</dataPath>
@@ -169,23 +166,49 @@
 			<dataPath>ПодразделениеКт</dataPath>
 			<field>ПодразделениеКт</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<valueType>
+				<v8:TypeSet xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:DocumentRef</v8:TypeSet>
+			</valueType>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
-	ХозрасчетныйОборотыДтКт.СубконтоДт1 КАК Контрагент,
-	ХозрасчетныйОборотыДтКт.СубконтоДт2 КАК ДоговорКонтрагента,
-	ХозрасчетныйОборотыДтКт.СуммаОборот КАК Сумма,
-	ЕСТЬNULL(СправкаОВыполненныхРаботах.игсНомерКС, ОснованиеКорректировка.игсНомерКС) КАК НомерКС,
-	ЕСТЬNULL(СправкаОВыполненныхРаботах.игсДатаКС, ОснованиеКорректировка.игсДатаКС) КАК ДатаКС,
-	СправкаОВыполненныхРаботах.Ссылка КАК Ссылка,
-	ХозрасчетныйОборотыДтКт.СубконтоКт3 КАК Этап
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ХозрасчетныйОборотыДтКт.Регистратор КАК Регистратор
+ПОМЕСТИТЬ ВТ_ХозОборотыДтКт
 ИЗ
-	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, Регистратор, СчетДт.Код = "62.01", , СчетКт.Код = "46", , ) КАК ХозрасчетныйОборотыДтКт
-		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ИмпРеализацияСтроительныхРаботУслуг КАК СправкаОВыполненныхРаботах
-		ПО ХозрасчетныйОборотыДтКт.Регистратор = СправкаОВыполненныхРаботах.Ссылка
+	РегистрБухгалтерии.Хозрасчетный.ОборотыДтКт({(&amp;НачалоПериода)}, {(&amp;КонецПериода)}, Регистратор, СчетДт = &amp;СчетДт62_01, , СчетКт = &amp;СчетКт46, , ) КАК ХозрасчетныйОборотыДтКт
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИмпРеализацияСтроительныхРаботУслуг.Контрагент КАК Контрагент,
+	ИмпРеализацияСтроительныхРаботУслуг.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ИмпРеализацияСтроительныхРаботУслугУслуги.Сумма КАК Сумма,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ИмпРеализацияСтроительныхРаботУслуг.игсНомерКС, ОснованиеКорректировка.игсНомерКС) = ""
+			ТОГДА " -- "
+		ИНАЧЕ ЕСТЬNULL(ИмпРеализацияСтроительныхРаботУслуг.игсНомерКС, ОснованиеКорректировка.игсНомерКС)
+	КОНЕЦ КАК НомерКС,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ИмпРеализацияСтроительныхРаботУслуг.игсДатаКС, ОснованиеКорректировка.игсДатаКС) = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА " -- "
+		ИНАЧЕ ЕСТЬNULL(ИмпРеализацияСтроительныхРаботУслуг.игсДатаКС, ОснованиеКорректировка.игсДатаКС)
+	КОНЕЦ КАК ДатаКС,
+	ИмпРеализацияСтроительныхРаботУслуг.Ссылка КАК Ссылка,
+	ИмпРеализацияСтроительныхРаботУслугУслуги.Субконто КАК Этап,
+	ВТ_ХозрасчетныйОборотыДтКт.Регистратор КАК Регистратор
+ИЗ
+	ВТ_ХозОборотыДтКт КАК ВТ_ХозрасчетныйОборотыДтКт
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ИмпРеализацияСтроительныхРаботУслуг КАК ИмпРеализацияСтроительныхРаботУслуг
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ИмпРеализацияСтроительныхРаботУслуг.Услуги КАК ИмпРеализацияСтроительныхРаботУслугУслуги
+			ПО ИмпРеализацияСтроительныхРаботУслуг.Ссылка = ИмпРеализацияСтроительныхРаботУслугУслуги.Ссылка
+		ПО ВТ_ХозрасчетныйОборотыДтКт.Регистратор = ИмпРеализацияСтроительныхРаботУслуг.Ссылка
 		ЛЕВОЕ СОЕДИНЕНИЕ Документ.КорректировкаРеализации КАК КорректировкаРеализации
 			ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ИмпРеализацияСтроительныхРаботУслуг КАК ОснованиеКорректировка
 			ПО КорректировкаРеализации.ДокументРеализации = ОснованиеКорректировка.Ссылка
-		ПО ХозрасчетныйОборотыДтКт.Регистратор = КорректировкаРеализации.Ссылка</query>
+		ПО ВТ_ХозрасчетныйОборотыДтКт.Регистратор = КорректировкаРеализации.Ссылка</query>
 	</dataSet>
 	<totalField>
 		<dataPath>Сумма</dataPath>
@@ -206,7 +229,8 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(&amp;Период.ДатаНачала, "День")</expression>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -223,7 +247,54 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ДобавитьКДате(КонецПериода(&amp;Период.ДатаОкончания, "День"), "Секунда", 1)</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
 		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СчетДт62_01</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет дт62 01</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.РасчетыСПокупателями</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СчетКт46</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет кт46</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ВыполненныеЭтапыПоНезавершеннымРаботам</value>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -241,16 +312,49 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>ac10eba6-b573-4f81-ac0f-477c38bd6b8a</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Контрагенты.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>584a3f4f-72de-48a3-87f2-d88580e92b04</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:left xsi:type="dcscor:Field">ДоговорКонтрагента</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.ДоговорыКонтрагентов.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>7efe5fd8-e8f1-495a-ae9c-4d625f9e9bba</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>53a7b74e-9a09-4491-a476-2407923a7d05</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетДт62_01</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетКт46</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
 					<dcsset:field>Контрагент.Наименование</dcsset:field>
@@ -282,6 +386,16 @@
 							<v8:content>Данные по выполненным объемам работ с указанием этапа</v8:content>
 						</v8:item>
 					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
